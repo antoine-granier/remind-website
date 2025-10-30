@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./globals.css";
 import CursorCircle from "@/components/CursorCircle";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -57,6 +58,7 @@ export default function RootLayout({
         {/* MAIN CONTENT */}
         <div className="min-h-screen flex flex-col">{children}</div>
         <SpeedInsights />
+        <Analytics />
 
         {/* FOOTER */}
         <footer className="w-full py-8 bg-primary text-background2 flex flex-col items-center text-center gap-3">
