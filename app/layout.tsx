@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -142,12 +143,18 @@ export default function RootLayout({
           <div className="text-sm tracking-wide">
             En développement — Re:mind © {new Date().getFullYear()}
           </div>
-          <a
-            href="mailto:contact@remind.com"
-            className="text-action hover:underline text-sm font-medium"
-          >
-            Contactez-nous
-          </a>
+          <div className="flex gap-4 items-center text-sm font-medium">
+            <a
+              href="mailto:contact@remind.com"
+              className="text-action hover:underline"
+            >
+              Contactez-nous
+            </a>
+            <span className="text-background2">•</span>
+            <Link href="/privacy" className="text-action hover:underline">
+              Politique de confidentialité
+            </Link>
+          </div>
         </footer>
       </body>
     </html>

@@ -6,8 +6,26 @@ import { motion } from "framer-motion";
 export default function CursorCircle() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(true);
 
   useEffect(() => {
+    // Détecte si c'est un appareil tactile
+    const detectTouchDevice = () => {
+      return (
+        window.matchMedia("(pointer:coarse)").matches ||
+        navigator.maxTouchPoints > 0 ||
+        (navigator as any).msMaxTouchPoints > 0
+      );
+    };
+
+    const hasTouch = detectTouchDevice();
+    setIsTouchDevice(hasTouch);
+
+    // Si c'est un appareil tactile, ne pas charger les event listeners
+    if (hasTouch) {
+      return;
+    }
+
     const handleMouseMove = (event: MouseEvent) => {
       setPosition({ x: event.clientX, y: event.clientY });
     };
@@ -34,13 +52,17 @@ export default function CursorCircle() {
     };
   }, []);
 
+  // Ne pas afficher sur appareils tactiles
+  if (isTouchDevice) {
+    return null;
+  }
+
   return (
     <motion.div
       animate={{
         x: position.x,
         y: position.y,
         scale: isHovering ? 2.5 : 1,
-        // opacity: isHovering ? 0.5 : 1,
       }}
       transition={{
         x: { duration: 0 },
