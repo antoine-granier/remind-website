@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "./globals.css";
-import CursorCircle from "@/components/CursorCircle";
+// import CursorCircle from "@/components/CursorCircle";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react";
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="font-sans bg-background text-primary m-0 p-0">
-        <CursorCircle />
+        {/* <CursorCircle /> */}
 
         {/* NAVBAR */}
         <nav className="w-full flex items-center justify-between py-4 px-4 md:px-8 bg-background2 shadow-sm fixed top-0 left-0 z-30">

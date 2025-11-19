@@ -53,5 +53,5 @@ body {
 /* Désactiver le scroll par défaut du navigateur pour animation perso */
 * {
   scroll-behavior: smooth;
-  cursor: none;
+  /* cursor: none; */
 }
