@@ -1,10 +1,23 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function HeroScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -63,12 +76,156 @@ export default function HeroScroll() {
     { emoji: "💎", top: "78%", right: "12%", delay: 2.1 },
   ];
 
+  // Version mobile - contenu linéaire sans animation de scroll
+  if (isMobile) {
+    return (
+      <div className="w-full bg-background">
+        {/* Section 1: Logo et texte avec emojis */}
+        <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
+          {/* Emojis flottants */}
+          <div className="absolute inset-0 z-5 pointer-events-none">
+            {emojis.map((item, index) => (
+              <motion.div
+                key={index}
+                className="absolute text-3xl"
+                style={{
+                  top: item.top,
+                  left: item.left,
+                  right: item.right,
+                }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, -10, 0],
+                  rotate: [0, 3, -3, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.8, delay: item.delay },
+                  scale: { duration: 0.8, delay: item.delay },
+                  y: {
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: item.delay,
+                  },
+                  rotate: {
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: item.delay,
+                  },
+                }}
+              >
+                {item.emoji}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Logo et texte */}
+          <div className="relative z-10 flex flex-col items-center justify-center gap-6">
+            {/* Conteneur des cercles - RESTE EN SPIRALE (état initial) avec proportions ajustées */}
+            <div className="relative flex items-center justify-center w-[200px] h-[200px]">
+              {/* Cercle 3 - Le plus grand - position spirale proportionnelle */}
+              <div
+                className="absolute w-[180px] h-[180px] rounded-full border-[6px] border-action"
+                style={{ transform: "translate(17.86px, 17.86px)" }}
+              />
+              {/* Cercle 2 - Moyen - position spirale proportionnelle */}
+              <div
+                className="absolute w-[130px] h-[130px] rounded-full border-[5px] border-action"
+                style={{ transform: "translate(-10.71px, -10.71px)" }}
+              />
+              {/* Cercle 1 - Le plus petit - position spirale proportionnelle */}
+              <div
+                className="absolute w-[80px] h-[80px] rounded-full border-[4px] border-action"
+                style={{ transform: "translate(-35.71px, -35.71px)" }}
+              />
+            </div>
+
+            <h2 className="text-5xl font-bold tracking-tight text-primary whitespace-nowrap">
+              Re:mind
+            </h2>
+
+            {/* Boutons de téléchargement */}
+            <div className="flex flex-col gap-4 items-center mt-4">
+              <div className="relative group cursor-not-allowed">
+                <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6 text-primary"
+                  >
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                  </svg>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-secondary">
+                      Disponible sur
+                    </span>
+                    <span className="text-sm font-semibold text-primary">
+                      App Store
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-action text-primary text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                  Bientôt disponible
+                </div>
+              </div>
+
+              <div className="relative group cursor-not-allowed">
+                <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6 text-primary"
+                  >
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
+                  </svg>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-secondary">
+                      Disponible sur
+                    </span>
+                    <span className="text-sm font-semibold text-primary">
+                      Google Play
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-action text-primary text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                  Bientôt disponible
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Contenu principal */}
+        <section className="min-h-[60vh] flex items-center justify-center px-6 py-20 bg-background">
+          <div className="flex flex-col items-center max-w-2xl">
+            <h1 className="text-4xl font-bold tracking-tight text-center mb-4 text-primary">
+              Votre esprit, libéré
+            </h1>
+            <p className="text-base text-secondary text-center mb-8 leading-relaxed">
+              Gérez facilement vos rappels et vos traitements médicaux. Libérez
+              votre esprit et restez productif.
+            </p>
+            <a
+              href="#decouvrir"
+              className="px-8 py-3 rounded-full bg-action text-primary font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            >
+              Découvrir Re:mind
+            </a>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Version desktop avec animation de scroll
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full -mt-20">
-      {/* Ajustez -mt-20 ou -mt-16 selon la hauteur de votre navbar */}
       <div className="sticky top-20 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
-        {/* Ajustez top-20 ou top-16 selon la hauteur de votre navbar */}
-
         {/* Emojis flottants */}
         <motion.div
           style={{ opacity: emojisOpacity }}
@@ -112,7 +269,7 @@ export default function HeroScroll() {
           ))}
         </motion.div>
 
-        {/* Contenu qui apparaît DERRIÈRE les cercles (z-index inférieur) */}
+        {/* Contenu qui apparaît DERRIÈRE les cercles */}
         <motion.div
           style={{
             opacity: contentOpacity,
@@ -135,13 +292,12 @@ export default function HeroScroll() {
           </a>
         </motion.div>
 
-        {/* Les trois cercles du logo avec le texte (z-index supérieur) */}
+        {/* Les trois cercles du logo avec le texte */}
         <motion.div
           style={{ opacity: circlesOpacity }}
           className="absolute z-10 w-full h-full flex items-center justify-center"
         >
           <div className="flex flex-col items-center justify-center">
-            {/* Conteneur des cercles */}
             <div className="relative flex items-center justify-center w-[280px] h-[280px]">
               {/* Cercle 3 - Le plus grand (extérieur) - le plus loin */}
               <motion.div
@@ -177,7 +333,6 @@ export default function HeroScroll() {
               />
             </div>
 
-            {/* Texte "Re:mind" qui remonte, rétrécit et disparaît */}
             <motion.div
               style={{
                 y: textY,
@@ -191,7 +346,6 @@ export default function HeroScroll() {
               </h2>
             </motion.div>
 
-            {/* Boutons de téléchargement - EN DESSOUS du texte */}
             <motion.div
               style={{
                 opacity: buttonsOpacity,
@@ -200,7 +354,6 @@ export default function HeroScroll() {
               }}
               className="flex flex-col sm:flex-row gap-4 items-center mt-8"
             >
-              {/* Bouton App Store */}
               <div className="relative group cursor-not-allowed">
                 <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
                   <svg
@@ -225,7 +378,6 @@ export default function HeroScroll() {
                 </div>
               </div>
 
-              {/* Bouton Google Play */}
               <div className="relative group cursor-not-allowed">
                 <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
                   <svg
