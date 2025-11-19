@@ -1,5 +1,7 @@
 import HeroScroll from "@/components/HeroScroll";
+import IPhoneMockup from "@/components/IphoneMockup";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,25 +9,245 @@ export default function Home() {
       {/* HERO SECTION AVEC ANIMATION SCROLL */}
       <HeroScroll />
 
-      {/* POURQUOI RE:MIND */}
+      {/* VOTRE ESPRIT, LIBÉRÉ - Avec mockup du dashboard */}
+      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+          <div className="relative w-full max-w-[300px] mx-auto">
+            <IPhoneMockup src="/IMG_0800.png" alt="Dashboard Re:mind" />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Votre esprit, <span className="italic text-action">libéré</span>
+          </h2>
+          <p className="text-secondary text-lg leading-relaxed mb-6">
+            Re:mind centralise tous vos rappels dans un tableau de bord
+            intuitif. Visualisez en un coup d'œil vos tâches du jour, celles
+            planifiées et celles déjà accomplies.
+          </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📊</span>
+              <div>
+                <h3 className="font-semibold text-primary">Résumé complet</h3>
+                <p className="text-secondary">
+                  Suivez vos rappels aujourd'hui, planifiés et terminés
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🎯</span>
+              <div>
+                <h3 className="font-semibold text-primary">Interface épurée</h3>
+                <p className="text-secondary">
+                  Un design moderne et facile à utiliser
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* PLANIFIEZ FACILEMENT - Avec mockup du planificateur */}
+      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6">
+        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+          <div className="relative w-full max-w-[300px] mx-auto">
+            <IPhoneMockup src="/IMG_0801.png" alt="Planificateur Re:mind" />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Vos rappels,{" "}
+            <span className="italic text-action">toujours à l'heure</span>
+          </h2>
+          <p className="text-secondary text-lg leading-relaxed mb-6">
+            Organisez votre semaine avec notre planificateur intégré. Créez des
+            rappels ponctuels, quotidiens ou hebdomadaires adaptés à votre
+            rythme de vie.
+          </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📅</span>
+              <div>
+                <h3 className="font-semibold text-primary">Vue calendrier</h3>
+                <p className="text-secondary">
+                  Naviguez facilement dans vos semaines
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">⏰</span>
+              <div>
+                <h3 className="font-semibold text-primary">
+                  Rappels multiples
+                </h3>
+                <p className="text-secondary">
+                  Gérez plusieurs rappels par jour sans effort
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* GESTION DES MÉDICAMENTS - Avec mockup */}
+      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+          <div className="relative w-full max-w-[300px] mx-auto">
+            <IPhoneMockup src="/IMG_0802.png" alt="Gestion des médicaments" />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Gérez vos traitements{" "}
+            <span className="italic text-action">intelligemment</span>
+          </h2>
+          <p className="text-secondary text-lg leading-relaxed mb-6">
+            Suivez vos traitements avec précision. Re:mind vous permet de
+            définir la posologie, la fréquence et le stock restant pour ne
+            jamais manquer une prise.
+          </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">💊</span>
+              <div>
+                <h3 className="font-semibold text-primary">Suivi des doses</h3>
+                <p className="text-secondary">
+                  1 pilule, 3x/jour - tout est clair
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📦</span>
+              <div>
+                <h3 className="font-semibold text-primary">Gestion du stock</h3>
+                <p className="text-secondary">
+                  Soyez alerté quand il est temps de renouveler
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* CRÉATION FACILE - Avec mockup nouveau rappel */}
+      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6">
+        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+          <div className="relative w-full max-w-[300px] mx-auto">
+            <IPhoneMockup src="/IMG_0803.png" alt="Créer un rappel" />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Créez en{" "}
+            <span className="italic text-action">quelques secondes</span>
+          </h2>
+          <p className="text-secondary text-lg leading-relaxed mb-6">
+            Interface intuitive pour créer vos rappels rapidement. Choisissez la
+            catégorie, la récurrence et l'heure en quelques taps.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col items-center p-4 bg-background2 rounded-xl">
+              <span className="text-3xl mb-2">🎯</span>
+              <span className="text-sm font-semibold text-primary">
+                Rappels
+              </span>
+            </div>
+            <div className="flex flex-col items-center p-4 bg-background2 rounded-xl">
+              <span className="text-3xl mb-2">💊</span>
+              <span className="text-sm font-semibold text-primary">
+                Médicament
+              </span>
+            </div>
+            <div className="flex flex-col items-center p-4 bg-background2 rounded-xl">
+              <span className="text-3xl mb-2">💊</span>
+              <span className="text-sm font-semibold text-primary">
+                Renouvellement
+              </span>
+            </div>
+            <div className="flex flex-col items-center p-4 bg-background2 rounded-xl">
+              <span className="text-3xl mb-2">🚗</span>
+              <span className="text-sm font-semibold text-primary">Péage</span>
+            </div>
+          </div>
+          <p className="text-center mt-4 font-semibold">Et plein d'autre...</p>
+        </ScrollReveal>
+      </section>
+
+      {/* PERSONNALISATION - Avec mockup paramètres */}
+      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+          <div className="relative w-full max-w-[300px] mx-auto">
+            <IPhoneMockup src="/IMG_0804.png" alt="Paramètres Re:mind" />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Personnalisez{" "}
+            <span className="italic text-action">à votre guise</span>
+          </h2>
+          <p className="text-secondary text-lg leading-relaxed mb-6">
+            Contrôlez chaque détail de votre expérience. Notifications,
+            abonnements, traitements et même la détection automatique des péages
+            - tout est configurable.
+          </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🔔</span>
+              <div>
+                <h3 className="font-semibold text-primary">
+                  Notifications intelligentes
+                </h3>
+                <p className="text-secondary">
+                  Activez ou désactivez selon vos préférences
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">💎</span>
+              <div>
+                <h3 className="font-semibold text-primary">Plans flexibles</h3>
+                <p className="text-secondary">Version gratuite ou premium</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🚗</span>
+              <div>
+                <h3 className="font-semibold text-primary">
+                  Détection de péages
+                </h3>
+                <p className="text-secondary">
+                  Rappels automatiques pour vos paiements en ligne
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* TYPES DE RAPPELS */}
       <section
         id="decouvrir"
-        className="w-full py-20 bg-background2 flex flex-col items-center px-6"
+        className="w-full py-20 bg-background flex flex-col items-center px-6"
       >
         <ScrollReveal>
-          <h2 className="text-4xl font-bold mb-6 text-primary">
-            Pourquoi Re:mind ?
+          <h2 className="text-4xl font-bold mb-6 text-primary text-center">
+            Adaptez Re:mind à votre vie
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
           <p className="text-secondary max-w-2xl text-center mb-12 text-lg leading-relaxed">
-            Une application de rappels intelligente qui organise toutes vos
-            tâches selon vos besoins, pour alléger votre esprit.
+            Trois types de rappels pour couvrir tous vos besoins quotidiens
           </p>
         </ScrollReveal>
 
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl">
           <ScrollReveal delay={0.1}>
             <FeatureCard
               title="Unique"
@@ -50,113 +272,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FONCTIONNALITÉS CLÉS */}
-      <section
-        id="features"
-        className="w-full py-20 bg-background flex flex-col items-center px-6"
-      >
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold mb-6 text-primary">
-            Fonctionnalités clés
-          </h2>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 max-w-6xl">
-          <ScrollReveal delay={0.1} direction="left">
-            <FeatureCard
-              title="Gestion des médicaments"
-              icon="💊"
-              desc="Suivez vos doses et dosages en un coup d'œil avec un tracker intégré."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <FeatureCard
-              title="Catégories personnalisées"
-              icon="🏷"
-              desc="Créez des catégories sur mesure : Rappels, Médicaments, Renouvellements et Péages."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.5} direction="right">
-            <FeatureCard
-              title="Détection de péages"
-              icon="🚗"
-              desc="Une fonctionnalité unique pour ne jamais oublier vos passages aux péages."
-            />
-          </ScrollReveal>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 max-w-6xl">
-          <ScrollReveal delay={0.1} direction="left">
-            <FeatureCard
-              title="Tableau de bord complet"
-              icon="📊"
-              desc="Visualisez vos rappels du jour, planifiés et complétés dans une interface intuitive."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <FeatureCard
-              title="Planificateur intégré"
-              icon="📅"
-              desc="Organisez vos rappels par jour de la semaine avec vue calendrier."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.5} direction="right">
-            <FeatureCard
-              title="Notifications intelligentes"
-              icon="🔔"
-              desc="Recevez des alertes personnalisables selon vos préférences et votre rythme."
-            />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* PERSONNALISATION */}
-      <section
-        id="personnalisation"
-        className="w-full py-20 bg-background2 flex flex-col items-center px-6"
-      >
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold mb-6 text-primary">
-            Une expérience sur mesure
-          </h2>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.2}>
-          <p className="text-secondary max-w-2xl text-center mb-12 text-lg leading-relaxed">
-            Personnalisez chaque détail pour adapter Re:mind à votre style de
-            vie.
-          </p>
-        </ScrollReveal>
-
-        <div className="flex flex-col md:flex-row gap-10">
-          <ScrollReveal delay={0.1}>
-            <FeatureCard
-              title="Plans flexibles"
-              icon="💎"
-              desc="Choisissez entre la version gratuite ou premium selon vos besoins."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <FeatureCard
-              title="Paramètres avancés"
-              icon="⚙️"
-              desc="Contrôlez vos notifications, abonnements et préférences en toute simplicité."
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.5}>
-            <FeatureCard
-              title="Suivi de traitements"
-              icon="📝"
-              desc="Ajoutez et gérez vos traitements médicaux avec dates et horaires précis."
-            />
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* LANCEMENT IMMINENT */}
       <section
         id="lancement"
-        className="w-full py-20 bg-background flex flex-col items-center gap-8 px-6"
+        className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6"
       >
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold text-primary text-center">
@@ -173,7 +292,7 @@ export default function Home() {
 
         <ScrollReveal delay={0.4}>
           <div className="flex flex-col sm:flex-row gap-6 items-center mt-4">
-            <div className="flex items-center gap-3 px-8 py-4 bg-background2 border-2 border-action rounded-xl">
+            <div className="flex items-center gap-3 px-8 py-4 bg-background border-2 border-action rounded-xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -190,7 +309,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-8 py-4 bg-background2 border-2 border-action rounded-xl">
+            <div className="flex items-center gap-3 px-8 py-4 bg-background border-2 border-action rounded-xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -229,7 +348,7 @@ function FeatureCard({
   desc: string;
 }) {
   return (
-    <div className="bg-background2 rounded-2xl h-full shadow-md p-8 flex flex-col items-center gap-3 border border-background hover:shadow-xl hover:scale-105 transition-all">
+    <div className="bg-background2 rounded-2xl h-full shadow-md p-8 flex flex-col items-center gap-3 border border-secondary hover:shadow-xl hover:scale-105 transition-all">
       <span className="text-5xl">{icon}</span>
       <span className="text-xl font-bold text-primary">{title}</span>
       <span className="text-base text-secondary text-center leading-relaxed">

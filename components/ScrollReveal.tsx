@@ -7,12 +7,14 @@ interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
   direction?: "up" | "down" | "left" | "right";
+  className?: string;
 }
 
 export default function ScrollReveal({
   children,
   delay = 0,
   direction = "up",
+  className = "",
 }: ScrollRevealProps) {
   const directions = {
     up: { y: 50 },
@@ -23,6 +25,7 @@ export default function ScrollReveal({
 
   return (
     <motion.div
+      className={className}
       initial={{
         opacity: 0,
         ...directions[direction],
