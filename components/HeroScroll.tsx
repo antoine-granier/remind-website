@@ -225,7 +225,7 @@ export default function HeroScroll() {
   // Version desktop avec animation de scroll
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full -mt-20">
-      <div className="sticky top-20 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+      <div className="sticky top-16 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
         {/* Emojis flottants */}
         <motion.div
           style={{ opacity: emojisOpacity }}
@@ -305,7 +305,7 @@ export default function HeroScroll() {
                   x: circle3X,
                   y: circle3Y,
                   scale: circle3Scale,
-                  boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 1)`,
+                  // boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 1)`,
                 }}
                 className="absolute w-[240px] h-[240px] rounded-full border-[8px] border-action"
               />
@@ -316,7 +316,7 @@ export default function HeroScroll() {
                   x: circle2X,
                   y: circle2Y,
                   scale: circle2Scale,
-                  boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 0.9)`,
+                  // boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 0.9)`,
                 }}
                 className="absolute w-[180px] h-[180px] rounded-full border-[7px] border-action"
               />
@@ -327,7 +327,7 @@ export default function HeroScroll() {
                   x: circle1X,
                   y: circle1Y,
                   scale: circle1Scale,
-                  boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 0.8)`,
+                  // boxShadow: `0 0 ${shadowIntensity.get()}px rgba(0, 0, 0, 0.8)`,
                 }}
                 className="absolute w-[120px] h-[120px] rounded-full border-[6px] border-action"
               />

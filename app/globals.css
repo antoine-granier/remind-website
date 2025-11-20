@@ -50,7 +50,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Désactiver le scroll par défaut du navigateur pour animation perso */
 * {
   scroll-behavior: smooth;
   /* cursor: none; */

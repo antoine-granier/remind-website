@@ -10,7 +10,10 @@ export default function Home() {
       <HeroScroll />
 
       {/* VOTRE ESPRIT, LIBÉRÉ - Avec mockup du dashboard */}
-      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+      <section
+        id="discover"
+        className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden"
+      >
         <ScrollReveal direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0800.png" alt="Dashboard Re:mind" />
@@ -50,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* PLANIFIEZ FACILEMENT - Avec mockup du planificateur */}
-      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6">
+      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6 overflow-hidden">
         <ScrollReveal direction="right" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0801.png" alt="Planificateur Re:mind" />
@@ -93,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* GESTION DES MÉDICAMENTS - Avec mockup */}
-      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden">
         <ScrollReveal direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0802.png" alt="Gestion des médicaments" />
@@ -134,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* CRÉATION FACILE - Avec mockup nouveau rappel */}
-      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6">
+      <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6 overflow-hidden">
         <ScrollReveal direction="right" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0803.png" alt="Créer un rappel" />
@@ -179,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* PERSONNALISATION - Avec mockup paramètres */}
-      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6">
+      <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden">
         <ScrollReveal direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0804.png" alt="Paramètres Re:mind" />
@@ -231,10 +234,7 @@ export default function Home() {
       </section>
 
       {/* TYPES DE RAPPELS */}
-      <section
-        id="decouvrir"
-        className="w-full py-20 bg-background flex flex-col items-center px-6"
-      >
+      <section className="w-full py-20 bg-background flex flex-col items-center px-6 overflow-hidden">
         <ScrollReveal>
           <h2 className="text-4xl font-bold mb-6 text-primary text-center">
             Adaptez Re:mind à votre vie
@@ -274,8 +274,8 @@ export default function Home() {
 
       {/* LANCEMENT IMMINENT */}
       <section
-        id="lancement"
-        className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6"
+        id="launch"
+        className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6 overflow-hidden"
       >
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold text-primary text-center">
