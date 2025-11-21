@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -52,6 +53,26 @@ export default function RootLayout({
               >
                 Pourquoi ?
               </a>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="relative text-primary transition-colors duration-300
+                  after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
+                  after:bg-action after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pricing"
+                className="relative text-primary transition-colors duration-300
+                  after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
+                  after:bg-action after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Tarifs
+              </Link>
             </li>
             <li>
               <a
@@ -110,6 +131,26 @@ export default function RootLayout({
               </a>
             </li>
             <li>
+              <Link
+                href="/blog"
+                className="text-primary hover:bg-action/5 transition-all duration-200
+                  block py-3 px-4 rounded-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pricing"
+                className="text-primary hover:bg-action/5 transition-all duration-200
+                  block py-3 px-4 rounded-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                Tarifs
+              </Link>
+            </li>
+            <li>
               <a
                 href="#launch"
                 className="bg-action text-primary hover:bg-action/90 transition-all duration-200
@@ -126,6 +167,9 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col pt-[73px]">{children}</div>
         <SpeedInsights />
         <Analytics />
+
+        {/* SCROLL TO TOP BUTTON */}
+        <ScrollToTop />
 
         {/* FOOTER */}
         <footer className="w-full py-8 bg-primary text-background2 flex flex-col items-center text-center gap-3">

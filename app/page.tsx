@@ -350,6 +350,149 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CONFIDENTIALITÉ ET DONNÉES */}
+      <section className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6 overflow-hidden">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
+              Confidentialité
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+              Vos données vous appartiennent, <span className="text-secondary/80">pour de vrai</span>
+            </h2>
+            <p className="text-secondary text-lg leading-relaxed mb-12">
+              Re:mind est conçu avec un principe simple : votre vie privée n'est pas négociable. 
+              Aucune donnée n'est collectée, stockée ou partagée. Tout reste sur votre appareil.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+          <ScrollReveal delay={0.1}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">🔒</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Aucune collecte</h3>
+              <p className="text-secondary leading-relaxed">
+                Nous ne collectons aucune donnée personnelle. Ni emails, ni historiques, ni habitudes. Rien.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">📱</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Stockage local</h3>
+              <p className="text-secondary leading-relaxed">
+                Toutes vos données restent sur votre téléphone. Vous gardez le contrôle total, toujours.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">🛡️</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Pas de revente</h3>
+              <p className="text-secondary leading-relaxed">
+                Vos informations ne seront jamais analysées, partagées ou vendues à des tiers. Jamais.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <ScrollReveal delay={0.4}>
+          <div className="max-w-3xl mx-auto mt-8 bg-gradient-to-br from-action/10 to-primary/5 border-2 border-action/20 rounded-2xl p-6 text-center">
+            <p className="text-primary font-semibold text-lg mb-2">
+              💚 Re:mind est une app éthique
+            </p>
+            <p className="text-secondary">
+              Pas de tracker, pas de publicités ciblées, pas de vente de données. 
+              Juste une application qui vous aide, point final.
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* CTA BLOG */}
+      <section className="w-full py-20 bg-gradient-to-br from-action/5 to-primary/5 flex flex-col items-center gap-6 px-6 overflow-hidden">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
+              Blog & Ressources
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+              Libérez votre esprit, <span className="text-secondary/80">une lecture à la fois</span>
+            </h2>
+            <p className="text-secondary text-lg leading-relaxed mb-8">
+              Découvrez nos articles sur la charge mentale, l'organisation et le bien-être. 
+              Des conseils pratiques pour une vie plus sereine.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/blog"
+                className="px-8 py-4 bg-action text-primary rounded-xl font-bold hover:bg-action/90 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+              >
+                Lire nos articles
+              </a>
+              <div className="flex gap-3 text-sm text-secondary">
+                <span className="px-3 py-2 bg-white/50 rounded-lg border border-white/60">Bien-être</span>
+                <span className="px-3 py-2 bg-white/50 rounded-lg border border-white/60">Santé</span>
+                <span className="px-3 py-2 bg-white/50 rounded-lg border border-white/60">Organisation</span>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* CTA TARIFS */}
+      <section className="w-full py-20 bg-background flex flex-col items-center gap-6 px-6 overflow-hidden">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
+              Tarifs
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+              Un plan pour <span className="text-secondary/80">chaque besoin</span>
+            </h2>
+            <p className="text-secondary text-lg leading-relaxed mb-8">
+              Gratuit, Plus ou Pro : trouvez le plan qui vous correspond. 
+              Gérez vos rappels et traitements sans effort, avec ou sans abonnement.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <a
+                href="/pricing"
+                className="px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+              >
+                Voir les tarifs
+              </a>
+              <span className="text-secondary text-sm">À partir de 0€ · Sans engagement</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-4">
+                <div className="text-2xl mb-2">🎁</div>
+                <div className="text-sm font-semibold text-primary">Version gratuite</div>
+                <div className="text-xs text-secondary">Fonctionnalités de base</div>
+              </div>
+              <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-4">
+                <div className="text-2xl mb-2">⭐</div>
+                <div className="text-sm font-semibold text-primary">Plus à 0,99€/mois</div>
+                <div className="text-xs text-secondary">Catégories illimitées</div>
+              </div>
+              <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-4">
+                <div className="text-2xl mb-2">🚀</div>
+                <div className="text-sm font-semibold text-primary">Pro à 1,25€/mois</div>
+                <div className="text-xs text-secondary">Toutes les fonctionnalités</div>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* LANCEMENT IMMINENT */}
       <section
         id="launch"

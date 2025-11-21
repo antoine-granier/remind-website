@@ -306,7 +306,7 @@ export default function HeroScroll() {
               votre esprit et restez productif.
             </p>
             <a
-              href="#decouvrir"
+              href="#discover"
               className="px-8 py-3 rounded-full bg-action text-primary font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
               Découvrir Re:mind
@@ -377,7 +377,7 @@ export default function HeroScroll() {
             votre esprit et restez productif.
           </p>
           <a
-            href="#decouvrir"
+            href="#discover"
             className="px-10 py-4 rounded-full bg-action text-primary font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             Découvrir Re:mind
