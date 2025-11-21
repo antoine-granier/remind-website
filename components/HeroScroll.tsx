@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import FloatingWidget, { WidgetType } from "./FloatingWidget";
 
 export default function HeroScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,8 +55,8 @@ export default function HeroScroll() {
   const textScale = useTransform(scrollYProgress, [0.25, 0.45], [1, 0.2]);
   const textOpacity = useTransform(scrollYProgress, [0.25, 0.45], [1, 0]);
 
-  // Opacité des emojis - disparaissent dès le début du scroll
-  const emojisOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  // Opacité des widgets - disparaissent dès le début du scroll
+  const widgetsOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   // Opacité des boutons de téléchargement - disparaissent avec le texte
   const buttonsOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -64,30 +65,103 @@ export default function HeroScroll() {
   const contentOpacity = useTransform(scrollYProgress, [0.45, 0.65], [0, 1]);
   const contentScale = useTransform(scrollYProgress, [0.45, 0.7], [0.5, 1]);
 
-  // Données des emojis avec leurs positions
-  const emojis = [
-    { emoji: "💊", top: "18%", left: "12%", delay: 0 },
-    { emoji: "⏰", top: "15%", left: "42%", delay: 0.3 },
-    { emoji: "🔔", top: "18%", right: "12%", delay: 0.6 },
-    { emoji: "📅", top: "48%", left: "8%", delay: 0.9 },
-    { emoji: "✅", top: "48%", right: "8%", delay: 1.2 },
-    { emoji: "📝", top: "78%", left: "12%", delay: 1.5 },
-    { emoji: "🚗", top: "82%", left: "42%", delay: 1.8 },
-    { emoji: "💎", top: "78%", right: "12%", delay: 2.1 },
+  // Données des widgets avec leurs positions
+  const widgets: {
+    type: WidgetType;
+    title?: string;
+    subtitle?: string;
+    time?: string;
+    icon?: string;
+    checked?: boolean;
+    top: string;
+    left?: string;
+    right?: string;
+    delay: number;
+  }[] = [
+    {
+      type: "medication",
+      title: "Doliprane",
+      subtitle: "1000mg",
+      time: "08:00",
+      icon: "💊",
+      top: "11%",
+      left: "15%",
+      delay: 0,
+    },
+    {
+      type: "calendar",
+      title: "21",
+      subtitle: "NOV",
+      time: "Jeudi",
+      top: "11%",
+      left: "68%",
+      delay: 0.3,
+    },
+    {
+      type: "notification",
+      title: "Rappel : Eau",
+      icon: "💧",
+      top: "25%",
+      right: "8%",
+      delay: 0.6,
+    },
+    {
+      type: "reminder",
+      title: "Rendez-vous médecin",
+      checked: false,
+      top: "30%",
+      left: "5%",
+      delay: 0.9,
+    },
+    {
+      type: "medication",
+      title: "Vitamine C",
+      subtitle: "1 comprimé",
+      time: "12:00",
+      icon: "🍊",
+      top: "50%",
+      right: "5%",
+      delay: 1.2,
+    },
+    {
+      type: "reminder",
+      title: "Payer le loyer",
+      checked: true,
+      top: "60%",
+      left: "8%",
+      delay: 1.5,
+    },
+    {
+      type: "notification",
+      title: "Renouveler ordonnance",
+      icon: "📝",
+      top: "80%",
+      left: "18%",
+      delay: 1.8,
+    },
+    {
+      type: "calendar",
+      title: "25",
+      subtitle: "DEC",
+      time: "Noël",
+      top: "75%",
+      right: "18%",
+      delay: 2.1,
+    },
   ];
 
   // Version mobile - contenu linéaire sans animation de scroll
   if (isMobile) {
     return (
       <div className="w-full bg-background">
-        {/* Section 1: Logo et texte avec emojis */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-          {/* Emojis flottants */}
+        {/* Section 1: Logo et texte avec widgets */}
+        <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+          {/* Widgets flottants */}
           <div className="absolute inset-0 z-5 pointer-events-none">
-            {emojis.map((item, index) => (
+            {widgets.map((item, index) => (
               <motion.div
                 key={index}
-                className="absolute text-3xl"
+                className="absolute scale-75 origin-center"
                 style={{
                   top: item.top,
                   left: item.left,
@@ -96,9 +170,8 @@ export default function HeroScroll() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
                   opacity: 1,
-                  scale: 1,
+                  scale: 0.75,
                   y: [0, -10, 0],
-                  rotate: [0, 3, -3, 0],
                 }}
                 transition={{
                   opacity: { duration: 0.8, delay: item.delay },
@@ -109,15 +182,9 @@ export default function HeroScroll() {
                     ease: "easeInOut",
                     delay: item.delay,
                   },
-                  rotate: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: item.delay,
-                  },
                 }}
               >
-                {item.emoji}
+                <FloatingWidget {...item} />
               </motion.div>
             ))}
           </div>
@@ -226,15 +293,15 @@ export default function HeroScroll() {
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full -mt-20">
       <div className="sticky top-16 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
-        {/* Emojis flottants */}
+        {/* Widgets flottants */}
         <motion.div
-          style={{ opacity: emojisOpacity }}
+          style={{ opacity: widgetsOpacity }}
           className="absolute inset-0 z-5 pointer-events-none"
         >
-          {emojis.map((item, index) => (
+          {widgets.map((item, index) => (
             <motion.div
               key={index}
-              className="absolute text-4xl md:text-6xl"
+              className="absolute"
               style={{
                 top: item.top,
                 left: item.left,
@@ -245,18 +312,11 @@ export default function HeroScroll() {
                 opacity: 1,
                 scale: 1,
                 y: [0, -15, 0],
-                rotate: [0, 5, -5, 0],
               }}
               transition={{
                 opacity: { duration: 0.8, delay: item.delay },
                 scale: { duration: 0.8, delay: item.delay },
                 y: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: item.delay,
-                },
-                rotate: {
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
@@ -264,7 +324,7 @@ export default function HeroScroll() {
                 },
               }}
             >
-              {item.emoji}
+              <FloatingWidget {...item} />
             </motion.div>
           ))}
         </motion.div>
