@@ -191,18 +191,17 @@ export default function HeroScroll() {
                   left: item.mobileLeft ?? item.left,
                   right: item.mobileRight ?? item.right,
                   bottom: item.bottom,
+                  willChange: "transform, opacity",
                 }}
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: 1,
-                  scale: 0.75,
-                  y: [0, -12, 0],
+                  y: [0, -10, 0],
                 }}
                 transition={{
-                  opacity: { duration: 0.8, delay: item.delay },
-                  scale: { duration: 0.8, delay: item.delay },
+                  opacity: { duration: 0.6, delay: item.delay, ease: "easeOut" },
                   y: {
-                    duration: 5,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: item.delay,
@@ -335,16 +334,15 @@ export default function HeroScroll() {
                 left: item.left,
                 right: item.right,
                 bottom: item.bottom,
+                willChange: "transform, opacity",
               }}
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: 1,
-                scale: 1,
-                y: [0, -15, 0],
+                y: [0, -12, 0],
               }}
               transition={{
-                opacity: { duration: 0.8, delay: item.delay },
-                scale: { duration: 0.8, delay: item.delay },
+                opacity: { duration: 0.6, delay: item.delay, ease: "easeOut" },
                 y: {
                   duration: 4,
                   repeat: Infinity,
