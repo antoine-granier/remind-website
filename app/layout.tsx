@@ -46,7 +46,7 @@ export default function RootLayout({
           <ul className="hidden md:flex items-center gap-8 text-base font-medium">
             <li>
               <a
-                href="#discover"
+                href="/#discover"
                 className="relative text-primary transition-colors duration-300
                   after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
                   after:bg-action after:transition-all after:duration-300 hover:after:w-full"
@@ -76,7 +76,7 @@ export default function RootLayout({
             </li>
             <li>
               <a
-                href="#launch"
+                href="/#launch"
                 className="px-5 py-2.5 bg-action text-primary rounded-lg font-semibold
                   hover:bg-action/90 hover:shadow-md transition-all duration-300
                   active:scale-95"
