@@ -40,13 +40,6 @@ export default function HeroScroll() {
   const circle2Scale = useTransform(scrollYProgress, [0.3, 0.8], [1, 70]);
   const circle3Scale = useTransform(scrollYProgress, [0.3, 0.8], [1, 80]);
 
-  // Ombres très visibles qui n'apparaissent que pendant le zoom
-  const shadowIntensity = useTransform(
-    scrollYProgress,
-    [0.3, 0.5, 0.7],
-    [0, 100, 0]
-  );
-
   // Opacité des cercles pendant le zoom
   const circlesOpacity = useTransform(scrollYProgress, [0.65, 0.8], [1, 0]);
 
@@ -65,19 +58,27 @@ export default function HeroScroll() {
   const contentOpacity = useTransform(scrollYProgress, [0.45, 0.65], [0, 1]);
   const contentScale = useTransform(scrollYProgress, [0.45, 0.7], [0.5, 1]);
 
-  // Données des widgets avec leurs positions
-  const widgets: {
-    type: WidgetType;
-    title?: string;
-    subtitle?: string;
-    time?: string;
-    icon?: string;
-    checked?: boolean;
-    top: string;
-    left?: string;
-    right?: string;
-    delay: number;
-  }[] = [
+  // Données des widgets avec leurs positions (State pour l'interactivité)
+  const [widgets, setWidgets] = useState<
+    {
+      type: WidgetType;
+      title?: string;
+      subtitle?: string;
+      time?: string;
+      icon?: string;
+      checked?: boolean;
+      top?: string;
+      left?: string;
+      right?: string;
+      bottom?: string;
+      mobileTop?: string;
+      mobileLeft?: string;
+      mobileRight?: string;
+      delay: number;
+      className?: string;
+      expandUp?: boolean;
+    }[]
+  >([
     {
       type: "medication",
       title: "Doliprane",
@@ -86,6 +87,8 @@ export default function HeroScroll() {
       icon: "💊",
       top: "11%",
       left: "15%",
+      mobileTop: "12%",
+      mobileLeft: "5%",
       delay: 0,
     },
     {
@@ -95,6 +98,9 @@ export default function HeroScroll() {
       time: "Jeudi",
       top: "11%",
       left: "68%",
+      mobileTop: "12%",
+      mobileRight: "5%",
+      mobileLeft: "auto",
       delay: 0.3,
     },
     {
@@ -104,6 +110,7 @@ export default function HeroScroll() {
       top: "25%",
       right: "8%",
       delay: 0.6,
+      className: "hidden xl:block", // Masqué sur les écrans < xl
     },
     {
       type: "reminder",
@@ -111,6 +118,8 @@ export default function HeroScroll() {
       checked: false,
       top: "30%",
       left: "5%",
+      mobileTop: "82%",
+      mobileLeft: "5%",
       delay: 0.9,
     },
     {
@@ -121,6 +130,9 @@ export default function HeroScroll() {
       icon: "🍊",
       top: "50%",
       right: "5%",
+      mobileTop: "82%",
+      mobileRight: "5%",
+      mobileLeft: "auto",
       delay: 1.2,
     },
     {
@@ -130,14 +142,17 @@ export default function HeroScroll() {
       top: "60%",
       left: "8%",
       delay: 1.5,
+      className: "hidden lg:block", // Masqué sur les écrans < lg
     },
     {
       type: "notification",
       title: "Renouveler ordonnance",
       icon: "📝",
-      top: "80%",
+      bottom: "20%",
       left: "18%",
       delay: 1.8,
+      className: "hidden xl:block", // Masqué sur les écrans < xl
+      expandUp: true,
     },
     {
       type: "calendar",
@@ -147,8 +162,15 @@ export default function HeroScroll() {
       top: "75%",
       right: "18%",
       delay: 2.1,
+      className: "hidden lg:block", // Masqué sur mobile maintenant
     },
-  ];
+  ]);
+
+  const handleWidgetToggle = (index: number) => {
+    const newWidgets = [...widgets];
+    newWidgets[index].checked = !newWidgets[index].checked;
+    setWidgets(newWidgets);
+  };
 
   // Version mobile - contenu linéaire sans animation de scroll
   if (isMobile) {
@@ -161,30 +183,36 @@ export default function HeroScroll() {
             {widgets.map((item, index) => (
               <motion.div
                 key={index}
-                className="absolute scale-75 origin-center"
+                className={`absolute scale-75 origin-center pointer-events-auto ${
+                  item.className || ""
+                }`}
                 style={{
-                  top: item.top,
-                  left: item.left,
-                  right: item.right,
+                  top: item.mobileTop ?? item.top,
+                  left: item.mobileLeft ?? item.left,
+                  right: item.mobileRight ?? item.right,
+                  bottom: item.bottom,
                 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
                   opacity: 1,
                   scale: 0.75,
-                  y: [0, -10, 0],
+                  y: [0, -12, 0],
                 }}
                 transition={{
                   opacity: { duration: 0.8, delay: item.delay },
                   scale: { duration: 0.8, delay: item.delay },
                   y: {
-                    duration: 3,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: item.delay,
                   },
                 }}
               >
-                <FloatingWidget {...item} />
+                <FloatingWidget
+                  {...item}
+                  onToggle={() => handleWidgetToggle(index)}
+                />
               </motion.div>
             ))}
           </div>
@@ -301,11 +329,12 @@ export default function HeroScroll() {
           {widgets.map((item, index) => (
             <motion.div
               key={index}
-              className="absolute"
+              className={`absolute pointer-events-auto ${item.className || ""}`}
               style={{
                 top: item.top,
                 left: item.left,
                 right: item.right,
+                bottom: item.bottom,
               }}
               initial={{ opacity: 0, scale: 0 }}
               animate={{
@@ -324,7 +353,10 @@ export default function HeroScroll() {
                 },
               }}
             >
-              <FloatingWidget {...item} />
+              <FloatingWidget
+                {...item}
+                onToggle={() => handleWidgetToggle(index)}
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -355,7 +387,7 @@ export default function HeroScroll() {
         {/* Les trois cercles du logo avec le texte */}
         <motion.div
           style={{ opacity: circlesOpacity }}
-          className="absolute z-10 w-full h-full flex items-center justify-center"
+          className="absolute z-10 w-full h-full flex items-center justify-center pointer-events-none"
         >
           <div className="flex flex-col items-center justify-center">
             <div className="relative flex items-center justify-center w-[280px] h-[280px]">
@@ -414,7 +446,7 @@ export default function HeroScroll() {
               }}
               className="flex flex-col sm:flex-row gap-4 items-center mt-8"
             >
-              <div className="relative group cursor-not-allowed">
+              <div className="relative group cursor-not-allowed pointer-events-auto">
                 <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -438,7 +470,7 @@ export default function HeroScroll() {
                 </div>
               </div>
 
-              <div className="relative group cursor-not-allowed">
+              <div className="relative group cursor-not-allowed pointer-events-auto">
                 <div className="flex items-center gap-3 px-6 py-3 bg-background2 border-2 border-secondary rounded-xl hover:border-action transition-colors opacity-60">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
