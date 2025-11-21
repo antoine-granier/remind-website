@@ -16,7 +16,12 @@ export default function RootLayout({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <html lang="fr" data-scroll-behavior="smooth" className="scroll-smooth">
+    <html
+      lang="fr"
+      data-scroll-behavior="smooth"
+      className="scroll-smooth"
+      title="Re:mind"
+    >
       <body className="font-sans bg-background text-primary m-0 p-0">
         {/* NAVBAR */}
         <nav className="w-full flex items-center justify-between py-5 px-6 md:px-10 bg-background2 shadow-sm fixed top-0 left-0 z-30">
@@ -41,7 +46,7 @@ export default function RootLayout({
             <li>
               <a
                 href="#discover"
-                className="relative text-secondary hover:text-action transition-colors duration-300
+                className="relative text-primary transition-colors duration-300
                   after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
                   after:bg-action after:transition-all after:duration-300 hover:after:w-full"
               >
@@ -51,7 +56,7 @@ export default function RootLayout({
             <li>
               <a
                 href="#launch"
-                className="px-5 py-2.5 bg-action text-white rounded-lg font-semibold
+                className="px-5 py-2.5 bg-action text-primary rounded-lg font-semibold
                   hover:bg-action/90 hover:shadow-md transition-all duration-300
                   active:scale-95"
               >
@@ -97,7 +102,7 @@ export default function RootLayout({
             <li>
               <a
                 href="#discover"
-                className="text-secondary hover:text-action hover:bg-action/5 transition-all duration-200
+                className="text-primary hover:bg-action/5 transition-all duration-200
                   block py-3 px-4 rounded-lg"
                 onClick={() => setIsOpen(false)}
               >
@@ -107,7 +112,7 @@ export default function RootLayout({
             <li>
               <a
                 href="#launch"
-                className="bg-action text-white hover:bg-action/90 transition-all duration-200
+                className="bg-action text-primary hover:bg-action/90 transition-all duration-200
                   block py-3 px-4 rounded-lg text-center font-semibold"
                 onClick={() => setIsOpen(false)}
               >

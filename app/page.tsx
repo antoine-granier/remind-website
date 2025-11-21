@@ -1,11 +1,51 @@
 import HeroScroll from "@/components/HeroScroll";
 import IPhoneMockup from "@/components/IphoneMockup";
 import ScrollReveal from "@/components/ScrollReveal";
-import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Re:mind – Application de rappels pour médicaments et tâches",
+  description:
+    "Re:mind centralise vos rappels de médicaments, tâches quotidiennes, péages et abonnements dans une app simple et intelligente sur iOS et Android.",
+  openGraph: {
+    type: "website",
+    title: "Re:mind – Application de rappels pour médicaments et tâches",
+    description:
+      "Ne manquez plus une prise de médicament ni une tâche importante grâce à Re:mind.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Re:mind – Application de rappels pour médicaments et tâches",
+    description:
+      "Application de rappels pour gérer vos médicaments, tâches et échéances importantes.",
+  },
+};
+
+// JSON-LD (SoftwareApplication) conseillé par Google et schema.org pour les apps. [web:26][web:29][web:35]
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Re:mind",
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "iOS, Android",
+  description:
+    "Application de rappels pour gérer vos médicaments, tâches quotidiennes, péages et abonnements.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "EUR",
+  },
+};
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center bg-background text-primary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* HERO SECTION AVEC ANIMATION SCROLL */}
       <HeroScroll />
 
@@ -233,41 +273,79 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* TYPES DE RAPPELS */}
-      <section className="w-full py-20 bg-background flex flex-col items-center px-6 overflow-hidden">
+      {/* TYPES DE RAPPELS - BENTO ENRICHI */}
+      <section className="w-full py-24 bg-background flex flex-col items-center px-6 overflow-hidden">
         <ScrollReveal>
-          <h2 className="text-4xl font-bold mb-6 text-primary text-center">
-            Adaptez Re:mind à votre vie
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary text-center">
+            Organisez-vous{" "}
+            <span className="italic text-action">comme vous voulez</span>
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <p className="text-secondary max-w-2xl text-center mb-12 text-lg leading-relaxed">
-            Trois types de rappels pour couvrir tous vos besoins quotidiens
+        <ScrollReveal delay={0.1}>
+          <p className="text-secondary text-center mb-16 text-lg max-w-2xl">
+            Trois modes de rappels pensés pour s'adapter à tous vos besoins
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl">
-          <ScrollReveal delay={0.1}>
-            <FeatureCard
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 max-w-6xl w-full">
+          {/* Card 1 - Large */}
+          <ScrollReveal delay={0.2} className="md:col-span-4">
+            <EnrichedBentoCard
               title="Unique"
               icon="⏰"
               desc="Pour les rappels ponctuels et événements importants."
+              features={[
+                "Rendez-vous médical",
+                "Date limite projet",
+                "Événement spécial",
+              ]}
+              stats="1 notification"
+              statsLabel="au bon moment"
+              size="large"
             />
           </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <FeatureCard
+
+          {/* Card 2 - Small */}
+          <ScrollReveal delay={0.3} className="md:col-span-2">
+            <EnrichedBentoCard
               title="Quotidien"
               icon="🌞"
-              desc="Pour votre routine quotidienne et habitudes santé."
+              desc="Pour votre routine quotidienne."
+              features={["Médicaments", "Sport", "Hydratation"]}
+              stats="Chaque jour"
+              statsLabel="sans y penser"
+              size="small"
             />
           </ScrollReveal>
-          <ScrollReveal delay={0.5}>
-            <FeatureCard
+
+          {/* Card 3 - Medium */}
+          <ScrollReveal delay={0.4} className="md:col-span-3">
+            <EnrichedBentoCard
               title="Hebdomadaire"
               icon="📆"
-              desc="Pour organiser vos tâches récurrentes sans effort."
+              desc="Pour organiser vos tâches récurrentes."
+              features={["Courses", "Ménage", "Révisions"]}
+              stats="Organisé"
+              statsLabel="sans stress"
+              size="medium"
             />
+          </ScrollReveal>
+
+          {/* Info Card */}
+          <ScrollReveal delay={0.5} className="md:col-span-3">
+            <div className="h-full bg-gradient-to-br from-action/5 to-primary/5 border-2 border-action/20 rounded-3xl p-8 flex flex-col items-center justify-center text-center gap-4 hover:border-action/40 transition-all duration-300 group cursor-pointer">
+              <div className="text-4xl mb-2">✨</div>
+              <h3 className="text-xl font-bold text-primary">
+                Mode personnalisé
+              </h3>
+              <p className="text-sm text-secondary">
+                Créez vos propres règles de récurrence
+              </p>
+              <div className="flex items-center gap-2 text-primary font-semibold text-sm mt-2">
+                Bientôt disponible...
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -338,22 +416,91 @@ export default function Home() {
   );
 }
 
-function FeatureCard({
+// NOUVELLE FONCTION ENRICHIE
+function EnrichedBentoCard({
   title,
   icon,
   desc,
+  features,
+  stats,
+  statsLabel,
+  size = "medium",
 }: {
   title: string;
   icon: string;
   desc: string;
+  features: string[];
+  stats: string;
+  statsLabel: string;
+  size?: "small" | "medium" | "large";
 }) {
+  const heightClass =
+    size === "large"
+      ? "h-80 md:h-96"
+      : size === "small"
+      ? "h-80 md:h-96"
+      : "h-80";
+
   return (
-    <div className="bg-background2 rounded-2xl h-full shadow-md p-8 flex flex-col items-center gap-3 border border-secondary hover:shadow-xl hover:scale-105 transition-all">
-      <span className="text-5xl">{icon}</span>
-      <span className="text-xl font-bold text-primary">{title}</span>
-      <span className="text-base text-secondary text-center leading-relaxed">
-        {desc}
-      </span>
+    <div
+      className={`group ${heightClass} bg-background2 border-2 border-gray-200 rounded-3xl p-6 md:p-8 hover:border-action/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative`}
+    >
+      <div
+        className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+      />
+
+      {/* Background icon watermark */}
+      <div className="absolute top-0 right-0 text-[180px] opacity-[0.03] transform rotate-12 translate-x-12 -translate-y-12 pointer-events-none">
+        {icon}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex-1 flex flex-col">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-6">
+          <div className="flex items-center gap-4">
+            <div className="text-5xl md:text-6xl transform group-hover:scale-110 transition-transform duration-300">
+              {icon}
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                {title}
+              </h3>
+              <p className="text-sm text-secondary">{desc}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features list */}
+        <div className="flex-1 mb-6">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-wide mb-3">
+            Exemples d'utilisation
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {features.map((feature, index) => (
+              <span
+                key={index}
+                className="px-3 py-1.5 bg-white/50 border border-gray-200 text-primary text-xs font-medium rounded-full hover:border-action/40 hover:bg-white transition-colors"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Stats footer */}
+        <div className="flex items-end justify-between">
+          <div>
+            <div className="text-3xl md:text-4xl font-black text-action mb-1">
+              {stats}
+            </div>
+            <p className="text-xs text-secondary">{statsLabel}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom accent bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-action transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
     </div>
   );
 }
