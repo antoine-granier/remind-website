@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: 'https://remind-apps.vercel.app',
   title: "Re:mind – Application de rappels pour médicaments et tâches",
   description:
     "Re:mind centralise vos rappels de médicaments, tâches quotidiennes, péages et abonnements dans une app simple et intelligente sur iOS et Android.",
@@ -165,7 +166,7 @@ export default function Home() {
           </h2>
           <p className="text-secondary text-lg leading-relaxed mb-6">
             Suivez vos traitements avec précision. Re:mind vous permet de
-            définir la posologie, la fréquence et le stock restant pour ne
+            choisir la posologie, la fréquence et le stock restant pour ne
             jamais manquer une prise.
           </p>
           <div className="flex flex-col gap-4">

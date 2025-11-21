@@ -124,70 +124,87 @@ export default function FloatingWidget({
   }
 
   if (type === "notification") {
+    const [isAnimating, setIsAnimating] = useState(false);
+
     const handleOptionClick = (e: React.MouseEvent) => {
       e.stopPropagation();
+      setIsAnimating(true);
       setShowOptions(false);
-      if (onToggle) onToggle();
+      
+      // Wait for slide-out animation to complete, then trigger onToggle and slide back in
+      setTimeout(() => {
+        if (onToggle) onToggle();
+        setIsAnimating(false);
+      }, 400); // 300ms for slide out + 100ms buffer
     };
 
     return (
-      <motion.div
-        layout
-        className={`bg-primary/90 backdrop-blur-md text-white shadow-2xl rounded-2xl p-3 flex ${
-          expandUp ? "flex-col-reverse" : "flex-col"
-        } gap-3 min-w-[200px] cursor-pointer hover:scale-105 hover:shadow-2xl transition-shadow duration-300 overflow-hidden ${
-          checked ? "opacity-50 grayscale" : ""
-        }`}
-        onClick={() => (checked ? onToggle?.() : setShowOptions(!showOptions))}
-      >
-        <motion.div layout="position" className="flex items-center gap-3 w-full">
-          <div className="w-8 h-8 rounded-full bg-action flex items-center justify-center text-primary text-sm shrink-0">
-            {icon || "🔔"}
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-bold text-action">Re:mind</span>
-            <span className="text-xs text-gray-200">
-              {title || "C'est l'heure !"}
-            </span>
-          </div>
-        </motion.div>
-
-        <AnimatePresence>
-          {showOptions && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="grid grid-cols-2 gap-2 w-full"
-            >
-              <button
-                onClick={handleOptionClick}
-                className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
-              >
-                ⏰ 5min
-              </button>
-              <button
-                onClick={handleOptionClick}
-                className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
-              >
-                ⏰ 15min
-              </button>
-              <button
-                onClick={handleOptionClick}
-                className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
-              >
-                ⏰ 30min
-              </button>
-              <button
-                onClick={handleOptionClick}
-                className="text-[10px] bg-action hover:bg-action/90 text-primary font-bold rounded-lg py-1.5 px-2 transition-colors text-center"
-              >
-                ✅ Fait
-              </button>
+      <AnimatePresence mode="wait">
+        {!isAnimating && (
+          <motion.div
+            key="notification"
+            layout
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`bg-primary/90 backdrop-blur-md text-white shadow-2xl rounded-2xl p-3 flex ${
+              expandUp ? "flex-col-reverse" : "flex-col"
+            } gap-3 min-w-[200px] cursor-pointer hover:scale-105 hover:shadow-2xl transition-shadow duration-300 overflow-hidden ${
+              checked ? "opacity-50 grayscale" : ""
+            }`}
+            onClick={() => (checked ? onToggle?.() : setShowOptions(!showOptions))}
+          >
+            <motion.div layout="position" className="flex items-center gap-3 w-full">
+              <div className="w-8 h-8 rounded-full bg-action flex items-center justify-center text-primary text-sm shrink-0">
+                {icon || "🔔"}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-action">Re:mind</span>
+                <span className="text-xs text-gray-200">
+                  {title || "C'est l'heure !"}
+                </span>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+
+            <AnimatePresence>
+              {showOptions && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="grid grid-cols-2 gap-2 w-full"
+                >
+                  <button
+                    onClick={handleOptionClick}
+                    className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
+                  >
+                    ⏰ 5min
+                  </button>
+                  <button
+                    onClick={handleOptionClick}
+                    className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
+                  >
+                    ⏰ 15min
+                  </button>
+                  <button
+                    onClick={handleOptionClick}
+                    className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
+                  >
+                    ⏰ 30min
+                  </button>
+                  <button
+                    onClick={handleOptionClick}
+                    className="text-[10px] bg-action hover:bg-action/90 text-primary font-bold rounded-lg py-1.5 px-2 transition-colors text-center"
+                  >
+                    ✅ Fait
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
     );
   }
 
