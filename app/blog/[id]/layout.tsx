@@ -60,16 +60,31 @@ export async function generateMetadata({
       "bien-être",
       "organisation",
     ],
+    icons: {
+      icon: "/favicon.png",
+      apple: "/favicon.png",
+    },
     openGraph: {
       title: `${article.title} | Re:mind`,
       description: article.description,
       type: "article",
       url: `https://remind.com/blog/${id}`,
+      images: [
+        {
+          url: "/favicon.png",
+          width: 512,
+          height: 512,
+          alt: article.title,
+        },
+      ],
+      siteName: "Re:mind",
+      locale: "fr_FR",
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: ["/favicon.png"],
     },
   };
 }

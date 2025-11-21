@@ -7,17 +7,32 @@ export const metadata: Metadata = {
   title: "Re:mind – Application de rappels pour médicaments et tâches",
   description:
     "Re:mind centralise vos rappels de médicaments, tâches quotidiennes, péages et abonnements dans une app simple et intelligente sur iOS et Android.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     title: "Re:mind – Application de rappels pour médicaments et tâches",
     description:
       "Ne manquez plus une prise de médicament ni une tâche importante grâce à Re:mind.",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "Re:mind - Application de rappels",
+      },
+    ],
+    siteName: "Re:mind",
+    locale: "fr_FR",
   },
   twitter: {
     card: "summary_large_image",
     title: "Re:mind – Application de rappels pour médicaments et tâches",
     description:
       "Application de rappels pour gérer vos médicaments, tâches et échéances importantes.",
+    images: ["/favicon.png"],
   },
 };
 
