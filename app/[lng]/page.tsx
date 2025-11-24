@@ -359,7 +359,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* CONFIDENTIALITÉ ET DONNÉES */}
       <section className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6 overflow-hidden">
-        <ScrollReveal key={`${lng}-privacy-title`}>
+        <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
               {t('privacy.badge')}
@@ -369,6 +369,54 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             </h2>
             <p className="text-secondary text-lg leading-relaxed mb-12">
               {t('privacy.subtitle')}
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+          <ScrollReveal delay={0.1}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">🔒</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.noCollection.title')}</h3>
+              <p className="text-secondary leading-relaxed">
+                {t('privacy.cards.noCollection.desc')}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">📱</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.localStorage.title')}</h3>
+              <p className="text-secondary leading-relaxed">
+                {t('privacy.cards.localStorage.desc')}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-4xl">🛡️</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.noResale.title')}</h3>
+              <p className="text-secondary leading-relaxed">
+                {t('privacy.cards.noResale.desc')}
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <ScrollReveal delay={0.4}>
+          <div className="max-w-3xl mx-auto mt-8 bg-linear-to-br from-action/10 to-primary/5 border-2 border-action/20 rounded-2xl p-6 text-center">
+            <p className="text-primary font-semibold text-lg mb-2">
+              {t('privacy.ethical.title')}
+            </p>
+            <p className="text-secondary">
               {t('privacy.ethical.desc')}
             </p>
           </div>
