@@ -17,7 +17,7 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
           EN
         </Link>
       ) : (
-        <span className="text-sm font-bold text-secondary">EN</span>
+        <span className="text-sm font-bold text-white">EN</span>
       )}
       <span className="text-secondary">/</span>
       {lng === 'en' ? (
@@ -25,7 +25,7 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
           FR
         </Link>
       ) : (
-        <span className="text-sm font-bold text-secondary">FR</span>
+        <span className="text-sm font-bold text-white">FR</span>
       )}
     </div>
   );
