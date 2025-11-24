@@ -280,33 +280,227 @@
       "1": {
         "title": "Understanding and reducing mental load daily",
         "excerpt": "Mental load is that invisible weight that weighs on us when we have to think about everything, all the time. Discover concrete strategies to lighten it.",
-        "category": "Well-being"
+        "category": "Well-being",
+        "date": "Nov 21, 2024",
+        "readTime": "5 min",
+        "image": "🧠",
+        "content": {
+          "intro": "Mental load is not just simple stress. It's an invisible fatigue that accumulates day after day, turning every simple task into a mountain to climb. You know that feeling? Having to manage everything, anticipate everything, organize everything in your head?",
+          "sections": [
+            {
+              "heading": "What is mental load?",
+              "text": "Mental load is that invisible work of management, organization, and anticipation that we perform constantly. It's thinking about groceries while working, medical appointments while doing the dishes, birthdays while driving. It's that endless mental list that never stops."
+            },
+            {
+              "heading": "Symptoms of excessive mental load",
+              "text": "How do you know if your mental load is too heavy? Here are the warning signs: chronic fatigue even after rest, difficulty concentrating, increased irritability, feeling constantly overwhelmed, sleep disturbances related to ruminations, and that impression that you can never really disconnect."
+            },
+            {
+              "heading": "Strategies to lighten the load",
+              "text": "The first step is to acknowledge the problem. Then, learn to externalize: use tools like Re:mind to delegate to technology what your brain doesn't need to carry. Practice kind refusal: you don't have to manage everything. Truly delegate (not just organize for someone else to execute). And above all, grant yourself real mental breaks."
+            }
+          ],
+          "keyTakeaways": [
+            "Mental load is invisible but exhausting work",
+            "Externalizing through digital tools frees the mind",
+            "Learning to say no is an essential skill",
+            "Mental breaks are not a luxury, but a necessity"
+          ],
+          "conclusion": "Reducing your mental load is not selfish, it's vital. By freeing your mind from daily management tasks, you regain energy for what really matters: your creativity, your relationships, your well-being."
+        }
       },
       "2": {
         "title": "5 tips to never forget your medications again",
         "excerpt": "Between shifting schedules and forgetfulness, following a treatment can be a challenge. Here are our best tips to be regular without stress.",
-        "category": "Health"
+        "category": "Health",
+        "date": "Nov 18, 2024",
+        "readTime": "3 min",
+        "image": "💊",
+        "content": {
+          "intro": "Forgetting to take your medications is more common than you think. Whether for chronic or occasional treatment, regularity is often the key to effectiveness. Here are five proven strategies to never miss a dose again.",
+          "sections": [
+            {
+              "heading": "1. Anchor your doses to existing rituals",
+              "text": "Associate each medication dose with an automatic daily gesture: morning coffee, tooth brushing, evening meal. The brain loves routines. By creating this association, you transform a conscious effort into automatism."
+            },
+            {
+              "heading": "2. Use technology smartly",
+              "text": "Apps like Re:mind don't just ring: they adapt to your life. Smart snooze, contextual rem inders, history tracking... Technology becomes your external memory, without the guilt of forgetting."
+            },
+            {
+              "heading": "3. Prepare your doses in advance",
+              "text": "Weekly pill organizers aren't just for seniors. Preparing your doses on Sunday evening for the whole week eliminates the daily decision moment and allows you to check at a glance if you've taken your treatment."
+            },
+            {
+              "heading": "4. Make your medications visible",
+              "text": "Out of sight, out of mind. Place your medications where you'll naturally see them at the right time: near the coffee maker for morning ones, on the nightstand for evening ones."
+            },
+            {
+              "heading": "5. Involve your circle",
+              "text": "For critical treatments, inform a trusted loved one. It's not dependency, it's common sense. A simple 'did you think about your medications?' can make all the difference."
+            }
+          ],
+          "keyTakeaways": [
+            "Anchor your doses to existing daily rituals",
+            "Leverage technology to make it your ally",
+            "Prepare your doses in advance to eliminate decision effort",
+            "Visibility and your circle are your best supports"
+          ],
+          "conclusion": "Medication regularity is not a matter of willpower, but of organization. By implementing these simple systems, you transform a constraint into automatism."
+        }
       },
       "3": {
         "title": "The importance of sleep on your memory",
         "excerpt": "Sleeping well is not a luxury, it's a biological necessity to consolidate your memories and clean your brain of toxins.",
-        "category": "Science"
+        "category": "Science",
+        "date": "Nov 15, 2024",
+        "readTime": "7 min",
+        "image": "🌙",
+        "content": {
+          "intro": "What if I told you that every hour of lost sleep makes you lose much more than energy? While you sleep, your brain actively works to consolidate your memories and eliminate metabolic waste. Sleep is not a pause, it's essential maintenance.",
+          "sections": [
+            {
+              "heading": "Nighttime memory consolidation",
+              "text": "During deep sleep and REM sleep, your brain replays the day's events. It sorts, classifies, and integrates new information with your existing knowledge. This is the process that transforms temporary learning into long-term memory. Without enough sleep, your learning efforts are literally erased."
+            },
+            {
+              "heading": "The glymphatic system: nighttime cleaning",
+              "text": "Recently discovered, the glymphatic system is the brain equivalent of your cleaning service. It activates mainly during deep sleep to eliminate toxic proteins, including beta-amyloid associated with Alzheimer's. It's as if your brain washes itself  while you sleep."
+            },
+            {
+              "heading": "Sleep and creativity",
+              "text": "REM sleep, when you dream, plays a crucial role in creativity and problem-solving. It allows unexpected connections between seemingly unrelated ideas. That's why solutions often come 'overnight'."
+            },
+            {
+              "heading": "How many hours really?",
+              "text": "Most adults need 7 to 9 hours. Not 6, not 5. Natural 'short sleepers' are rare. If you need an alarm to wake up, you're probably sleep-deprived. The real test: can you wake up naturally and feel rested?"
+            }
+          ],
+          "keyTakeaways": [
+            "Sleep actively consolidates your memories",
+            "The glymphatic system cleans your brain at night",
+            "REM sleep boosts creativity",
+            "7 to 9 hours is not a luxury, it's a biological need"
+          ],
+          "conclusion": "Prioritizing your sleep is not lazy, it's smart. A well-rested brain learns better, memorizes better, and functions better. Sleep is your most underestimated superpower."
+        }
       },
       "4": {
         "title": "Digital Detox: taking back control of your attention",
         "excerpt": "Our phones are distraction machines. Learn how to configure your notifications so they serve you instead of enslaving you.",
-        "category": "Productivity"
+        "category": "Productivity",
+        "date": "Nov 10, 2024",
+        "readTime": "4 min",
+        "image": "📱",
+        "content": {
+          "intro": "How many times have you unlocked your phone today? 50 times? 100 times? More? Your phone was supposed to be a tool. It has become a tyrant dictating your attention. It's time to take back power.",
+          "sections": [
+            {
+              "heading": "The invisible cost of interruption",
+              "text": "Each notification is not just a lost second. It's 23 minutes on average to regain your deep concentration according to recent studies. A single interruption can destroy an hour of concentrated work. And your phone interrupts you on average every 12 minutes."
+            },
+            {
+              "heading": "Manufactured urgency",
+              "text": "Notifications create false urgency. Can that WhatsApp message really not wait 2 hours? Does that news change your life today? 99% of notifications are neither urgent nor important. They're just designed to capture your attention."
+            },
+            {
+              "heading": "The radical sorting method",
+              "text": "Go to your settings. Disable ALL notifications. Yes, all of them. Then re-enable ONE BY ONE those that are truly essential. Calls? Yes. Messages from your partner? Maybe. Instagram likes? Absolutely not. You'll be surprised: most apps don't need to disturb you."
+            },
+            {
+              "heading": "Create disconnected times",
+              "text": "Define sacred slots: no phone when waking up (1h), not during meals, not 1h before bed. Use a real alarm clock. Read a physical book. Really talk to people around you. Your brain will thank you."
+            }
+          ],
+          "keyTakeaways": [
+            "One interruption = 23 minutes of lost concentration",
+            "99% of notifications are neither urgent nor important",
+            "Disable everything, then re-enable sparingly",
+            "Create 100% tech-free time zones"
+          ],
+          "conclusion": "Your attention is your most precious resource. Tech giants know this and have monetized every second. It's time to take back what belongs to you."
+        }
       },
       "5": {
         "title": "Organizing family life without exhaustion",
         "excerpt": "Shared calendars, delegations, rituals: how to transform family chaos into a well-oiled machine.",
-        "category": "Organization"
+        "category": "Organization",
+        "date": "Nov 05, 2024",
+        "readTime": "6 min",
+        "image": "🏡",
+        "content": {
+          "intro": "A family is magnificent. It's also permanent organizational chaos: medical appointments, extracurricular activities, groceries, meals, homework... How do some families seem to manage everything effortlessly while others constantly run? It's not magic, it's systems.",
+          "sections": [
+            {
+              "heading": "The single family calendar",
+              "text": "Stop juggling between 5 different agendas. A single shared calendar (Google, Apple, or other) where EVERYTHING appears: everyone's activities, appointments, planned meals, outings. Color by person to visualize at a glance. The golden rule: if it's not in the calendar, it doesn't exist."
+            },
+            {
+              "heading": "True delegation (not just execution)",
+              "text": "Delegating is not saying 'Can you do the dishes?'. It's giving complete responsibility: 'You're responsible for the dishes this week'. The difference? In the first case, you have to think of asking. In the second, the other has to think of doing. It's the mental load that changes sides."
+            },
+            {
+              "heading": "Rituals that simplify",
+              "text": "Family meeting Sunday evening: 15 minutes to review the coming week. Preparing outfits the night before. Batch cooking on weekends. These rituals eliminate the daily micro-decisions that exhaust. Fewer decisions = less fatigue."
+            },
+            {
+              "heading": "The art of 'good enough'",
+              "text": "Perfectionism is the enemy of family serenity. Children can set the table even if it's not aligned to the millimeter. The meal can be simple. The house can be 'lived-in' rather  than 'clean'. Accept 80% perfection for 100% mental health."
+            }
+          ],
+          "keyTakeaways": [
+            "A single shared calendar for the whole family",
+            "Delegate responsibility, not just execution",
+            "Weekly rituals eliminate micro-decisions",
+            "Aim for 'good enough' rather than 'perfect'"
+          ],
+          "conclusion": "An organized family is not a military family. It's a family where everyone knows what to expect, where the load is shared, and where parents can finally breathe. These simple systems transform chaos into serene cohabitation."
+        }
       },
       "6": {
         "title": "Why writing helps think more clearly",
         "excerpt": "Journaling is not reserved for writers. It's a powerful tool to externalize your thoughts and reduce anxiety.",
-        "category": "Development"
+        "category": "Development",
+        "date": "Nov 01, 2024",
+        "readTime": "4 min",
+        "image": "✍️",
+        "content": {
+          "intro": "Your brain is extraordinary, but it has a flaw: it's not made to store, but to process. When you try to 'keep everything in mind', you saturate your working memory and block your ability to think clearly. The solution? Externalize on paper.",
+          "sections": [
+            {
+              "heading": "Writing = Thinking out loud",
+              "text": "When you write, you force your vague thoughts to take form. A vague idea in your head suddenly becomes concrete on paper. It's often while writing that you realize: 'Ah, so that's the problem'. Writing reveals what you already thought without knowing it."
+            },
+            {
+              "heading": "Journaling as emotional discharge",
+              "text": "Anxious thoughts loop in your head. Writing breaks this loop. By putting your worries on paper, you get them out of your system. It's like emptying a bag that's too heavy: instantly, you feel lighter. And often, rereading your written worries makes them less terrifying."
+            },
+            {
+              "heading": "Morning pages: the 3-page practice",
+              "text": "Technique popularized by Julia Cameron: every morning, 3 handwritten pages, stream of consciousness, without censorship or judgment. You empty your head of everything cluttering it. It's like defragmenting a mental hard drive. Result: mental clarity impossible to obtain otherwise."
+            },
+            {
+              "heading": "No need to be a writer",
+              "text": "Forget spelling, style, beauty. Your journal is not a novel. It's a tool. Write as you think. Use lists, bullets, doodles. What matters is not the result, it's the externalization process."
+            }
+          ],
+          "keyTakeaways": [
+            "Writing forces your vague thoughts to become concrete",
+            "Journaling breaks anxious thought loops",
+            "Morning pages unlock rare mental clarity",
+            "No need to write 'well', just write"
+          ],
+          "conclusion": "Your brain is brilliant, but it needs help. Writing is not a creative activity reserved for others. It's a cognitive tool everyone should use. Ten minutes a day can transform your mental clarity."
+        }
       }
+    },
+    "labels": {
+      "backToBlog": "Back to blog",
+      "keyTakeaways": "Key takeaways",
+      "conclusion": "Conclusion",
+      "ctaTitle": "Ready to simplify your daily life?",
+      "ctaSubtitle": "Re:mind helps you manage your reminders and treatments effortlessly.",
+      "ctaButton": "Discover Re:mind"
     }
   },
   "pricingPage": {
