@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     title: t('metadata.title'),
     description: t('metadata.description'),
     icons: {
-      icon: "/favicon.png",
-      apple: "/favicon.png",
+      icon: "https://remind-apps.vercel.app/favicon.png",
+      apple: "https://remind-apps.vercel.app/favicon.png",
     },
     openGraph: {
       type: "website",
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
       description: t('metadata.ogDescription'),
       images: [
         {
-          url: "/favicon.png",
+          url: "https://remind-apps.vercel.app/favicon.png",
           width: 512,
           height: 512,
           alt: "Re:mind - Application de rappels",
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
       card: "summary_large_image",
       title: t('metadata.twitterTitle'),
       description: t('metadata.twitterDescription'),
-      images: ["/favicon.png"],
+      images: ["https://remind-apps.vercel.app/favicon.png"],
     },
   };
 }
