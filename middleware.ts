@@ -7,7 +7,8 @@ acceptLanguage.languages(languages)
 
 export const config = {
   // matcher: '/:lng*'
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)']
+  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|favicon.png|sw.js|site.webmanifest|.*\\.(?:png|jpg|jpeg|svg|webp|ico|gif)).*)'
+  ]
 }
 
 export function middleware(req: NextRequest) {
