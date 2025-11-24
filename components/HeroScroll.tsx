@@ -198,12 +198,12 @@ export default function HeroScroll({ lng }: { lng: string }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: 1,
-                  y: [0, -10, 0],
+                  y: [0, -8, 0],
                 }}
                 transition={{
                   opacity: { duration: 0.6, delay: item.delay, ease: "easeOut" },
                   y: {
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: item.delay,
@@ -324,7 +324,7 @@ export default function HeroScroll({ lng }: { lng: string }) {
       <div className="sticky top-16 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
         {/* Widgets flottants */}
         <motion.div
-          style={{ opacity: widgetsOpacity }}
+          style={{ opacity: widgetsOpacity, willChange: "opacity" }}
           className="absolute inset-0 z-5 pointer-events-none"
         >
           {widgets.map((item, index) => (
@@ -341,12 +341,12 @@ export default function HeroScroll({ lng }: { lng: string }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: 1,
-                y: [0, -12, 0],
+                y: [0, -10, 0],
               }}
               transition={{
                 opacity: { duration: 0.6, delay: item.delay, ease: "easeOut" },
                 y: {
-                  duration: 4,
+                  duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: item.delay,
@@ -367,6 +367,7 @@ export default function HeroScroll({ lng }: { lng: string }) {
           style={{
             opacity: contentOpacity,
             scale: contentScale,
+            willChange: "opacity, transform",
           }}
           className="absolute z-0 flex flex-col items-center px-6 w-full"
         >
@@ -386,7 +387,7 @@ export default function HeroScroll({ lng }: { lng: string }) {
 
         {/* Les trois cercles du logo avec le texte */}
         <motion.div
-          style={{ opacity: circlesOpacity }}
+          style={{ opacity: circlesOpacity, willChange: "opacity" }}
           className="absolute z-10 w-full h-full flex items-center justify-center pointer-events-none"
         >
           <div className="flex flex-col items-center justify-center">
