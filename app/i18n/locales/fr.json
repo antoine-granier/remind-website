@@ -210,6 +210,39 @@
     "q4": "Faut‑il une connexion internet ?",
     "a4": "Non. Toutes les fonctions fonctionnent hors‑ligne. Internet n’est requis que pour télécharger l’application ou vérifier les mises à jour."
   },
+  "contactPage": {
+    "badge": "Contact",
+    "title": "Contactez-nous",
+    "subtitle": "Une question ? Une suggestion ? Nous sommes là pour vous aider.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "message": "Message",
+      "messagePlaceholder": "Votre message...",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Email invalide",
+      "subjectRequired": "Le sujet est requis",
+      "messageRequired": "Le message est requis",
+      "messageMin": "Le message doit contenir au moins 10 caractères"
+    },
+    "info": {
+      "title": "Autres moyens de nous contacter",
+      "email": "Email",
+      "emailValue": "antoine.granier@protonmail.com",
+      "response": "Nous répondons généralement sous 24-48h"
+    }
+  },
   "footer": {
     "copyright": "En développement — Re:mind © {{year}}",
     "contact": "Contactez-nous",

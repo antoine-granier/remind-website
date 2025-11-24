@@ -62,12 +62,12 @@ export default async function RootLayout({
               {t('footer.copyright', { year: new Date().getFullYear() })}
             </div>
             <nav className="flex flex-wrap gap-x-4 gap-y-2 items-center justify-center text-sm font-medium px-4 max-w-md">
-              <a
-                href="mailto:contact@remind.com"
+              <Link
+                href={`/${lng}/contact`}
                 className="text-action hover:underline whitespace-nowrap"
               >
                 {t('footer.contact')}
-              </a>
+              </Link>
               <span className="text-background2 hidden sm:inline">•</span>
               <Link href={`/${lng}/faq`} className="text-action hover:underline whitespace-nowrap">
                 {t('footer.faq')}
