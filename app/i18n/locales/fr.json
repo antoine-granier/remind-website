@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "title": "Re:mind – Application de rappels pour médicaments et tâches",
+    "description": "Re:mind centralise vos rappels de médicaments, tâches quotidiennes, péages et abonnements dans une app simple et intelligente sur iOS et Android.",
+    "ogTitle": "Re:mind – Application de rappels pour médicaments et tâches",
+    "ogDescription": "Ne manquez plus une prise de médicament ni une tâche importante grâce à Re:mind.",
+    "twitterTitle": "Re:mind – Application de rappels pour médicaments et tâches",
+    "twitterDescription": "Application de rappels pour gérer vos médicaments, tâches et échéances importantes."
+  },
+  "hero": {
+    "title_prefix": "Votre esprit, ",
+    "title_highlight": "libéré",
+    "subtitle": "Re:mind centralise tous vos rappels dans un tableau de bord intuitif. Visualisez en un coup d'œil vos tâches du jour, celles planifiées et celles déjà accomplies.",
+    "features": {
+      "summary": {
+        "title": "Résumé complet",
+        "desc": "Suivez vos rappels aujourd'hui, planifiés et terminés"
+      },
+      "interface": {
+        "title": "Interface épurée",
+        "desc": "Un design moderne et facile à utiliser"
+      }
+    }
+  },
+  "planning": {
+    "title_prefix": "Vos rappels, ",
+    "title_highlight": "toujours à l'heure",
+    "subtitle": "Organisez votre semaine avec notre planificateur intégré. Créez des rappels ponctuels, quotidiens ou hebdomadaires adaptés à votre rythme de vie.",
+    "features": {
+      "calendar": {
+        "title": "Vue calendrier",
+        "desc": "Naviguez facilement dans vos semaines"
+      },
+      "multiple": {
+        "title": "Rappels multiples",
+        "desc": "Gérez plusieurs rappels par jour sans effort"
+      }
+    }
+  },
+  "medication": {
+    "title_prefix": "Gérez vos traitements ",
+    "title_highlight": "intelligemment",
+    "subtitle": "Suivez vos traitements avec précision. Re:mind vous permet de choisir la posologie, la fréquence et le stock restant pour ne jamais manquer une prise.",
+    "features": {
+      "doses": {
+        "title": "Suivi des doses",
+        "desc": "1 pilule, 3x/jour - tout est clair"
+      },
+      "stock": {
+        "title": "Gestion du stock",
+        "desc": "Soyez alerté quand il est temps de renouveler"
+      }
+    }
+  },
+  "creation": {
+    "title_prefix": "Créez en ",
+    "title_highlight": "quelques secondes",
+    "subtitle": "Interface intuitive pour créer vos rappels rapidement. Choisissez la catégorie, la récurrence et l'heure en quelques taps.",
+    "categories": {
+      "reminders": "Rappels",
+      "medication": "Médicament",
+      "renewal": "Renouvellement",
+      "toll": "Péage"
+    },
+    "more": "Et plein d'autre..."
+  },
+  "customization": {
+    "title_prefix": "Personnalisez ",
+    "title_highlight": "à votre guise",
+    "subtitle": "Contrôlez chaque détail de votre expérience. Notifications, abonnements, traitements et même la détection automatique des péages - tout est configurable.",
+    "features": {
+      "notifications": {
+        "title": "Notifications intelligentes",
+        "desc": "Activez ou désactivez selon vos préférences"
+      },
+      "plans": {
+        "title": "Plans flexibles",
+        "desc": "Version gratuite ou premium"
+      },
+      "tolls": {
+        "title": "Détection de péages",
+        "desc": "Rappels automatiques pour vos paiements en ligne"
+      }
+    }
+  },
+  "bento": {
+    "title_prefix": "Organisez-vous ",
+    "title_highlight": "comme vous voulez",
+    "subtitle": "Trois modes de rappels pensés pour s'adapter à tous vos besoins",
+    "unique": {
+      "title": "Unique",
+      "desc": "Pour les rappels ponctuels et événements importants.",
+      "features": [
+        "Rendez-vous médical",
+        "Date limite projet",
+        "Événement spécial"
+      ],
+      "stats": "1 notification",
+      "statsLabel": "au bon moment"
+    },
+    "daily": {
+      "title": "Quotidien",
+      "desc": "Pour votre routine quotidienne.",
+      "features": [
+        "Médicaments",
+        "Sport",
+        "Hydratation"
+      ],
+      "stats": "Chaque jour",
+      "statsLabel": "sans y penser"
+    },
+    "weekly": {
+      "title": "Hebdomadaire",
+      "desc": "Pour organiser vos tâches récurrentes.",
+      "features": [
+        "Courses",
+        "Ménage",
+        "Révisions"
+      ],
+      "stats": "Organisé",
+      "statsLabel": "sans stress"
+    },
+    "custom": {
+      "title": "Mode personnalisé",
+      "desc": "Créez vos propres règles de récurrence",
+      "soon": "Bientôt disponible..."
+    }
+  },
+  "privacy": {
+    "badge": "Confidentialité",
+    "title_prefix": "Vos données vous appartiennent, ",
+    "title_highlight": "pour de vrai",
+    "subtitle": "Re:mind est conçu avec un principe simple : votre vie privée n'est pas négociable. Aucune donnée n'est collectée, stockée ou partagée. Tout reste sur votre appareil.",
+    "cards": {
+      "noCollection": {
+        "title": "Aucune collecte",
+        "desc": "Nous ne collectons aucune donnée personnelle. Ni emails, ni historiques, ni habitudes. Rien."
+      },
+      "localStorage": {
+        "title": "Stockage local",
+        "desc": "Toutes vos données restent sur votre téléphone. Vous gardez le contrôle total, toujours."
+      },
+      "noResale": {
+        "title": "Pas de revente",
+        "desc": "Vos informations ne seront jamais analysées, partagées ou vendues à des tiers. Jamais."
+      }
+    },
+    "ethical": {
+      "title": "💚 Re:mind est une app éthique",
+      "desc": "Pas de tracker, pas de publicités ciblées, pas de vente de données. Juste une application qui vous aide, point final."
+    }
+  },
+  "blog": {
+    "badge": "Blog & Ressources",
+    "title_prefix": "Libérez votre esprit, ",
+    "title_highlight": "une lecture à la fois",
+    "subtitle": "Découvrez nos articles sur la charge mentale, l'organisation et le bien-être. Des conseils pratiques pour une vie plus sereine.",
+    "cta": "Lire nos articles",
+    "tags": {
+      "wellness": "Bien-être",
+      "health": "Santé",
+      "organization": "Organisation"
+    }
+  },
+  "pricing": {
+    "badge": "Tarifs",
+    "title_prefix": "Un plan pour ",
+    "title_highlight": "chaque besoin",
+    "subtitle": "Gratuit, Plus ou Pro : trouvez le plan qui vous correspond. Gérez vos rappels et traitements sans effort, avec ou sans abonnement.",
+    "cta": "Voir les tarifs",
+    "subtext": "À partir de 0€ · Sans engagement",
+    "cards": {
+      "free": {
+        "title": "Version gratuite",
+        "desc": "Fonctionnalités de base"
+      },
+      "plus": {
+        "title": "Plus à 0,99€/mois",
+        "desc": "Catégories illimitées"
+      },
+      "pro": {
+        "title": "Pro à 1,25€/mois",
+        "desc": "Toutes les fonctionnalités"
+      }
+    }
+  },
+  "launch": {
+    "title": "Bientôt disponible",
+    "subtitle": "Re:mind arrive très prochainement sur iOS et Android. Préparez-vous à libérer votre esprit et à simplifier votre quotidien.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "soon": "Bientôt sur",
+    "stayTuned": "Restez à l'écoute ! 🚀"
+  },
+  "nav": {
+    "why": "Pourquoi ?",
+    "blog": "Blog",
+    "pricing": "Tarifs",
+    "download": "Téléchargement"
+  },
+  "footer": {
+    "copyright": "En développement — Re:mind © {{year}}",
+    "contact": "Contactez-nous",
+    "privacy": "Politique de confidentialité"
+  },
+  "components": {
+    "floatingWidget": {
+      "defaultTitle": "Vitamine D",
+      "defaultSubtitle": "1 comprimé",
+      "defaultMonth": "NOV",
+      "defaultDay": "21",
+      "defaultWeekday": "Jeudi",
+      "defaultReminder": "Faire les courses",
+      "appName": "Re:mind",
+      "defaultNotification": "C'est l'heure !",
+      "actions": {
+        "5min": "5min",
+        "15min": "15min",
+        "30min": "30min",
+        "done": "Fait"
+      }
+    },
+    "heroScroll": {
+      "widgets": {
+        "doliprane": {
+          "title": "Doliprane",
+          "subtitle": "1000mg"
+        },
+        "water": "Rappel : Eau",
+        "doctor": "Rendez-vous médecin",
+        "vitaminC": {
+          "title": "Vitamine C",
+          "subtitle": "1 comprimé"
+        },
+        "rent": "Payer le loyer",
+        "prescription": "Renouveler ordonnance",
+        "christmas": {
+          "title": "25",
+          "subtitle": "DEC",
+          "time": "Noël"
+        },
+        "nov21": {
+          "title": "21",
+          "subtitle": "NOV",
+          "time": "Jeudi"
+        }
+      },
+      "appStore": {
+        "available": "Disponible sur",
+        "store": "App Store",
+        "soon": "Bientôt disponible"
+      },
+      "googlePlay": {
+        "available": "Disponible sur",
+        "store": "Google Play",
+        "soon": "Bientôt disponible"
+      },
+      "content": {
+        "title": "Votre esprit, libéré",
+        "description": "Gérez facilement vos rappels et vos traitements médicaux. Libérez votre esprit et restez productif.",
+        "cta": "Découvrir Re:mind"
+      }
+    }
+  },
+  "blogPage": {
+    "header": {
+      "badge": "Blog & Ressources",
+      "title": "Libérez votre esprit, <br /> <span class=\"text-secondary/80\">une lecture à la fois.</span>",
+      "subtitle": "Explorez nos articles sur la santé mentale, l'organisation et le bien-être. Des conseils pratiques pour une vie plus sereine."
+    },
+    "cta": {
+      "read": "Lire l'article",
+      "download": {
+        "title": "Prêt à alléger votre charge mentale ?",
+        "subtitle": "Rejoignez les milliers d'utilisateurs qui ont déjà choisi la sérénité. Téléchargez Re:mind dès maintenant.",
+        "button": "Télécharger l'application"
+      }
+    },
+    "articles": {
+      "1": {
+        "title": "Comprendre et réduire la charge mentale au quotidien",
+        "excerpt": "La charge mentale est ce poids invisible qui pèse sur nous lorsque nous devons penser à tout, tout le temps. Découvrez des stratégies concrètes pour l'alléger.",
+        "category": "Bien-être"
+      },
+      "2": {
+        "title": "5 astuces pour ne plus jamais oublier ses médicaments",
+        "excerpt": "Entre les horaires décalés et les oublis, suivre un traitement peut être un défi. Voici nos meilleures astuces pour être régulier sans stress.",
+        "category": "Santé"
+      },
+      "3": {
+        "title": "L'importance du sommeil sur votre mémoire",
+        "excerpt": "Bien dormir n'est pas un luxe, c'est une nécessité biologique pour consolider vos souvenirs et nettoyer votre cerveau des toxines.",
+        "category": "Science"
+      },
+      "4": {
+        "title": "Digital Detox : reprendre le contrôle de son attention",
+        "excerpt": "Nos téléphones sont des machines à distraction. Apprenez à configurer vos notifications pour qu'elles vous servent au lieu de vous asservir.",
+        "category": "Productivité"
+      },
+      "5": {
+        "title": "Organiser sa vie de famille sans s'épuiser",
+        "excerpt": "Calendriers partagés, délégations, rituels : comment transformer le chaos familial en une mécanique bien huilée.",
+        "category": "Organisation"
+      },
+      "6": {
+        "title": "Pourquoi écrire aide à penser plus clairement",
+        "excerpt": "Le journaling n'est pas réservé aux écrivains. C'est un outil puissant pour externaliser ses pensées et réduire l'anxiété.",
+        "category": "Développement"
+      }
+    }
+  },
+  "pricingPage": {
+    "header": {
+      "badge": "Tarifs",
+      "title": "Un plan pour chaque besoin",
+      "subtitle": "Choisissez le plan qui vous convient. Changez ou annulez à tout moment."
+    },
+    "duration": {
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "lifetime": "Lifetime",
+      "discount": "-17%"
+    },
+    "plans": {
+      "free": "Gratuit",
+      "popular": "Populaire",
+      "uniquePayment": "Paiement unique",
+      "month": "/mois",
+      "year": "/an"
+    },
+    "features": {
+      "2categories": "Accès à 2 catégories de rappels",
+      "1treatment": "1 traitement médical",
+      "tollCustom": "Délai de rappel péage personnalisable",
+      "unlimitedCategories": "Catégories de rappels illimitées",
+      "unlimitedTreatments": "Traitements médicaux illimités",
+      "tollFixed": "Délai de rappel péage fixe",
+      "support": "Support prioritaire",
+      "preview": "Fonctionnalités en avant-première"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "q1": "Puis-je changer de plan à tout moment ?",
+      "a1": "Oui, vous pouvez upgrader, downgrader ou annuler votre abonnement à tout moment depuis les paramètres de l'application.",
+      "q2": "Que se passe-t-il si j'annule mon abonnement ?",
+      "a2": "Vous conservez l'accès aux fonctionnalités premium jusqu'à la fin de votre période de facturation, puis votre compte repasse automatiquement au plan gratuit.",
+      "q3": "Le plan Lifetime est-il vraiment à vie ?",
+      "a3": "Oui ! Un seul paiement vous donne accès à toutes les fonctionnalités Pro pour toujours, sans aucun abonnement récurrent."
+    }
+  },
+  "privacyPage": {
+    "title": "Politique de confidentialité",
+    "lastUpdate": "Dernière mise à jour : Novembre 2025",
+    "sections": {
+      "1": {
+        "title": "1. Éditeur",
+        "content": "L'application Re:mind est éditée par Antoine Granier, développeur indépendant résidant en France.",
+        "contact": "Contact : "
+      },
+      "2": {
+        "title": "2. Collecte de données personnelles",
+        "p1": "Re:mind ne collecte aucune donnée personnelle. Aucun nom, adresse email, numéro de téléphone ou toute autre information vous concernant n'est enregistré, stocké ou transmis à des tiers.",
+        "p2": "L'application fonctionne exclusivement en local sur votre appareil. Toutes les données (rappels, traitements médicaux) restent sur votre téléphone et ne sont jamais transmises à des serveurs externes.",
+        "p3": "L'application propose également des abonnements à renouvellement automatique. Pour gérer ces abonnements, certaines informations peuvent être recueillies, notamment des identifiants liés aux plateformes Apple App Store ou Google Play, sans que les données bancaires ne soient stockées localement.",
+        "p4": "Les données d'abonnement sont utilisées uniquement pour la gestion du service, la facturation et la prévention de la fraude.",
+        "p5": "Vous bénéficiez des droits RGPD relatifs à ces données, notamment l'accès, la rectification et la suppression via les plateformes concernées.",
+        "p6": "Toute modification sur la gestion des abonnements fera l'objet d'une mise à jour de cette politique."
+      },
+      "3": {
+        "title": "3. Géolocalisation",
+        "p1": "La seule donnée utilisée est la géolocalisation en arrière-plan, uniquement si vous activez la fonctionnalité de détection de passage au péage.",
+        "p2": "Cette géolocalisation :",
+        "list": [
+          "N'est utilisée que pour créer des rappels de paiement de péage",
+          "Ne quitte jamais votre appareil",
+          "N'est pas stockée ni partagée avec des tiers",
+          "Peut être désactivée à tout moment dans les paramètres de l'application ou de votre téléphone"
+        ]
+      },
+      "4": {
+        "title": "4. Services tiers",
+        "p1": "Aucun service tiers (analytics, publicité, API externe, notifications push) n'est actuellement intégré à l'application.",
+        "p2": "Si des services tiers ou de la publicité étaient ajoutés à l'avenir, cette politique de confidentialité sera mise à jour et affichée dans l'application."
+      },
+      "5": {
+        "title": "5. Vos droits (RGPD)",
+        "p1": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :",
+        "list": [
+          "Droit d'accès à vos données personnelles",
+          "Droit de rectification",
+          "Droit de suppression",
+          "Droit d'opposition",
+          "Droit à la portabilité"
+        ],
+        "p2": "Toutefois, ces droits ne s'appliquent pas dans le cadre de Re:mind car aucune donnée personnelle n'est collectée, stockée ou traitée par l'éditeur, sauf pour la gestion des abonnements selon les modalités décrites.",
+        "contact": "Pour toute question concernant vos données, contactez : "
+      },
+      "6": {
+        "title": "6. Durée de conservation",
+        "p1": "Aucune donnée n'est conservée par l'éditeur directement. Toutes les informations créées dans l'application (rappels, traitements) restent uniquement sur votre appareil jusqu'à ce que vous les supprimiez ou désinstalliez l'application.",
+        "p2": "Les données liées aux abonnements sont conservées selon les règles des plateformes Apple et Google."
+      },
+      "7": {
+        "title": "7. Modifications",
+        "content": "Cette politique de confidentialité peut être modifiée à tout moment. Les modifications seront directement visibles dans l'application. Il est conseillé de consulter régulièrement cette page."
+      },
+      "8": {
+        "title": "8. Droit applicable",
+        "content": "La présente politique est soumise au droit français."
+      }
+    }
+  }
+}

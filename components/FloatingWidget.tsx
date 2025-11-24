@@ -12,7 +12,10 @@ interface FloatingWidgetProps {
   checked?: boolean;
   onToggle?: () => void;
   expandUp?: boolean;
+  lng: string;
 }
+
+import { useTranslation } from "@/app/i18n/client";
 
 export default function FloatingWidget({
   type,
@@ -23,7 +26,9 @@ export default function FloatingWidget({
   checked = false,
   onToggle,
   expandUp = false,
+  lng,
 }: FloatingWidgetProps) {
+  const { t } = useTranslation(lng);
   const [showOptions, setShowOptions] = useState(false);
 
   // Base styles for all widgets - Glassmorphism effect
@@ -41,10 +46,10 @@ export default function FloatingWidget({
         </div>
         <div className="flex flex-col">
           <span className="text-sm font-bold text-primary">
-            {title || "Vitamine D"}
+            {title || t('components.floatingWidget.defaultTitle')}
           </span>
           <span className="text-xs text-secondary">
-            {subtitle || "1 comprimé"}
+            {subtitle || t('components.floatingWidget.defaultSubtitle')}
           </span>
         </div>
         {time && (
@@ -71,17 +76,17 @@ export default function FloatingWidget({
             checked ? "text-primary/80" : "text-action"
           }`}
         >
-          {subtitle || "NOV"}
+          {subtitle || t('components.floatingWidget.defaultMonth')}
         </span>
         <span className="text-3xl font-black text-primary leading-none my-1">
-          {title || "21"}
+          {title || t('components.floatingWidget.defaultDay')}
         </span>
         <span
           className={`text-[10px] ${
             checked ? "text-primary/80" : "text-secondary"
           }`}
         >
-          {time || "Jeudi"}
+          {time || t('components.floatingWidget.defaultWeekday')}
         </span>
       </div>
     );
@@ -106,7 +111,7 @@ export default function FloatingWidget({
                 fillRule="evenodd"
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clipRule="evenodd"
-              />
+                />
             </svg>
           )}
         </div>
@@ -116,7 +121,7 @@ export default function FloatingWidget({
               checked ? "text-secondary line-through" : "text-primary"
             }`}
           >
-            {title || "Faire les courses"}
+            {title || t('components.floatingWidget.defaultReminder')}
           </span>
         </div>
       </div>
@@ -160,9 +165,9 @@ export default function FloatingWidget({
                 {icon || "🔔"}
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-action">Re:mind</span>
+                <span className="text-xs font-bold text-action">{t('components.floatingWidget.appName')}</span>
                 <span className="text-xs text-gray-200">
-                  {title || "C'est l'heure !"}
+                  {title || t('components.floatingWidget.defaultNotification')}
                 </span>
               </div>
             </motion.div>
@@ -179,25 +184,25 @@ export default function FloatingWidget({
                     onClick={handleOptionClick}
                     className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
                   >
-                    ⏰ 5min
+                    ⏰ {t('components.floatingWidget.actions.5min')}
                   </button>
                   <button
                     onClick={handleOptionClick}
                     className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
                   >
-                    ⏰ 15min
+                    ⏰ {t('components.floatingWidget.actions.15min')}
                   </button>
                   <button
                     onClick={handleOptionClick}
                     className="text-[10px] bg-white/10 hover:bg-white/20 rounded-lg py-1.5 px-2 transition-colors text-center"
                   >
-                    ⏰ 30min
+                    ⏰ {t('components.floatingWidget.actions.30min')}
                   </button>
                   <button
                     onClick={handleOptionClick}
                     className="text-[10px] bg-action hover:bg-action/90 text-primary font-bold rounded-lg py-1.5 px-2 transition-colors text-center"
                   >
-                    ✅ Fait
+                    ✅ {t('components.floatingWidget.actions.done')}
                   </button>
                 </motion.div>
               )}

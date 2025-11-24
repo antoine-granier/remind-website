@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 type Duration = "monthly" | "yearly" | "lifetime";
 type PlanLevel = "free" | "plus" | "pro";
@@ -16,106 +17,6 @@ type Plan = {
   priceValue: number;
   originalPrice?: string | null;
   features: Feature[];
-};
-
-const PLANS = {
-  monthly: {
-    free: {
-      price: "Gratuit",
-      priceValue: 0,
-      features: [
-        { hasFeature: true, label: "Accès à 2 catégories de rappels" },
-        { hasFeature: true, label: "1 traitement médical" },
-        { hasFeature: false, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: false, label: "Catégories de rappels illimitées" },
-        { hasFeature: false, label: "Traitements médicaux illimités" },
-      ],
-    },
-    plus: {
-      price: "0,99€",
-      priceValue: 0.99,
-      features: [
-        { hasFeature: true, label: "Catégories de rappels illimitées" },
-        { hasFeature: true, label: "1 traitement médical" },
-        { hasFeature: true, label: "Délai de rappel péage fixe" },
-        { hasFeature: false, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: false, label: "Traitements médicaux illimités" },
-      ],
-    },
-    pro: {
-      price: "1,25€",
-      priceValue: 1.25,
-      features: [
-        { hasFeature: true, label: "Catégories de rappels illimitées" },
-        { hasFeature: true, label: "Traitements médicaux illimités" },
-        { hasFeature: true, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: true, label: "Support prioritaire" },
-        { hasFeature: true, label: "Fonctionnalités en avant-première" },
-      ],
-    },
-  },
-  yearly: {
-    free: {
-      price: "Gratuit",
-      priceValue: 0,
-      originalPrice: null,
-      features: [
-        { hasFeature: true, label: "Accès à 2 catégories de rappels" },
-        { hasFeature: true, label: "1 traitement médical" },
-        { hasFeature: false, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: false, label: "Catégories de rappels illimitées" },
-        { hasFeature: false, label: "Traitements médicaux illimités" },
-      ],
-    },
-    plus: {
-      price: "9,99€",
-      priceValue: 9.99,
-      originalPrice: "11,88€",
-      features: [
-        { hasFeature: true, label: "Catégories de rappels illimitées" },
-        { hasFeature: true, label: "1 traitement médical" },
-        { hasFeature: true, label: "Délai de rappel péage fixe" },
-        { hasFeature: false, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: false, label: "Traitements médicaux illimités" },
-      ],
-    },
-    pro: {
-      price: "12,50€",
-      priceValue: 12.5,
-      originalPrice: "15,00€",
-      features: [
-        { hasFeature: true, label: "Catégories de rappels illimitées" },
-        { hasFeature: true, label: "Traitements médicaux illimités" },
-        { hasFeature: true, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: true, label: "Support prioritaire" },
-        { hasFeature: true, label: "Fonctionnalités en avant-première" },
-      ],
-    },
-  },
-  lifetime: {
-    free: {
-      price: "Gratuit",
-      priceValue: 0,
-      features: [
-        { hasFeature: true, label: "Accès à 2 catégories de rappels" },
-        { hasFeature: true, label: "1 traitement médical" },
-        { hasFeature: false, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: false, label: "Catégories de rappels illimitées" },
-        { hasFeature: false, label: "Traitements médicaux illimités" },
-      ],
-    },
-    pro: {
-      price: "29,99€",
-      priceValue: 29.99,
-      features: [
-        { hasFeature: true, label: "Catégories de rappels illimitées" },
-        { hasFeature: true, label: "Traitements médicaux illimités" },
-        { hasFeature: true, label: "Délai de rappel péage personnalisable" },
-        { hasFeature: true, label: "Support prioritaire" },
-        { hasFeature: true, label: "Fonctionnalités en avant-première" },
-      ],
-    },
-  },
 };
 
 function CheckIcon() {
@@ -161,13 +62,18 @@ function PlanCard({
   planLevel,
   duration,
   isPopular = false,
+  plansData,
+  lng
 }: {
   title: string;
   planLevel: PlanLevel;
   duration: Duration;
   isPopular?: boolean;
+  plansData: any;
+  lng: string;
 }) {
-  const durationPlans = PLANS[duration];
+  const { t } = useTranslation(lng);
+  const durationPlans = plansData[duration];
   
   if (!(planLevel in durationPlans)) {
     return null;
@@ -180,13 +86,13 @@ function PlanCard({
   }
 
   const getPriceLabel = () => {
-    if (plan.price === "Gratuit") return "";
-    if (duration === "lifetime") return "Paiement unique";
-    return duration === "monthly" ? "/mois" : "/an";
+    if (plan.price === t('pricingPage.plans.free')) return "";
+    if (duration === "lifetime") return t('pricingPage.plans.uniquePayment');
+    return duration === "monthly" ? t('pricingPage.plans.month') : t('pricingPage.plans.year');
   };
 
   const showOriginalPrice =
-    duration === "yearly" && "originalPrice" in plan && plan.originalPrice && plan.price !== "Gratuit";
+    duration === "yearly" && "originalPrice" in plan && plan.originalPrice && plan.price !== t('pricingPage.plans.free');
 
   return (
     <motion.div
@@ -199,7 +105,7 @@ function PlanCard({
     >
       {isPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-action text-primary px-4 py-1 rounded-full text-sm font-bold">
-          ⭐ Populaire
+          ⭐ {t('pricingPage.plans.popular')}
         </div>
       )}
 
@@ -220,7 +126,7 @@ function PlanCard({
       </div>
 
       <ul className="space-y-4 mb-8">
-        {plan.features.map((feature, index) => (
+        {plan.features.map((feature: any, index: number) => (
           <li key={index} className="flex items-center gap-3">
             {feature.hasFeature ? <CheckIcon /> : <CrossIcon />}
             <span
@@ -237,14 +143,116 @@ function PlanCard({
   );
 }
 
-export default function PricingPage() {
+export default function PricingPage({ params }: { params: Promise<{ lng: string }> }) {
+  const { lng } = use(params);
+  const { t } = useTranslation(lng);
   const [selectedDuration, setSelectedDuration] = useState<Duration>("yearly");
+
+  const PLANS = {
+    monthly: {
+      free: {
+        price: t('pricingPage.plans.free'),
+        priceValue: 0,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.2categories') },
+          { hasFeature: true, label: t('pricingPage.features.1treatment') },
+          { hasFeature: false, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedTreatments') },
+        ],
+      },
+      plus: {
+        price: "0,99€",
+        priceValue: 0.99,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: true, label: t('pricingPage.features.1treatment') },
+          { hasFeature: true, label: t('pricingPage.features.tollFixed') },
+          { hasFeature: false, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedTreatments') },
+        ],
+      },
+      pro: {
+        price: "1,25€",
+        priceValue: 1.25,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: true, label: t('pricingPage.features.unlimitedTreatments') },
+          { hasFeature: true, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: true, label: t('pricingPage.features.support') },
+          { hasFeature: true, label: t('pricingPage.features.preview') },
+        ],
+      },
+    },
+    yearly: {
+      free: {
+        price: t('pricingPage.plans.free'),
+        priceValue: 0,
+        originalPrice: null,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.2categories') },
+          { hasFeature: true, label: t('pricingPage.features.1treatment') },
+          { hasFeature: false, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedTreatments') },
+        ],
+      },
+      plus: {
+        price: "9,99€",
+        priceValue: 9.99,
+        originalPrice: "11,88€",
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: true, label: t('pricingPage.features.1treatment') },
+          { hasFeature: true, label: t('pricingPage.features.tollFixed') },
+          { hasFeature: false, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedTreatments') },
+        ],
+      },
+      pro: {
+        price: "12,50€",
+        priceValue: 12.5,
+        originalPrice: "15,00€",
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: true, label: t('pricingPage.features.unlimitedTreatments') },
+          { hasFeature: true, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: true, label: t('pricingPage.features.support') },
+          { hasFeature: true, label: t('pricingPage.features.preview') },
+        ],
+      },
+    },
+    lifetime: {
+      free: {
+        price: t('pricingPage.plans.free'),
+        priceValue: 0,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.2categories') },
+          { hasFeature: true, label: t('pricingPage.features.1treatment') },
+          { hasFeature: false, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: false, label: t('pricingPage.features.unlimitedTreatments') },
+        ],
+      },
+      pro: {
+        price: "29,99€",
+        priceValue: 29.99,
+        features: [
+          { hasFeature: true, label: t('pricingPage.features.unlimitedCategories') },
+          { hasFeature: true, label: t('pricingPage.features.unlimitedTreatments') },
+          { hasFeature: true, label: t('pricingPage.features.tollCustom') },
+          { hasFeature: true, label: t('pricingPage.features.support') },
+          { hasFeature: true, label: t('pricingPage.features.preview') },
+        ],
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <header className="py-20 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-action/5 to-transparent" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-b from-action/5 to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -252,13 +260,13 @@ export default function PricingPage() {
           className="max-w-3xl mx-auto"
         >
           <span className="text-primary bg-action py-2 px-3 rounded-full mx-auto w-fit font-bold tracking-wider uppercase text-sm mb-4 block">
-            Tarifs
+            {t('pricingPage.header.badge')}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Un plan pour chaque besoin
+            {t('pricingPage.header.title')}
           </h1>
           <p className="text-lg text-secondary leading-relaxed">
-            Choisissez le plan qui vous convient. Changez ou annulez à tout moment.
+            {t('pricingPage.header.subtitle')}
           </p>
         </motion.div>
       </header>
@@ -280,7 +288,7 @@ export default function PricingPage() {
                   : "text-secondary hover:text-primary"
               }`}
             >
-              Mensuel
+              {t('pricingPage.duration.monthly')}
             </button>
             <button
               onClick={() => setSelectedDuration("yearly")}
@@ -290,9 +298,9 @@ export default function PricingPage() {
                   : "text-secondary hover:text-primary"
               }`}
             >
-              Annuel
+              {t('pricingPage.duration.yearly')}
               <span className="absolute -top-2 -right-2 bg-action text-primary text-xs font-bold px-2 py-0.5 rounded-full border-2 border-background">
-                -17%
+                {t('pricingPage.duration.discount')}
               </span>
             </button>
             <button
@@ -303,7 +311,7 @@ export default function PricingPage() {
                   : "text-secondary hover:text-primary"
               }`}
             >
-              Lifetime
+              {t('pricingPage.duration.lifetime')}
             </button>
           </div>
         </motion.div>
@@ -311,9 +319,11 @@ export default function PricingPage() {
         {/* Plan Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <PlanCard
-            title="Gratuit"
+            title={t('pricingPage.plans.free')}
             planLevel="free"
             duration={selectedDuration}
+            plansData={PLANS}
+            lng={lng}
           />
           {selectedDuration !== "lifetime" && (
             <PlanCard
@@ -321,6 +331,8 @@ export default function PricingPage() {
               planLevel="plus"
               duration={selectedDuration}
               isPopular={selectedDuration === "yearly"}
+              plansData={PLANS}
+              lng={lng}
             />
           )}
           <PlanCard
@@ -328,6 +340,8 @@ export default function PricingPage() {
             planLevel="pro"
             duration={selectedDuration}
             isPopular={selectedDuration === "lifetime"}
+            plansData={PLANS}
+            lng={lng}
           />
         </div>
 
@@ -339,31 +353,31 @@ export default function PricingPage() {
           className="max-w-3xl mx-auto mt-20"
         >
           <h2 className="text-3xl font-bold text-primary text-center mb-12">
-            Questions fréquentes
+            {t('pricingPage.faq.title')}
           </h2>
           <div className="space-y-6">
             <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-6">
               <h3 className="font-bold text-primary mb-2">
-                Puis-je changer de plan à tout moment ?
+                {t('pricingPage.faq.q1')}
               </h3>
               <p className="text-secondary">
-                Oui, vous pouvez upgrader, downgrader ou annuler votre abonnement à tout moment depuis les paramètres de l'application.
+                {t('pricingPage.faq.a1')}
               </p>
             </div>
             <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-6">
               <h3 className="font-bold text-primary mb-2">
-                Que se passe-t-il si j'annule mon abonnement ?
+                {t('pricingPage.faq.q2')}
               </h3>
               <p className="text-secondary">
-                Vous conservez l'accès aux fonctionnalités premium jusqu'à la fin de votre période de facturation, puis votre compte repasse automatiquement au plan gratuit.
+                {t('pricingPage.faq.a2')}
               </p>
             </div>
             <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-2xl p-6">
               <h3 className="font-bold text-primary mb-2">
-                Le plan Lifetime est-il vraiment à vie ?
+                {t('pricingPage.faq.q3')}
               </h3>
               <p className="text-secondary">
-                Oui ! Un seul paiement vous donne accès à toutes les fonctionnalités Pro pour toujours, sans aucun abonnement récurrent.
+                {t('pricingPage.faq.a3')}
               </p>
             </div>
           </div>

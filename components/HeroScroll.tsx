@@ -2,9 +2,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useTranslation } from "@/app/i18n/client";
 import FloatingWidget, { WidgetType } from "./FloatingWidget";
 
-export default function HeroScroll() {
+export default function HeroScroll({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -81,8 +83,8 @@ export default function HeroScroll() {
   >([
     {
       type: "medication",
-      title: "Doliprane",
-      subtitle: "1000mg",
+      title: t('components.heroScroll.widgets.doliprane.title'),
+      subtitle: t('components.heroScroll.widgets.doliprane.subtitle'),
       time: "08:00",
       icon: "💊",
       top: "11%",
@@ -93,9 +95,9 @@ export default function HeroScroll() {
     },
     {
       type: "calendar",
-      title: "21",
-      subtitle: "NOV",
-      time: "Jeudi",
+      title: t('components.heroScroll.widgets.nov21.title'),
+      subtitle: t('components.heroScroll.widgets.nov21.subtitle'),
+      time: t('components.heroScroll.widgets.nov21.time'),
       top: "11%",
       left: "68%",
       mobileTop: "12%",
@@ -105,7 +107,7 @@ export default function HeroScroll() {
     },
     {
       type: "notification",
-      title: "Rappel : Eau",
+      title: t('components.heroScroll.widgets.water'),
       icon: "💧",
       top: "25%",
       right: "8%",
@@ -114,7 +116,7 @@ export default function HeroScroll() {
     },
     {
       type: "reminder",
-      title: "Rendez-vous médecin",
+      title: t('components.heroScroll.widgets.doctor'),
       checked: false,
       top: "30%",
       left: "5%",
@@ -124,8 +126,8 @@ export default function HeroScroll() {
     },
     {
       type: "medication",
-      title: "Vitamine C",
-      subtitle: "1 comprimé",
+      title: t('components.heroScroll.widgets.vitaminC.title'),
+      subtitle: t('components.heroScroll.widgets.vitaminC.subtitle'),
       time: "12:00",
       icon: "🍊",
       top: "50%",
@@ -137,7 +139,7 @@ export default function HeroScroll() {
     },
     {
       type: "reminder",
-      title: "Payer le loyer",
+      title: t('components.heroScroll.widgets.rent'),
       checked: true,
       top: "60%",
       left: "8%",
@@ -146,7 +148,7 @@ export default function HeroScroll() {
     },
     {
       type: "notification",
-      title: "Renouveler ordonnance",
+      title: t('components.heroScroll.widgets.prescription'),
       icon: "📝",
       bottom: "20%",
       left: "18%",
@@ -156,9 +158,9 @@ export default function HeroScroll() {
     },
     {
       type: "calendar",
-      title: "25",
-      subtitle: "DEC",
-      time: "Noël",
+      title: t('components.heroScroll.widgets.christmas.title'),
+      subtitle: t('components.heroScroll.widgets.christmas.subtitle'),
+      time: t('components.heroScroll.widgets.christmas.time'),
       top: "75%",
       right: "18%",
       delay: 2.1,
@@ -210,6 +212,7 @@ export default function HeroScroll() {
               >
                 <FloatingWidget
                   {...item}
+                  lng={lng}
                   onToggle={() => handleWidgetToggle(index)}
                 />
               </motion.div>
@@ -298,17 +301,16 @@ export default function HeroScroll() {
         <section className="min-h-[60vh] flex items-center justify-center px-6 py-20 bg-background">
           <div className="flex flex-col items-center max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-center mb-4 text-primary">
-              Votre esprit, libéré
+              {t('components.heroScroll.content.title')}
             </h1>
             <p className="text-base text-secondary text-center mb-8 leading-relaxed">
-              Gérez facilement vos rappels et vos traitements médicaux. Libérez
-              votre esprit et restez productif.
+              {t('components.heroScroll.content.description')}
             </p>
             <a
               href="#discover"
               className="px-8 py-3 rounded-full bg-action text-primary font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
-              Découvrir Re:mind
+              {t('components.heroScroll.content.cta')}
             </a>
           </div>
         </section>
@@ -353,6 +355,7 @@ export default function HeroScroll() {
             >
               <FloatingWidget
                 {...item}
+                lng={lng}
                 onToggle={() => handleWidgetToggle(index)}
               />
             </motion.div>
@@ -368,17 +371,16 @@ export default function HeroScroll() {
           className="absolute z-0 flex flex-col items-center px-6 w-full"
         >
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-center mb-4 text-primary">
-            Votre esprit, libéré
+            {t('components.heroScroll.content.title')}
           </h1>
           <p className="text-lg md:text-xl text-secondary text-center max-w-2xl mb-8 leading-relaxed">
-            Gérez facilement vos rappels et vos traitements médicaux. Libérez
-            votre esprit et restez productif.
+            {t('components.heroScroll.content.description')}
           </p>
           <a
             href="#discover"
             className="px-10 py-4 rounded-full bg-action text-primary font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
-            Découvrir Re:mind
+            {t('components.heroScroll.content.cta')}
           </a>
         </motion.div>
 
@@ -456,15 +458,15 @@ export default function HeroScroll() {
                   </svg>
                   <div className="flex flex-col">
                     <span className="text-xs text-secondary">
-                      Disponible sur
+                      {t('components.heroScroll.appStore.available')}
                     </span>
                     <span className="text-sm font-semibold text-primary">
-                      App Store
+                      {t('components.heroScroll.appStore.store')}
                     </span>
                   </div>
                 </div>
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-action text-primary text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  Bientôt disponible
+                  {t('components.heroScroll.appStore.soon')}
                 </div>
               </div>
 
@@ -480,15 +482,15 @@ export default function HeroScroll() {
                   </svg>
                   <div className="flex flex-col">
                     <span className="text-xs text-secondary">
-                      Disponible sur
+                      {t('components.heroScroll.googlePlay.available')}
                     </span>
                     <span className="text-sm font-semibold text-primary">
-                      Google Play
+                      {t('components.heroScroll.googlePlay.store')}
                     </span>
                   </div>
                 </div>
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-action text-primary text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  Bientôt disponible
+                  {t('components.heroScroll.googlePlay.soon')}
                 </div>
               </div>
             </motion.div>

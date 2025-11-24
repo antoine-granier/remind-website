@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "title": "Re:mind – Reminder App for Medications and Tasks",
+    "description": "Re:mind centralizes your medication reminders, daily tasks, tolls, and subscriptions in a simple and smart app on iOS and Android.",
+    "ogTitle": "Re:mind – Reminder App for Medications and Tasks",
+    "ogDescription": "Never miss a medication dose or an important task thanks to Re:mind.",
+    "twitterTitle": "Re:mind – Reminder App for Medications and Tasks",
+    "twitterDescription": "Reminder app to manage your medications, tasks, and important deadlines."
+  },
+  "hero": {
+    "title_prefix": "Your mind, ",
+    "title_highlight": "freed",
+    "subtitle": "Re:mind centralizes all your reminders in an intuitive dashboard. Visualize at a glance your tasks for the day, those planned, and those already completed.",
+    "features": {
+      "summary": {
+        "title": "Complete Summary",
+        "desc": "Track your reminders today, planned, and completed"
+      },
+      "interface": {
+        "title": "Clean Interface",
+        "desc": "A modern and easy-to-use design"
+      }
+    }
+  },
+  "planning": {
+    "title_prefix": "Your reminders, ",
+    "title_highlight": "always on time",
+    "subtitle": "Organize your week with our integrated planner. Create one-time, daily, or weekly reminders adapted to your lifestyle.",
+    "features": {
+      "calendar": {
+        "title": "Calendar View",
+        "desc": "Navigate easily through your weeks"
+      },
+      "multiple": {
+        "title": "Multiple Reminders",
+        "desc": "Manage multiple reminders per day effortlessly"
+      }
+    }
+  },
+  "medication": {
+    "title_prefix": "Manage your treatments ",
+    "title_highlight": "smartly",
+    "subtitle": "Track your treatments with precision. Re:mind allows you to choose the dosage, frequency, and remaining stock so you never miss a dose.",
+    "features": {
+      "doses": {
+        "title": "Dose Tracking",
+        "desc": "1 pill, 3x/day - everything is clear"
+      },
+      "stock": {
+        "title": "Stock Management",
+        "desc": "Be alerted when it's time to renew"
+      }
+    }
+  },
+  "creation": {
+    "title_prefix": "Create in ",
+    "title_highlight": "seconds",
+    "subtitle": "Intuitive interface to create your reminders quickly. Choose the category, recurrence, and time in a few taps.",
+    "categories": {
+      "reminders": "Reminders",
+      "medication": "Medication",
+      "renewal": "Renewal",
+      "toll": "Toll"
+    },
+    "more": "And much more..."
+  },
+  "customization": {
+    "title_prefix": "Customize ",
+    "title_highlight": "as you wish",
+    "subtitle": "Control every detail of your experience. Notifications, subscriptions, treatments, and even automatic toll detection - everything is configurable.",
+    "features": {
+      "notifications": {
+        "title": "Smart Notifications",
+        "desc": "Enable or disable according to your preferences"
+      },
+      "plans": {
+        "title": "Flexible Plans",
+        "desc": "Free or premium version"
+      },
+      "tolls": {
+        "title": "Toll Detection",
+        "desc": "Automatic reminders for your online payments"
+      }
+    }
+  },
+  "bento": {
+    "title_prefix": "Get organized ",
+    "title_highlight": "how you want",
+    "subtitle": "Three reminder modes designed to adapt to all your needs",
+    "unique": {
+      "title": "Unique",
+      "desc": "For one-time reminders and important events.",
+      "features": [
+        "Medical appointment",
+        "Project deadline",
+        "Special event"
+      ],
+      "stats": "1 notification",
+      "statsLabel": "at the right time"
+    },
+    "daily": {
+      "title": "Daily",
+      "desc": "For your daily routine.",
+      "features": [
+        "Medications",
+        "Sport",
+        "Hydration"
+      ],
+      "stats": "Every day",
+      "statsLabel": "without thinking"
+    },
+    "weekly": {
+      "title": "Weekly",
+      "desc": "To organize your recurring tasks.",
+      "features": [
+        "Groceries",
+        "Cleaning",
+        "Revision"
+      ],
+      "stats": "Organized",
+      "statsLabel": "stress-free"
+    },
+    "custom": {
+      "title": "Custom Mode",
+      "desc": "Create your own recurrence rules",
+      "soon": "Coming soon..."
+    }
+  },
+  "privacy": {
+    "badge": "Privacy",
+    "title_prefix": "Your data belongs to you, ",
+    "title_highlight": "for real",
+    "subtitle": "Re:mind is designed with a simple principle: your privacy is not negotiable. No data is collected, stored, or shared. Everything stays on your device.",
+    "cards": {
+      "noCollection": {
+        "title": "No Collection",
+        "desc": "We do not collect any personal data. No emails, no history, no habits. Nothing."
+      },
+      "localStorage": {
+        "title": "Local Storage",
+        "desc": "All your data stays on your phone. You keep total control, always."
+      },
+      "noResale": {
+        "title": "No Resale",
+        "desc": "Your information will never be analyzed, shared, or sold to third parties. Never."
+      }
+    },
+    "ethical": {
+      "title": "💚 Re:mind is an ethical app",
+      "desc": "No trackers, no targeted ads, no data selling. Just an app that helps you, period."
+    }
+  },
+  "blog": {
+    "badge": "Blog & Resources",
+    "title_prefix": "Free your mind, ",
+    "title_highlight": "one read at a time",
+    "subtitle": "Discover our articles on mental load, organization, and well-being. Practical tips for a more serene life.",
+    "cta": "Read our articles",
+    "tags": {
+      "wellness": "Well-being",
+      "health": "Health",
+      "organization": "Organization"
+    }
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title_prefix": "A plan for ",
+    "title_highlight": "every need",
+    "subtitle": "Free, Plus, or Pro: find the plan that suits you. Manage your reminders and treatments effortlessly, with or without a subscription.",
+    "cta": "See pricing",
+    "subtext": "Starting at €0 · No commitment",
+    "cards": {
+      "free": {
+        "title": "Free Version",
+        "desc": "Basic features"
+      },
+      "plus": {
+        "title": "Plus at €0.99/month",
+        "desc": "Unlimited categories"
+      },
+      "pro": {
+        "title": "Pro at €1.25/month",
+        "desc": "All features"
+      }
+    }
+  },
+  "launch": {
+    "title": "Coming Soon",
+    "subtitle": "Re:mind is coming very soon to iOS and Android. Get ready to free your mind and simplify your daily life.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "soon": "Coming soon on",
+    "stayTuned": "Stay tuned! 🚀"
+  },
+  "nav": {
+    "why": "Why?",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "download": "Download"
+  },
+  "footer": {
+    "copyright": "In development — Re:mind © {{year}}",
+    "contact": "Contact Us",
+    "privacy": "Privacy Policy"
+  },
+  "components": {
+    "floatingWidget": {
+      "defaultTitle": "Vitamin D",
+      "defaultSubtitle": "1 pill",
+      "defaultMonth": "NOV",
+      "defaultDay": "21",
+      "defaultWeekday": "Thursday",
+      "defaultReminder": "Groceries",
+      "appName": "Re:mind",
+      "defaultNotification": "It's time!",
+      "actions": {
+        "5min": "5min",
+        "15min": "15min",
+        "30min": "30min",
+        "done": "Done"
+      }
+    },
+    "heroScroll": {
+      "widgets": {
+        "doliprane": {
+          "title": "Paracetamol",
+          "subtitle": "1000mg"
+        },
+        "water": "Reminder: Water",
+        "doctor": "Doctor appointment",
+        "vitaminC": {
+          "title": "Vitamin C",
+          "subtitle": "1 pill"
+        },
+        "rent": "Pay rent",
+        "prescription": "Renew prescription",
+        "christmas": {
+          "title": "25",
+          "subtitle": "DEC",
+          "time": "Christmas"
+        },
+        "nov21": {
+          "title": "21",
+          "subtitle": "NOV",
+          "time": "Thursday"
+        }
+      },
+      "appStore": {
+        "available": "Available on",
+        "store": "App Store",
+        "soon": "Coming soon"
+      },
+      "googlePlay": {
+        "available": "Available on",
+        "store": "Google Play",
+        "soon": "Coming soon"
+      },
+      "content": {
+        "title": "Your mind, freed",
+        "description": "Easily manage your reminders and medical treatments. Free your mind and stay productive.",
+        "cta": "Discover Re:mind"
+      }
+    }
+  },
+  "blogPage": {
+    "header": {
+      "badge": "Blog & Resources",
+      "title": "Free your mind, <br /> <span class=\"text-secondary/80\">one read at a time.</span>",
+      "subtitle": "Discover our articles on mental load, organization, and well-being. Practical tips for a more serene life."
+    },
+    "cta": {
+      "read": "Read article",
+      "download": {
+        "title": "Ready to lighten your mental load?",
+        "subtitle": "Join thousands of users who have already chosen serenity. Download Re:mind now.",
+        "button": "Download the app"
+      }
+    },
+    "articles": {
+      "1": {
+        "title": "Understanding and reducing mental load daily",
+        "excerpt": "Mental load is that invisible weight that weighs on us when we have to think about everything, all the time. Discover concrete strategies to lighten it.",
+        "category": "Well-being"
+      },
+      "2": {
+        "title": "5 tips to never forget your medications again",
+        "excerpt": "Between shifting schedules and forgetfulness, following a treatment can be a challenge. Here are our best tips to be regular without stress.",
+        "category": "Health"
+      },
+      "3": {
+        "title": "The importance of sleep on your memory",
+        "excerpt": "Sleeping well is not a luxury, it's a biological necessity to consolidate your memories and clean your brain of toxins.",
+        "category": "Science"
+      },
+      "4": {
+        "title": "Digital Detox: taking back control of your attention",
+        "excerpt": "Our phones are distraction machines. Learn how to configure your notifications so they serve you instead of enslaving you.",
+        "category": "Productivity"
+      },
+      "5": {
+        "title": "Organizing family life without exhaustion",
+        "excerpt": "Shared calendars, delegations, rituals: how to transform family chaos into a well-oiled machine.",
+        "category": "Organization"
+      },
+      "6": {
+        "title": "Why writing helps think more clearly",
+        "excerpt": "Journaling is not reserved for writers. It's a powerful tool to externalize your thoughts and reduce anxiety.",
+        "category": "Development"
+      }
+    }
+  },
+  "pricingPage": {
+    "header": {
+      "badge": "Pricing",
+      "title": "A plan for every need",
+      "subtitle": "Choose the plan that suits you. Change or cancel at any time."
+    },
+    "duration": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "lifetime": "Lifetime",
+      "discount": "-17%"
+    },
+    "plans": {
+      "free": "Free",
+      "popular": "Popular",
+      "uniquePayment": "One-time payment",
+      "month": "/month",
+      "year": "/year"
+    },
+    "features": {
+      "2categories": "Access to 2 reminder categories",
+      "1treatment": "1 medical treatment",
+      "tollCustom": "Customizable toll reminder delay",
+      "unlimitedCategories": "Unlimited reminder categories",
+      "unlimitedTreatments": "Unlimited medical treatments",
+      "tollFixed": "Fixed toll reminder delay",
+      "support": "Priority support",
+      "preview": "Preview features"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Can I change plans at any time?",
+      "a1": "Yes, you can upgrade, downgrade, or cancel your subscription at any time from the app settings.",
+      "q2": "What happens if I cancel my subscription?",
+      "a2": "You keep access to premium features until the end of your billing period, then your account automatically reverts to the free plan.",
+      "q3": "Is the Lifetime plan really for life?",
+      "a3": "Yes! A single payment gives you access to all Pro features forever, without any recurring subscription."
+    }
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdate": "Last update: November 2025",
+    "sections": {
+      "1": {
+        "title": "1. Publisher",
+        "content": "The Re:mind application is published by Antoine Granier, an independent developer residing in France.",
+        "contact": "Contact: "
+      },
+      "2": {
+        "title": "2. Collection of Personal Data",
+        "p1": "Re:mind does not collect any personal data. No name, email address, phone number, or any other information about you is recorded, stored, or transmitted to third parties.",
+        "p2": "The application works exclusively locally on your device. All data (reminders, medical treatments) remain on your phone and are never transmitted to external servers.",
+        "p3": "The application also offers auto-renewable subscriptions. To manage these subscriptions, certain information may be collected, including identifiers linked to Apple App Store or Google Play platforms, without banking data being stored locally.",
+        "p4": "Subscription data is used solely for service management, billing, and fraud prevention.",
+        "p5": "You benefit from GDPR rights relating to this data, including access, rectification, and deletion via the relevant platforms.",
+        "p6": "Any change in subscription management will be subject to an update of this policy."
+      },
+      "3": {
+        "title": "3. Geolocation",
+        "p1": "The only data used is background geolocation, only if you enable the toll passage detection feature.",
+        "p2": "This geolocation:",
+        "list": [
+          "Is used only to create toll payment reminders",
+          "Never leaves your device",
+          "Is not stored or shared with third parties",
+          "Can be disabled at any time in the app or phone settings"
+        ]
+      },
+      "4": {
+        "title": "4. Third-Party Services",
+        "p1": "No third-party services (analytics, advertising, external API, push notifications) are currently integrated into the application.",
+        "p2": "If third-party services or advertising were added in the future, this privacy policy would be updated and displayed in the application."
+      },
+      "5": {
+        "title": "5. Your Rights (GDPR)",
+        "p1": "In accordance with the General Data Protection Regulation (GDPR), you have the following rights:",
+        "list": [
+          "Right of access to your personal data",
+          "Right of rectification",
+          "Right of deletion",
+          "Right of opposition",
+          "Right to portability"
+        ],
+        "p2": "However, these rights do not apply in the context of Re:mind because no personal data is collected, stored, or processed by the publisher, except for subscription management as described.",
+        "contact": "For any questions regarding your data, contact: "
+      },
+      "6": {
+        "title": "6. Retention Period",
+        "p1": "No data is retained by the publisher directly. All information created in the application (reminders, treatments) remains solely on your device until you delete it or uninstall the application.",
+        "p2": "Data related to subscriptions is retained according to the rules of the Apple and Google platforms."
+      },
+      "7": {
+        "title": "7. Modifications",
+        "content": "This privacy policy may be modified at any time. Modifications will be directly visible in the application. It is advisable to consult this page regularly."
+      },
+      "8": {
+        "title": "8. Applicable Law",
+        "content": "This policy is subject to French law."
+      }
+    }
+  }
+}

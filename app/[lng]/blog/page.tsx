@@ -2,83 +2,16 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-// --- Mock Data ---
-const ARTICLES = [
-  {
-    id: 1,
-    title: "Comprendre et réduire la charge mentale au quotidien",
-    excerpt:
-      "La charge mentale est ce poids invisible qui pèse sur nous lorsque nous devons penser à tout, tout le temps. Découvrez des stratégies concrètes pour l'alléger.",
-    category: "Bien-être",
-    date: "21 Nov 2024",
-    readTime: "5 min",
-    image: "🧠", // Using emoji as placeholder for now, can be replaced with real images
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "5 astuces pour ne plus jamais oublier ses médicaments",
-    excerpt:
-      "Entre les horaires décalés et les oublis, suivre un traitement peut être un défi. Voici nos meilleures astuces pour être régulier sans stress.",
-    category: "Santé",
-    date: "18 Nov 2024",
-    readTime: "3 min",
-    image: "💊",
-    featured: false,
-  },
-  {
-    id: 3,
-    title: "L'importance du sommeil sur votre mémoire",
-    excerpt:
-      "Bien dormir n'est pas un luxe, c'est une nécessité biologique pour consolider vos souvenirs et nettoyer votre cerveau des toxines.",
-    category: "Science",
-    date: "15 Nov 2024",
-    readTime: "7 min",
-    image: "🌙",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Digital Detox : reprendre le contrôle de son attention",
-    excerpt:
-      "Nos téléphones sont des machines à distraction. Apprenez à configurer vos notifications pour qu'elles vous servent au lieu de vous asservir.",
-    category: "Productivité",
-    date: "10 Nov 2024",
-    readTime: "4 min",
-    image: "📱",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Organiser sa vie de famille sans s'épuiser",
-    excerpt:
-      "Calendriers partagés, délégations, rituels : comment transformer le chaos familial en une mécanique bien huilée.",
-    category: "Organisation",
-    date: "05 Nov 2024",
-    readTime: "6 min",
-    image: "🏡",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Pourquoi écrire aide à penser plus clairement",
-    excerpt:
-      "Le journaling n'est pas réservé aux écrivains. C'est un outil puissant pour externaliser ses pensées et réduire l'anxiété.",
-    category: "Développement",
-    date: "01 Nov 2024",
-    readTime: "4 min",
-    image: "✍️",
-    featured: false,
-  },
-];
+import { useTranslation } from "@/app/i18n/client";
+import { use } from "react";
 
 // --- Components ---
 
-function BlogHeader() {
+function BlogHeader({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng);
   return (
     <header className="py-20 px-6 text-center relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-action/5 to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-b from-action/5 to-transparent" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -86,24 +19,21 @@ function BlogHeader() {
         className="max-w-3xl mx-auto"
       >
         <span className="text-primary bg-action py-2 px-3 rounded-full mx-auto w-fit font-bold tracking-wider uppercase text-sm mb-4 block">
-          Blog & Ressources
+          {t('blogPage.header.badge')}
         </span>
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-          Libérez votre esprit, <br />
-          <span className="text-secondary/80">une lecture à la fois.</span>
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6" dangerouslySetInnerHTML={{ __html: t('blogPage.header.title') }} />
         <p className="text-lg text-secondary leading-relaxed">
-          Explorez nos articles sur la santé mentale, l'organisation et le
-          bien-être. Des conseils pratiques pour une vie plus sereine.
+          {t('blogPage.header.subtitle')}
         </p>
       </motion.div>
     </header>
   );
 }
 
-function ArticleCard({ article, featured = false }: { article: any; featured?: boolean }) {
+function ArticleCard({ article, featured = false, lng }: { article: any; featured?: boolean; lng: string }) {
+  const { t } = useTranslation(lng);
   return (
-    <Link href={`/blog/${article.id}`} className="group block h-full">
+    <Link href={`/${lng}/blog/${article.id}`} className="group block h-full">
       <article
         className={`h-full flex ${
           featured ? "flex-col md:flex-row gap-8" : "flex-col gap-4"
@@ -111,7 +41,7 @@ function ArticleCard({ article, featured = false }: { article: any; featured?: b
       >
         {/* Image Placeholder */}
         <div
-          className={`shrink-0 flex items-center justify-center bg-gradient-to-br from-action/20 to-primary/5 rounded-2xl ${
+          className={`shrink-0 flex items-center justify-center bg-linear-to-br from-action/20 to-primary/5 rounded-2xl ${
             featured ? "w-full md:w-1/2 h-64 md:h-auto text-8xl" : "w-full h-48 text-6xl"
           }`}
         >
@@ -140,7 +70,7 @@ function ArticleCard({ article, featured = false }: { article: any; featured?: b
             {article.excerpt}
           </p>
           <div className="mt-auto flex items-center text-primary bg-action rounded-full w-fit py-2 px-3 font-semibold text-sm">
-            Lire l'article
+            {t('blogPage.cta.read')}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -160,13 +90,82 @@ function ArticleCard({ article, featured = false }: { article: any; featured?: b
   );
 }
 
-export default function BlogPage() {
+export default function BlogPage({ params }: { params: Promise<{ lng: string }> }) {
+  const { lng } = use(params);
+  const { t } = useTranslation(lng);
+
+  // --- Mock Data with Translations ---
+  // Note: In a real app, this would likely come from a CMS or be fully translated in JSON
+  // For now, we'll map the IDs to the translation keys we created
+  const ARTICLES = [
+    {
+      id: 1,
+      title: t('blogPage.articles.1.title'),
+      excerpt: t('blogPage.articles.1.excerpt'),
+      category: t('blogPage.articles.1.category'),
+      date: "21 Nov 2024",
+      readTime: "5 min",
+      image: "🧠",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: t('blogPage.articles.2.title'),
+      excerpt: t('blogPage.articles.2.excerpt'),
+      category: t('blogPage.articles.2.category'),
+      date: "18 Nov 2024",
+      readTime: "3 min",
+      image: "💊",
+      featured: false,
+    },
+    {
+      id: 3,
+      title: t('blogPage.articles.3.title'),
+      excerpt: t('blogPage.articles.3.excerpt'),
+      category: t('blogPage.articles.3.category'),
+      date: "15 Nov 2024",
+      readTime: "7 min",
+      image: "🌙",
+      featured: false,
+    },
+    {
+      id: 4,
+      title: t('blogPage.articles.4.title'),
+      excerpt: t('blogPage.articles.4.excerpt'),
+      category: t('blogPage.articles.4.category'),
+      date: "10 Nov 2024",
+      readTime: "4 min",
+      image: "📱",
+      featured: false,
+    },
+    {
+      id: 5,
+      title: t('blogPage.articles.5.title'),
+      excerpt: t('blogPage.articles.5.excerpt'),
+      category: t('blogPage.articles.5.category'),
+      date: "05 Nov 2024",
+      readTime: "6 min",
+      image: "🏡",
+      featured: false,
+    },
+    {
+      id: 6,
+      title: t('blogPage.articles.6.title'),
+      excerpt: t('blogPage.articles.6.excerpt'),
+      category: t('blogPage.articles.6.category'),
+      date: "01 Nov 2024",
+      readTime: "4 min",
+      image: "✍️",
+      featured: false,
+    },
+  ];
+
   const featuredArticle = ARTICLES.find((a) => a.featured);
   const otherArticles = ARTICLES.filter((a) => !a.featured);
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <BlogHeader />
+      <BlogHeader lng={lng} />
 
       <main className="max-w-7xl mx-auto px-6">
         {/* Featured Article */}
@@ -177,7 +176,7 @@ export default function BlogPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-16"
           >
-            <ArticleCard article={featuredArticle} featured />
+            <ArticleCard article={featuredArticle} featured lng={lng} />
           </motion.section>
         )}
 
@@ -190,7 +189,7 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
             >
-              <ArticleCard article={article} />
+              <ArticleCard article={article} lng={lng} />
             </motion.div>
           ))}
         </section>
@@ -203,10 +202,10 @@ export default function BlogPage() {
             className="mt-20 bg-primary text-white rounded-3xl p-10 text-center relative overflow-hidden"
         >
             <div className="relative z-10 max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold mb-4">Prêt à alléger votre charge mentale ?</h2>
-                <p className="text-white/80 mb-8">Rejoignez les milliers d'utilisateurs qui ont déjà choisi la sérénité. Téléchargez Re:mind dès maintenant.</p>
-                <Link href="/" className="inline-block px-8 py-4 rounded-xl bg-action text-primary font-bold hover:bg-white transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200">
-                    Télécharger l'application
+                <h2 className="text-3xl font-bold mb-4">{t('blogPage.cta.download.title')}</h2>
+                <p className="text-white/80 mb-8">{t('blogPage.cta.download.subtitle')}</p>
+                <Link href={`/${lng}`} className="inline-block px-8 py-4 rounded-xl bg-action text-primary font-bold hover:bg-white transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200">
+                    {t('blogPage.cta.download.button')}
                 </Link>
             </div>
         </motion.section>
