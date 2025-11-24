@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Metadata } from "next";
 import { useTranslation } from "../i18n/server";
 
-export async function generateMetadata({ params }: { params: { lng: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await useTranslation(lng, 'translation');
   return {
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { lng: string } }):
   };
 }
 
-export default async function Home({ params }: { params: { lng: string } }) {
+export default async function Home({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
 

@@ -23,7 +23,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lng: string };
+  params: Promise<{ lng: string }>;
 }) {
   const { lng } = await params;
   const { t } = await useTranslation(lng);

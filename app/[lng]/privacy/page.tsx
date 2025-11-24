@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n/server";
 
-export async function generateMetadata({ params }: { params: { lng: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
   return {
@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { lng: string } }):
   };
 }
 
-export default async function PrivacyPage({ params }: { params: { lng: string } }) {
+export default async function PrivacyPage({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
 
