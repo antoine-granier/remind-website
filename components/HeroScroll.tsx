@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import FloatingWidget, { WidgetType } from "./FloatingWidget";
@@ -27,38 +27,57 @@ export default function HeroScroll({ lng }: { lng: string }) {
     offset: ["start start", "end start"],
   });
 
+  // Détection automatique de la performance de la machine
+  // Basé sur le nombre de cœurs CPU (deviceMemory est peu fiable et limité par la vie privée)
+  const isLowPerformance =
+    typeof navigator !== "undefined" &&
+    navigator.hardwareConcurrency &&
+    navigator.hardwareConcurrency <= 6;
+
+  // Lissage du scroll avec paramètres adaptatifs selon la performance
+  const scrollYProgressSpring = useSpring(scrollYProgress, {
+    stiffness: isLowPerformance ? 250 : 200,
+    damping: isLowPerformance ? 40 : 30,
+    restDelta: 0.001,
+  });
+
   // Phase 1: Les cercles partent de leur position initiale en spirale et s'alignent (0 -> 0.3)
-  const circle1X = useTransform(scrollYProgress, [0, 0.3], [-50, 0]);
-  const circle1Y = useTransform(scrollYProgress, [0, 0.3], [-50, 0]);
+  const circle1X = useTransform(scrollYProgressSpring, [0, 0.3], [-50, 0]);
+  const circle1Y = useTransform(scrollYProgressSpring, [0, 0.3], [-50, 0]);
 
-  const circle2X = useTransform(scrollYProgress, [0, 0.3], [-15, 0]);
-  const circle2Y = useTransform(scrollYProgress, [0, 0.3], [-15, 0]);
+  const circle2X = useTransform(scrollYProgressSpring, [0, 0.3], [-15, 0]);
+  const circle2Y = useTransform(scrollYProgressSpring, [0, 0.3], [-15, 0]);
 
-  const circle3X = useTransform(scrollYProgress, [0, 0.3], [25, 0]);
-  const circle3Y = useTransform(scrollYProgress, [0, 0.3], [25, 0]);
+  const circle3X = useTransform(scrollYProgressSpring, [0, 0.3], [25, 0]);
+  const circle3Y = useTransform(scrollYProgressSpring, [0, 0.3], [25, 0]);
 
   // Phase 2: Zoom massif à travers les cercles (0.3 -> 0.8)
-  const circle1Scale = useTransform(scrollYProgress, [0.3, 0.8], [1, 60]);
-  const circle2Scale = useTransform(scrollYProgress, [0.3, 0.8], [1, 70]);
-  const circle3Scale = useTransform(scrollYProgress, [0.3, 0.8], [1, 80]);
+  const circle1Scale = useTransform(scrollYProgressSpring, [0.3, 0.8], [1, 60]);
+  const circle2Scale = useTransform(scrollYProgressSpring, [0.3, 0.8], [1, 70]);
+  const circle3Scale = useTransform(scrollYProgressSpring, [0.3, 0.8], [1, 80]);
 
   // Opacité des cercles pendant le zoom
-  const circlesOpacity = useTransform(scrollYProgress, [0.65, 0.8], [1, 0]);
+  const circlesOpacity = useTransform(scrollYProgressSpring, [0.65, 0.8], [1, 0]);
 
   // Texte "Re:mind" qui remonte, rétrécit et disparaît
-  const textY = useTransform(scrollYProgress, [0, 0.25, 0.4], [0, -220, -220]);
-  const textScale = useTransform(scrollYProgress, [0.25, 0.45], [1, 0.2]);
-  const textOpacity = useTransform(scrollYProgress, [0.25, 0.45], [1, 0]);
+  const textY = useTransform(scrollYProgressSpring, [0, 0.25, 0.4], [0, -220, -220]);
+  const textScale = useTransform(scrollYProgressSpring, [0.25, 0.45], [1, 0.2]);
+  const textOpacity = useTransform(scrollYProgressSpring, [0.25, 0.45], [1, 0]);
 
   // Opacité des widgets - disparaissent dès le début du scroll
-  const widgetsOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const widgetsOpacity = useTransform(scrollYProgressSpring, [0, 0.15], [1, 0]);
 
   // Opacité des boutons de téléchargement - disparaissent avec le texte
-  const buttonsOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const buttonsOpacity = useTransform(scrollYProgressSpring, [0, 0.2], [1, 0]);
 
   // Phase 3: Contenu qui apparaît après la disparition du texte
-  const contentOpacity = useTransform(scrollYProgress, [0.45, 0.65], [0, 1]);
-  const contentScale = useTransform(scrollYProgress, [0.45, 0.7], [0.5, 1]);
+  const contentOpacity = useTransform(scrollYProgressSpring, [0.45, 0.65], [0, 1]);
+  // Scale uniquement sur machines performantes pour éviter le lag
+  const contentScale = useTransform(
+    scrollYProgressSpring,
+    [0.45, 0.65],
+    isLowPerformance ? [1, 1] : [0.60, 1]
+  );
 
   // Données des widgets avec leurs positions (State pour l'interactivité)
   const [widgets, setWidgets] = useState<
@@ -369,12 +388,12 @@ export default function HeroScroll({ lng }: { lng: string }) {
             scale: contentScale,
             willChange: "opacity, transform",
           }}
-          className="absolute z-0 flex flex-col items-center px-6 w-full"
+          className="absolute z-0 flex flex-col items-center px-6 w-full transform-gpu backface-hidden"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-center mb-4 text-primary">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-center mb-4 text-primary will-change-transform backface-hidden contain-paint">
             {t('components.heroScroll.content.title')}
           </h1>
-          <p className="text-lg md:text-xl text-secondary text-center max-w-2xl mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-secondary text-center max-w-2xl mb-8 leading-relaxed backface-hidden">
             {t('components.heroScroll.content.description')}
           </p>
           <a
@@ -501,3 +520,4 @@ export default function HeroScroll({ lng }: { lng: string }) {
     </div>
   );
 }
+
