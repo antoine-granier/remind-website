@@ -48,7 +48,7 @@ export default async function RootLayout({
           <ScrollToTop />
 
           {/* FOOTER */}
-          <footer className="w-full py-8 bg-primary text-background2 flex flex-col items-center text-center gap-3">
+          <footer className="w-full py-8 bg-primary text-background2 flex flex-col items-center text-center gap-4">
             <div>
               <Image
                 src="/favicon.png"
@@ -58,29 +58,29 @@ export default async function RootLayout({
                 className="inline-block rounded-full"
               />
             </div>
-            <div className="text-sm tracking-wide">
+            <div className="text-sm tracking-wide px-4">
               {t('footer.copyright', { year: new Date().getFullYear() })}
             </div>
-            <div className="flex gap-4 items-center text-sm font-medium">
+            <nav className="flex flex-wrap gap-x-4 gap-y-2 items-center justify-center text-sm font-medium px-4 max-w-md">
               <a
                 href="mailto:contact@remind.com"
-                className="text-action hover:underline"
+                className="text-action hover:underline whitespace-nowrap"
               >
                 {t('footer.contact')}
               </a>
-              <span className="text-background2">•</span>
-              <Link href={`/${lng}/faq`} className="text-action hover:underline">
+              <span className="text-background2 hidden sm:inline">•</span>
+              <Link href={`/${lng}/faq`} className="text-action hover:underline whitespace-nowrap">
                 {t('footer.faq')}
               </Link>
-              <span className="text-background2">•</span>
-              <Link href={`/${lng}/privacy`} className="text-action hover:underline">
+              <span className="text-background2 hidden sm:inline">•</span>
+              <Link href={`/${lng}/privacy`} className="text-action hover:underline whitespace-nowrap">
                 {t('footer.privacy')}
               </Link>
-              <span className="text-background2">•</span>
-              <Link href={`/${lng}/terms`} className="text-action hover:underline">
+              <span className="text-background2 hidden sm:inline">•</span>
+              <Link href={`/${lng}/terms`} className="text-action hover:underline whitespace-nowrap">
                 {t('footer.terms')}
               </Link>
-            </div>
+            </nav>
             <LanguageSwitcher lng={lng} />
           </footer>
         </Providers>

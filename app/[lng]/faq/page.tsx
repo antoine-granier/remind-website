@@ -1,13 +1,39 @@
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n/server";
-import ScrollReveal from "@/components/ScrollReveal";
+import FAQContent from "./FAQContent";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
+  
+  const title = `${t('faq.title')} - Re:mind`;
+  const description = lng === 'fr' 
+    ? 'Toutes les réponses à vos questions sur Re:mind : confidentialité, plateformes, fonctionnalités et plus encore.'
+    : 'All the answers to your questions about Re:mind: privacy, platforms, features and more.';
+
   return {
-    title: `${t('faq.title')} - Re:mind`,
-    description: t('faq.title'),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://re-mind.app/${lng}/faq`,
+      siteName: 'Re:mind',
+      locale: lng === 'fr' ? 'fr_FR' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `https://re-mind.app/${lng}/faq`,
+      languages: {
+        'fr': 'https://re-mind.app/fr/faq',
+        'en': 'https://re-mind.app/en/faq',
+      },
+    },
   };
 }
 
@@ -15,56 +41,54 @@ export default async function FAQPage({ params }: { params: Promise<{ lng: strin
   const { lng } = await params;
   const { t } = await useTranslation(lng);
 
+  // Structured data for SEO (FAQ Schema)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": t('faq.q1'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a1')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q2'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a2')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q3'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a3')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q4'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.a4')
+        }
+      }
+    ]
+  };
+
   return (
-    <main className="min-h-screen bg-background text-primary">
-      {/* FAQ Section */}
-      <section className="w-full py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <ScrollReveal key={`${lng}-faq-title`}> 
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
-              {t('faq.title')}
-            </h2>
-          </ScrollReveal>
-          <div className="space-y-6">
-            {/* Question 1 */}
-            <ScrollReveal key={`${lng}-faq-1`} delay={0.1}>
-              <div className="bg-background rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-primary mb-2">
-                  {t('faq.q1')}
-                </h3>
-                <p className="text-secondary">{t('faq.a1')}</p>
-              </div>
-            </ScrollReveal>
-            {/* Question 2 */}
-            <ScrollReveal key={`${lng}-faq-2`} delay={0.2}>
-              <div className="bg-background rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-primary mb-2">
-                  {t('faq.q2')}
-                </h3>
-                <p className="text-secondary">{t('faq.a2')}</p>
-              </div>
-            </ScrollReveal>
-            {/* Question 3 */}
-            <ScrollReveal key={`${lng}-faq-3`} delay={0.3}>
-              <div className="bg-background rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-primary mb-2">
-                  {t('faq.q3')}
-                </h3>
-                <p className="text-secondary">{t('faq.a3')}</p>
-              </div>
-            </ScrollReveal>
-            {/* Question 4 */}
-            <ScrollReveal key={`${lng}-faq-4`} delay={0.4}>
-              <div className="bg-background rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-primary mb-2">
-                  {t('faq.q4')}
-                </h3>
-                <p className="text-secondary">{t('faq.a4')}</p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <FAQContent lng={lng} />
+    </>
   );
 }
