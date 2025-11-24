@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "../app/i18n/client";
+import NavbarLanguageSwitcher from "./NavbarLanguageSwitcher";
 
 export const Navbar = ({ lng }: { lng: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,6 +71,9 @@ export const Navbar = ({ lng }: { lng: string }) => {
             >
               {t('nav.download')}
             </a>
+          </li>
+          <li>
+            <NavbarLanguageSwitcher lng={lng} />
           </li>
         </ul>
 
@@ -146,6 +150,11 @@ export const Navbar = ({ lng }: { lng: string }) => {
             >
               {t('nav.download')}
             </a>
+          </li>
+          <li>
+            <div className="py-3 px-4">
+              <NavbarLanguageSwitcher lng={lng} />
+            </div>
           </li>
         </ul>
       </motion.div>
