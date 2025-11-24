@@ -194,15 +194,28 @@
   },
   "nav": {
     "why": "Pourquoi ?",
+    "compare": "Comparer",
     "blog": "Blog",
     "pricing": "Tarifs",
     "download": "Téléchargement"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "q1": "Comment Re:mind protège‑t‑il mes données ?",
+    "a1": "Re:mind stocke tout localement sur votre appareil. Aucun cloud, aucun compte, aucune trace. Vos rappels de médicaments, tâches et notes restent uniquement sur votre téléphone.",
+    "q2": "Puis‑je utiliser Re:mind avec Apple Reminders ou Google Tasks ?",
+    "a2": "Bien sûr. Re:mind est un outil complémentaire : vous pouvez garder vos listes courses dans Apple Reminders et utiliser Re:mind pour les rappels santé, péages, abonnements, etc.",
+    "q3": "Sur quelles plateformes Re:mind fonctionne‑t‑il ?",
+    "a3": "iOS et Android, avec le même design responsive qui s’adapte aux téléphones et tablettes.",
+    "q4": "Faut‑il une connexion internet ?",
+    "a4": "Non. Toutes les fonctions fonctionnent hors‑ligne. Internet n’est requis que pour télécharger l’application ou vérifier les mises à jour."
   },
   "footer": {
     "copyright": "En développement — Re:mind © {{year}}",
     "contact": "Contactez-nous",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation"
+    "terms": "Conditions d'utilisation",
+    "faq": "FAQ"
   },
   "components": {
     "floatingWidget": {
@@ -672,6 +685,75 @@
         "content": "Pour toute question relative aux CGU ou abonnements, contactez : ",
         "email": "antoine.granier@protonmail.com"
       }
+    }
+  },
+  "comparePage": {
+    "title": "Pourquoi choisir Re:mind ?",
+    "subtitle": "Découvrez comment Re:mind se distingue des applications de rappels classiques.",
+    "table": {
+      "features": "Fonctionnalités",
+      "remind": "Re:mind",
+      "apple": "Apple Rappels",
+      "google": "Google Tasks",
+      "rows": {
+        "medication": {
+          "title": "Gestion des médicaments",
+          "remind": "Avancée (Doses, Stock)",
+          "apple": "Basique",
+          "google": "Non"
+        },
+        "toll": {
+          "title": "Rappel de péage (Géoloc)",
+          "remind": "Oui (Automatique)",
+          "apple": "Non",
+          "google": "Non"
+        },
+        "privacy": {
+          "title": "Confidentialité",
+          "remind": "100% Local",
+          "apple": "Cloud (Chiffré)",
+          "google": "Collecte de données"
+        },
+        "platform": {
+          "title": "Multiplateforme",
+          "remind": "iOS & Android",
+          "apple": "Apple uniquement",
+          "google": "Oui"
+        },
+        "customization": {
+          "title": "Personnalisation",
+          "remind": "Avancée",
+          "apple": "Moyenne",
+          "google": "Faible"
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à passer à la vitesse supérieure ?",
+      "button": "Télécharger Re:mind"
+    },
+    "details": {
+      "health": {
+        "title": "Santé & Traitements",
+        "desc": "Les rappels classiques ne suffisent pas pour la santé. Re:mind gère les stocks, les doses variables et les cycles de renouvellement. C'est un véritable assistant médical de poche."
+      },
+      "privacy": {
+        "title": "Confidentialité Totale",
+        "desc": "Contrairement aux géants de la tech, nous ne voulons pas de vos données. Tout reste sur votre téléphone. Pas de cloud, pas de compte obligatoire, pas de tracking."
+      },
+      "mentalLoad": {
+        "title": "Charge Mentale",
+        "desc": "Re:mind est conçu pour décharger votre cerveau. Péages, abonnements, tâches ménagères... L'application anticipe pour vous grâce à des fonctionnalités intelligentes."
+      }
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "q1": "Puis-je utiliser Re:mind en plus d'Apple Rappels ?",
+      "a1": "Absolument ! Beaucoup d'utilisateurs gardent Apple Rappels pour les listes de courses simples et utilisent Re:mind pour les choses importantes (santé, factures, administratif).",
+      "q2": "Est-ce difficile de changer d'application ?",
+      "a2": "Non, l'interface de Re:mind est conçue pour être familière et intuitive. Vous serez à l'aise en quelques secondes.",
+      "q3": "Pourquoi payer pour des rappels ?",
+      "a3": "Parce que c'est plus que des rappels. C'est de la sérénité. La gestion des stocks de médicaments ou l'évitement d'une amende de péage rentabilise l'application immédiatement."
     }
   }
 }

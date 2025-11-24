@@ -44,6 +44,16 @@ export const Navbar = ({ lng }: { lng: string }) => {
           </li>
           <li>
             <Link
+              href={`/${lng}/compare`}
+              className="relative text-primary transition-colors duration-300
+                after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
+                after:bg-action after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {t('nav.compare')}
+            </Link>
+          </li>
+          <li>
+            <Link
               href={`/${lng}/blog`}
               className="relative text-primary transition-colors duration-300
                 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
@@ -120,6 +130,16 @@ export const Navbar = ({ lng }: { lng: string }) => {
             >
               {t('nav.why')}
             </a>
+          </li>
+          <li>
+            <Link
+              href={`/${lng}/compare`}
+              className="text-primary hover:bg-action/5 transition-all duration-200
+                block py-3 px-4 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.compare')}
+            </Link>
           </li>
           <li>
             <Link

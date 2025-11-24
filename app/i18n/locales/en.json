@@ -194,15 +194,28 @@
   },
   "nav": {
     "why": "Why?",
+    "compare": "Compare",
     "blog": "Blog",
     "pricing": "Pricing",
     "download": "Download"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How does Re:mind keep my data private?",
+    "a1": "Re:mind stores everything locally on your device. No cloud sync, no accounts, and no tracking. Your medication schedules, reminders, and personal notes never leave your phone.",
+    "q2": "Can I use Re:mind together with Apple Reminders or Google Tasks?",
+    "a2": "Absolutely. Re:mind is a complementary tool – you can keep your shopping lists in Apple Reminders and still use Re:mind for health‑related reminders, tolls, subscriptions, etc.",
+    "q3": "What platforms does Re:mind support?",
+    "a3": "It runs natively on iOS and Android. The UI is identical on both, with a responsive design that adapts to tablets and phones.",
+    "q4": "Do I need an internet connection?",
+    "a4": "No. All features work offline. An internet connection is only needed to download the app or to check for updates."
   },
   "footer": {
     "copyright": "In development — Re:mind © {{year}}",
     "contact": "Contact Us",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "terms": "Terms of Use",
+    "faq": "FAQ"
   },
   "components": {
     "floatingWidget": {
@@ -672,6 +685,75 @@
         "content": "For any questions regarding the TOS or subscriptions, contact: ",
         "email": "antoine.granier@protonmail.com"
       }
+    }
+  },
+  "comparePage": {
+    "title": "Why Choose Re:mind?",
+    "subtitle": "Discover how Re:mind stands out from classic reminder apps.",
+    "table": {
+      "features": "Features",
+      "remind": "Re:mind",
+      "apple": "Apple Reminders",
+      "google": "Google Tasks",
+      "rows": {
+        "medication": {
+          "title": "Medication Management",
+          "remind": "Advanced (Doses, Stock)",
+          "apple": "Basic",
+          "google": "No"
+        },
+        "toll": {
+          "title": "Toll Reminder (Geoloc)",
+          "remind": "Yes (Automatic)",
+          "apple": "No",
+          "google": "No"
+        },
+        "privacy": {
+          "title": "Privacy",
+          "remind": "100% Local",
+          "apple": "Cloud (Encrypted)",
+          "google": "Data Collection"
+        },
+        "platform": {
+          "title": "Cross-platform",
+          "remind": "iOS & Android",
+          "apple": "Apple only",
+          "google": "Yes"
+        },
+        "customization": {
+          "title": "Customization",
+          "remind": "Advanced",
+          "apple": "Medium",
+          "google": "Low"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to upgrade your reminders?",
+      "button": "Download Re:mind"
+    },
+    "details": {
+      "health": {
+        "title": "Health & Treatments",
+        "desc": "Classic reminders aren't enough for health. Re:mind manages stocks, variable doses, and renewal cycles. It's a true pocket medical assistant."
+      },
+      "privacy": {
+        "title": "Total Privacy",
+        "desc": "Unlike tech giants, we don't want your data. Everything stays on your phone. No cloud, no mandatory account, no tracking."
+      },
+      "mentalLoad": {
+        "title": "Mental Load",
+        "desc": "Re:mind is designed to unload your brain. Tolls, subscriptions, household chores... The app anticipates for you thanks to smart features."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Can I use Re:mind alongside Apple Reminders?",
+      "a1": "Absolutely! Many users keep Apple Reminders for simple grocery lists and use Re:mind for important things (health, bills, admin).",
+      "q2": "Is it hard to switch apps?",
+      "a2": "No, Re:mind's interface is designed to be familiar and intuitive. You'll be comfortable in seconds.",
+      "q3": "Why pay for reminders?",
+      "a3": "Because it's more than reminders. It's peace of mind. Managing medication stocks or avoiding a toll fine pays for the app immediately."
     }
   }
 }

@@ -69,6 +69,10 @@ export default async function RootLayout({
                 {t('footer.contact')}
               </a>
               <span className="text-background2">•</span>
+              <Link href={`/${lng}/faq`} className="text-action hover:underline">
+                {t('footer.faq')}
+              </Link>
+              <span className="text-background2">•</span>
               <Link href={`/${lng}/privacy`} className="text-action hover:underline">
                 {t('footer.privacy')}
               </Link>

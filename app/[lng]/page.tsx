@@ -74,13 +74,13 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
         id="discover"
         className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden"
       >
-        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-discover-img`} direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0800.png" alt="Dashboard Re:mind" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-discover-text`} direction="right" className="flex-1 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             {t('hero.title_prefix')}<span className="italic text-action">{t('hero.title_highlight')}</span>
           </h2>
@@ -112,13 +112,13 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* PLANIFIEZ FACILEMENT - Avec mockup du planificateur */}
       <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6 overflow-hidden">
-        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-planning-img`} direction="right" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0801.png" alt="Planificateur Re:mind" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-planning-text`} direction="left" className="flex-1 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             {t('planning.title_prefix')}
             <span className="italic text-action">{t('planning.title_highlight')}</span>
@@ -153,13 +153,13 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* GESTION DES MÉDICAMENTS - Avec mockup */}
       <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden">
-        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-medication-img`} direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0802.png" alt="Gestion des médicaments" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-medication-text`} direction="right" className="flex-1 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             {t('medication.title_prefix')}
             <span className="italic text-action">{t('medication.title_highlight')}</span>
@@ -192,13 +192,13 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* CRÉATION FACILE - Avec mockup nouveau rappel */}
       <section className="w-full py-20 bg-background flex flex-col lg:flex-row-reverse items-center justify-center gap-12 px-6 overflow-hidden">
-        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-creation-img`} direction="right" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0803.png" alt="Créer un rappel" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-creation-text`} direction="left" className="flex-1 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             {t('creation.title_prefix')}
             <span className="italic text-action">{t('creation.title_highlight')}</span>
@@ -236,13 +236,13 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* PERSONNALISATION - Avec mockup paramètres */}
       <section className="w-full py-20 bg-background2 flex flex-col lg:flex-row items-center justify-center gap-12 px-6 overflow-hidden">
-        <ScrollReveal direction="left" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-custom-img`} direction="left" className="flex-1 max-w-xl">
           <div className="relative w-full max-w-[300px] mx-auto">
             <IPhoneMockup src="/IMG_0804.png" alt="Paramètres Re:mind" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="right" className="flex-1 max-w-xl">
+        <ScrollReveal key={`${lng}-custom-text`} direction="right" className="flex-1 max-w-xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             {t('customization.title_prefix')}
             <span className="italic text-action">{t('customization.title_highlight')}</span>
@@ -286,14 +286,14 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* TYPES DE RAPPELS - BENTO ENRICHI */}
       <section className="w-full py-24 bg-background flex flex-col items-center px-6 overflow-hidden">
-        <ScrollReveal>
+        <ScrollReveal key={`${lng}-bento-title`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary text-center">
             {t('bento.title_prefix')}
             <span className="italic text-action">{t('bento.title_highlight')}</span>
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
+        <ScrollReveal key={`${lng}-bento-sub`} delay={0.1}>
           <p className="text-secondary text-center mb-16 text-lg max-w-2xl">
             {t('bento.subtitle')}
           </p>
@@ -301,7 +301,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 max-w-6xl w-full">
           {/* Card 1 - Large */}
-          <ScrollReveal delay={0.2} className="md:col-span-4">
+          <ScrollReveal key={`${lng}-bento-1`} delay={0.2} className="md:col-span-4">
             <EnrichedBentoCard
               title={t('bento.unique.title')}
               icon="⏰"
@@ -314,7 +314,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
           </ScrollReveal>
 
           {/* Card 2 - Small */}
-          <ScrollReveal delay={0.3} className="md:col-span-2">
+          <ScrollReveal key={`${lng}-bento-2`} delay={0.3} className="md:col-span-2">
             <EnrichedBentoCard
               title={t('bento.daily.title')}
               icon="🌞"
@@ -327,7 +327,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
           </ScrollReveal>
 
           {/* Card 3 - Medium */}
-          <ScrollReveal delay={0.4} className="md:col-span-3">
+          <ScrollReveal key={`${lng}-bento-3`} delay={0.4} className="md:col-span-3">
             <EnrichedBentoCard
               title={t('bento.weekly.title')}
               icon="📆"
@@ -340,7 +340,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
           </ScrollReveal>
 
           {/* Info Card */}
-          <ScrollReveal delay={0.5} className="md:col-span-3">
+          <ScrollReveal key={`${lng}-bento-info`} delay={0.5} className="md:col-span-3">
             <div className="h-full bg-linear-to-br from-action/5 to-primary/5 border-2 border-action/20 rounded-3xl p-8 flex flex-col items-center justify-center text-center gap-4 hover:border-action/40 transition-all duration-300 group cursor-pointer">
               <div className="text-4xl mb-2">✨</div>
               <h3 className="text-xl font-bold text-primary">
@@ -359,7 +359,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* CONFIDENTIALITÉ ET DONNÉES */}
       <section className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6 overflow-hidden">
-        <ScrollReveal>
+        <ScrollReveal key={`${lng}-privacy-title`}>
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
               {t('privacy.badge')}
@@ -369,54 +369,6 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
             </h2>
             <p className="text-secondary text-lg leading-relaxed mb-12">
               {t('privacy.subtitle')}
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
-          <ScrollReveal delay={0.1}>
-            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl">🔒</span>
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.noCollection.title')}</h3>
-              <p className="text-secondary leading-relaxed">
-                {t('privacy.cards.noCollection.desc')}
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.2}>
-            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl">📱</span>
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.localStorage.title')}</h3>
-              <p className="text-secondary leading-relaxed">
-                {t('privacy.cards.localStorage.desc')}
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.3}>
-            <div className="bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-action/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl">🛡️</span>
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{t('privacy.cards.noResale.title')}</h3>
-              <p className="text-secondary leading-relaxed">
-                {t('privacy.cards.noResale.desc')}
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-
-        <ScrollReveal delay={0.4}>
-          <div className="max-w-3xl mx-auto mt-8 bg-linear-to-br from-action/10 to-primary/5 border-2 border-action/20 rounded-2xl p-6 text-center">
-            <p className="text-primary font-semibold text-lg mb-2">
-              {t('privacy.ethical.title')}
-            </p>
-            <p className="text-secondary">
               {t('privacy.ethical.desc')}
             </p>
           </div>
@@ -425,7 +377,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* CTA BLOG */}
       <section className="w-full py-20 bg-linear-to-br from-action/5 to-primary/5 flex flex-col items-center gap-6 px-6 overflow-hidden">
-        <ScrollReveal>
+        <ScrollReveal key={`${lng}-blog`}>
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
               {t('blog.badge')}
@@ -455,7 +407,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
 
       {/* CTA TARIFS */}
       <section className="w-full py-20 bg-background flex flex-col items-center gap-6 px-6 overflow-hidden">
-        <ScrollReveal>
+        <ScrollReveal key={`${lng}-pricing`}>
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary bg-action rounded-full px-3 py-2 w-fit font-bold tracking-wider uppercase text-sm mb-4 block mx-auto">
               {t('pricing.badge')}
@@ -501,19 +453,19 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
         id="launch"
         className="w-full py-20 bg-background2 flex flex-col items-center gap-8 px-6 overflow-hidden"
       >
-        <ScrollReveal>
+        <ScrollReveal key={`${lng}-launch-title`}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary text-center">
             {t('launch.title')}
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal key={`${lng}-launch-sub`} delay={0.2}>
           <p className="text-secondary text-center max-w-2xl text-lg leading-relaxed">
             {t('launch.subtitle')}
           </p>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.4}>
+        <ScrollReveal key={`${lng}-launch-stores`} delay={0.4}>
           <div className="flex flex-col sm:flex-row gap-6 items-center mt-4">
             <div className="flex items-center gap-3 px-8 py-4 bg-background border-2 border-action rounded-xl">
               <svg
@@ -551,7 +503,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.6}>
+        <ScrollReveal key={`${lng}-launch-final`} delay={0.6}>
           <p className="text-primary font-semibold text-lg mt-4">
             {t('launch.stayTuned')}
           </p>
