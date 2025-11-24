@@ -72,6 +72,10 @@ export default async function RootLayout({
               <Link href={`/${lng}/privacy`} className="text-action hover:underline">
                 {t('footer.privacy')}
               </Link>
+              <span className="text-background2">•</span>
+              <Link href={`/${lng}/terms`} className="text-action hover:underline">
+                {t('footer.terms')}
+              </Link>
             </div>
             <LanguageSwitcher lng={lng} />
           </footer>

@@ -201,7 +201,8 @@
   "footer": {
     "copyright": "En développement — Re:mind © {{year}}",
     "contact": "Contactez-nous",
-    "privacy": "Politique de confidentialité"
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
   },
   "components": {
     "floatingWidget": {
@@ -601,6 +602,75 @@
       "8": {
         "title": "8. Droit applicable",
         "content": "La présente politique est soumise au droit français."
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Conditions Générales d'Utilisation",
+    "lastUpdate": "Dernière mise à jour : Novembre 2025",
+    "sections": {
+      "1": {
+        "title": "1. Objet",
+        "content": "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de l'application mobile Re:mind, éditée par Antoine Granier. En téléchargeant et en utilisant l'application, vous acceptez sans réserve les présentes CGU."
+      },
+      "2": {
+        "title": "2. Description des services",
+        "content": "Re:mind offre des fonctionnalités gratuites de gestion de rappels ainsi que des abonnements payants à renouvellement automatique comprenant plusieurs plans tarifaires. Les principales fonctionnalités comprennent :",
+        "list": [
+          "Création de rappels uniques, quotidiens ou hebdomadaires",
+          "Gestion de traitements médicaux avec rappels associés",
+          "Détection de passage au péage pour créer automatiquement un rappel de paiement (nécessite l'activation de la géolocalisation)"
+        ]
+      },
+      "3": {
+        "title": "3. Accès à l'application",
+        "content": "L'application est accessible gratuitement sur Android et iOS via Google Play Store et Apple App Store. Les abonnements payants sont gérés exclusivement via les stores Apple et Google avec renouvellement automatique. Aucun paiement direct n’est pris par l’application. Aucun compte utilisateur n’est requis pour accéder aux fonctionnalités gratuites."
+      },
+      "4": {
+        "title": "4. Responsabilité",
+        "content": "L'éditeur met tout en œuvre pour assurer le bon fonctionnement de l'application, mais ne peut garantir :",
+        "list1": [
+          "L'absence totale de bugs ou dysfonctionnements",
+          "La compatibilité avec tous les appareils",
+          "Le déclenchement systématique des rappels en cas de problème système"
+        ],
+        "content2": "L'utilisateur utilise l'application sous sa propre responsabilité. L'éditeur ne saurait être tenu responsable :",
+        "list2": [
+          "Des oublis de rappels ou de prise de médicaments",
+          "De tout dommage direct ou indirect lié à l'utilisation de l'application",
+          "De la perte de données en cas de désinstallation ou de dysfonctionnement de l'appareil"
+        ]
+      },
+      "5": {
+        "title": "5. Propriété intellectuelle",
+        "content": "L'application Re:mind, son code source, son design, ses icônes et tous les éléments qui la composent sont la propriété exclusive d'Antoine Granier. Toute reproduction, distribution, modification ou utilisation non autorisée est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle français."
+      },
+      "6": {
+        "title": "6. Évolutions futures",
+        "content": "L'éditeur se réserve le droit d'ajouter à l'avenir :",
+        "list": [
+          "De la publicité",
+          "Des fonctionnalités payantes ou un abonnement premium",
+          "Des achats intégrés"
+        ],
+        "content2": "Les utilisateurs en seront informés via une mise à jour des présentes CGU directement visible dans l'application."
+      },
+      "7": {
+        "title": "7. Modifications des CGU",
+        "content": "Les présentes CGU peuvent être modifiées à tout moment. Les nouvelles conditions seront directement consultables dans l'application. Il appartient à l'utilisateur de consulter régulièrement cette page."
+      },
+      "8": {
+        "title": "8. Droit applicable et juridiction",
+        "content": "Les présentes CGU sont régies par le droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents."
+      },
+      "9": {
+        "title": "9. Abonnements",
+        "content": "Les abonnements proposés dans l'application sont à renouvellement automatique et gérés via Apple App Store ou Google Play Store. Le renouvellement, l'annulation et la gestion des abonnements doivent être effectués par l'utilisateur via ces plateformes. L'éditeur n’intervient pas dans la facturation. Les abonnés seront informés des modifications tarifaires ou des services liés à leur abonnement via une mise à jour des CGU."
+      },
+      "10": {
+        "title": "10. Contact",
+        "content": "Pour toute question relative aux CGU ou abonnements, contactez : ",
+        "email": "antoine.granier@protonmail.com"
       }
     }
   }

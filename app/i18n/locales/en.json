@@ -201,7 +201,8 @@
   "footer": {
     "copyright": "In development — Re:mind © {{year}}",
     "contact": "Contact Us",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
   },
   "components": {
     "floatingWidget": {
@@ -601,6 +602,75 @@
       "8": {
         "title": "8. Applicable Law",
         "content": "This policy is subject to French law."
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdate": "Last updated: November 2025",
+    "sections": {
+      "1": {
+        "title": "1. Purpose",
+        "content": "These Terms of Service (TOS) govern the use of the Re:mind mobile application, published by Antoine Granier. By downloading and using the application, you unconditionally accept these TOS."
+      },
+      "2": {
+        "title": "2. Service Description",
+        "content": "Re:mind offers free reminder management features as well as auto-renewable paid subscriptions with various pricing plans. Key features include:",
+        "list": [
+          "Creation of one-time, daily, or weekly reminders",
+          "Management of medical treatments with associated reminders",
+          "Toll booth detection to automatically create a payment reminder (requires geolocation activation)"
+        ]
+      },
+      "3": {
+        "title": "3. Application Access",
+        "content": "The app is freely accessible on Android and iOS via Google Play Store and Apple App Store. Paid subscriptions are managed exclusively via Apple and Google stores with auto-renewal. No direct payment is taken by the app. No user account is required to access the free features."
+      },
+      "4": {
+        "title": "4. Liability",
+        "content": "The publisher strives to ensure the proper functioning of the app but cannot guarantee:",
+        "list1": [
+          "Complete absence of bugs or malfunctions",
+          "Compatibility with all devices",
+          "Systematic triggering of reminders in case of system issues"
+        ],
+        "content2": "The user uses the app at their own risk. The publisher cannot be held responsible for:",
+        "list2": [
+          "Missed reminders or medication doses",
+          "Any direct or indirect damage related to app usage",
+          "Data loss in case of uninstallation or device malfunction"
+        ]
+      },
+      "5": {
+        "title": "5. Intellectual Property",
+        "content": "The Re:mind app, its source code, design, icons, and all constituent elements are the exclusive property of Antoine Granier. Any unauthorized reproduction, distribution, modification, or use is strictly prohibited and constitutes infringement punishable by French intellectual property law."
+      },
+      "6": {
+        "title": "6. Future Developments",
+        "content": "The publisher reserves the right to add in the future:",
+        "list": [
+          "Advertising",
+          "Paid features or premium subscription",
+          "In-app purchases"
+        ],
+        "content2": "Users will be informed via an update of these TOS directly visible in the app."
+      },
+      "7": {
+        "title": "7. TOS Modifications",
+        "content": "These TOS may be modified at any time. New conditions will be accessible directly in the app. It is the user's responsibility to check this page regularly."
+      },
+      "8": {
+        "title": "8. Applicable Law and Jurisdiction",
+        "content": "These TOS are governed by French law. In case of dispute, and in the absence of amicable resolution, French courts shall have sole jurisdiction."
+      },
+      "9": {
+        "title": "9. Subscriptions",
+        "content": "Subscriptions offered in the app are auto-renewable and managed via the Apple App Store or Google Play Store. Renewal, cancellation, and management of subscriptions must be performed by the user via these platforms. The publisher does not intervene in billing. Subscribers will be informed of pricing or service changes related to their subscription via updates to the TOS."
+      },
+      "10": {
+        "title": "10. Contact",
+        "content": "For any questions regarding the TOS or subscriptions, contact: ",
+        "email": "antoine.granier@protonmail.com"
       }
     }
   }
