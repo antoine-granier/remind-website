@@ -236,7 +236,7 @@ export default function FeaturesPage({ params }: { params: Promise<{ lng: string
             href={`/${lng}/download`}
             className="px-8 py-4 bg-action text-primary rounded-full font-bold text-lg hover:shadow-lg hover:scale-105 transition-all"
           >
-            {t('downloadPage.appStore')}
+            {t('downloadPage.title_prefix')}
           </a>
         </ScrollReveal>
       </section>
