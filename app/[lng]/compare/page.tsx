@@ -178,7 +178,7 @@ export default async function ComparePage({ params }: { params: Promise<{ lng: s
               {t('comparePage.cta.title')}
             </h2>
             <a
-              href={`/${lng}#download`}
+              href={`/${lng}/download`}
               className="px-8 py-4 bg-action text-primary rounded-xl font-bold hover:bg-action/90 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
             >
               {t('comparePage.cta.button')}

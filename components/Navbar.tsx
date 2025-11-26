@@ -43,6 +43,16 @@ export const Navbar = ({ lng }: { lng: string }) => {
             </a>
           </li>
           <li>
+            <a
+              href={`/${lng}/features`}
+              className="relative text-primary transition-colors duration-300
+                after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 
+                after:bg-action after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {t('nav.features')}
+            </a>
+          </li>
+          <li>
             <Link
               href={`/${lng}/compare`}
               className="relative text-primary transition-colors duration-300

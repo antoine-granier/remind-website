@@ -204,7 +204,7 @@ export default function BlogPage({ params }: { params: Promise<{ lng: string }> 
             <div className="relative z-10 max-w-2xl mx-auto">
                 <h2 className="text-3xl font-bold mb-4">{t('blogPage.cta.download.title')}</h2>
                 <p className="text-white/80 mb-8">{t('blogPage.cta.download.subtitle')}</p>
-                <Link href={`/${lng}`} className="inline-block px-8 py-4 rounded-xl bg-action text-primary font-bold hover:bg-white transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200">
+                <Link href={`/${lng}/download`} className="inline-block px-8 py-4 rounded-xl bg-action text-primary font-bold hover:bg-white transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200">
                     {t('blogPage.cta.download.button')}
                 </Link>
             </div>

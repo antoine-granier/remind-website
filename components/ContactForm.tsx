@@ -76,7 +76,7 @@ export default function ContactForm({ lng }: ContactFormProps) {
     setSubmitStatus('idle');
 
     // Simple mailto fallback
-    const mailtoLink = `mailto:contact@re-mind.app?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:antoine.granier@protonmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
 
