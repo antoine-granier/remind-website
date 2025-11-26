@@ -197,6 +197,7 @@
     "compare": "Compare",
     "blog": "Blog",
     "pricing": "Pricing",
+    "features": "Features",
     "download": "Download"
   },
   "faq": {
@@ -787,6 +788,151 @@
       "a2": "No, Re:mind's interface is designed to be familiar and intuitive. You'll be comfortable in seconds.",
       "q3": "Why pay for reminders?",
       "a3": "Because it's more than reminders. It's peace of mind. Managing medication stocks or avoiding a toll fine pays for the app immediately."
+    }
+  },
+  "downloadPage": {
+    "title_prefix": "Download ",
+    "title_highlight": "Re:mind",
+    "subtitle": "Available now on iOS and Android. Start freeing your mind today.",
+    "appStore": "Download on the App Store",
+    "googlePlay": "Download on Google Play",
+    "scanTitle": "Scan to download",
+    "scanDesc": "Use your phone's camera",
+    "features": {
+      "title": "Why Re:mind?",
+      "list": [
+        "Unlimited reminders",
+        "Medication management",
+        "Offline mode",
+        "Total privacy"
+      ]
+    },
+    "quickStart": {
+      "title": "Start in 3 steps",
+      "steps": [
+        {
+          "title": "Download",
+          "desc": "Install the app from your store."
+        },
+        {
+          "title": "Create",
+          "desc": "Add your first reminders in seconds."
+        },
+        {
+          "title": "Enjoy",
+          "desc": "Free your mind and let Re:mind handle it."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is it free?",
+      "a1": "Yes, Re:mind offers a complete free version. Advanced features are available with the Pro subscription.",
+      "q2": "Are my data secure?",
+      "a2": "Absolutely. Everything is stored locally on your phone. We have access to nothing."
+    }
+  },
+  "featuresPage": {
+    "title_prefix": "Discover",
+    "title_highlight": "Re:mind",
+    "subtitle": "A complete suite of tools to organize your life and free your mind.",
+    "header": {
+      "badge": "Features",
+      "title": "Everything you need, <br /> <span class=\"text-secondary/80\">all in one place.</span>",
+      "subtitle": "Explore the features that make Re:mind your perfect daily companion. Organize your life, free your mind, and never miss what matters."
+    },
+    "beforeAfter": {
+      "title": "Life Before and After Re:mind",
+      "subtitle": "See how Re:mind transforms your daily organization and mental well-being",
+      "before": {
+        "title": "Before Re:mind",
+        "items": [
+          "Forgetting medication doses and important tasks",
+          "Mental overload from trying to remember everything",
+          "Missed appointments and deadlines causing stress",
+          "No clear overview of your day or week",
+          "Constant anxiety about what you might have forgotten"
+        ]
+      },
+      "after": {
+        "title": "After Re:mind",
+        "items": [
+          "Never miss a medication or important reminder",
+          "Clear mind with everything externalized",
+          "Organized schedule with visual planning",
+          "Complete overview of tasks at a glance",
+          "Peace of mind knowing nothing slips through"
+        ]
+      }
+    },
+    "keyBenefitsLabel": "Key Benefits:",
+    "overview": {
+      "dashboard": {
+        "title": "Dashboard",
+        "desc": "Centralized view of all your tasks"
+      },
+      "calendar": {
+        "title": "Calendar",
+        "desc": "Visual planning made simple"
+      },
+      "tasks": {
+        "title": "Reminders",
+        "desc": "Smart notifications & tracking"
+      },
+      "privacy": {
+        "title": "Privacy",
+        "desc": "Your data stays on your device"
+      }
+    },
+    "hero": {
+      "title": "Everything you need",
+      "subtitle": "Explore the features that make Re:mind your perfect daily companion."
+    },
+    "features": {
+      "dashboard": {
+        "title": "Clear Overview",
+        "desc": "Access all your important information at a glance. Your day, your tasks, and your reminders, centralized in one beautiful dashboard.",
+        "highlight": "📊 Dashboard",
+        "benefits": [
+          "See today's tasks, planned items, and completed activities",
+          "Quick stats on your productivity and habits",
+          "Intuitive color coding for different categories",
+          "Customizable widgets for your needs"
+        ]
+      },
+      "calendar": {
+        "title": "Intuitive Calendar",
+        "desc": "Plan your days with ease. Drag and drop your tasks and visualize your schedule like never before.",
+        "highlight": "📅 Planning",
+        "benefits": [
+          "Week and month views for better planning",
+          "Visual time blocking for productivity",
+          "Drag-and-drop to reschedule instantly",
+          "Sync with your existing calendar apps"
+        ]
+      },
+      "tasks": {
+        "title": "Powerful Task Management",
+        "desc": "Create, organize, and prioritize your tasks. Never let anything slip through the cracks again.",
+        "highlight": "✅ Tasks",
+        "benefits": [
+          "Smart categorization (medications, reminders, renewals)",
+          "Recurring tasks with flexible scheduling",
+          "Stock management for medications",
+          "Automatic toll detection and reminders"
+        ]
+      },
+      "stats": {
+        "title": "Detailed Statistics",
+        "desc": "Track your productivity and analyze your habits to improve day by day.",
+        "highlight": "📈 Analytics",
+        "benefits": [
+          "Completion rates and streak tracking",
+          "Identify patterns in your productivity",
+          "Weekly and monthly progress reports",
+          "Insights to optimize your routine"
+        ]
+      }
     }
   }
 }

@@ -61,7 +61,7 @@ export default async function RootLayout({
             <div className="text-sm tracking-wide px-4">
               {t('footer.copyright', { year: new Date().getFullYear() })}
             </div>
-            <nav className="flex flex-wrap gap-x-4 gap-y-2 items-center justify-center text-sm font-medium px-4 max-w-md">
+            <nav className="flex min-w-full flex-wrap gap-x-4 gap-y-2 items-center justify-center text-sm font-medium px-4 max-w-md">
               <Link
                 href={`/${lng}/contact`}
                 className="text-action hover:underline whitespace-nowrap"

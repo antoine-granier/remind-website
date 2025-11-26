@@ -74,7 +74,7 @@ export const Navbar = ({ lng }: { lng: string }) => {
           </li>
           <li>
             <a
-              href={`/${lng}/#launch`}
+              href={`/${lng}/download`}
               className="px-5 py-2.5 bg-action text-primary rounded-lg font-semibold
                 hover:bg-action/90 hover:shadow-md transition-all duration-300
                 active:scale-95"

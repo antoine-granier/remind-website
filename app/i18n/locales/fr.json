@@ -197,7 +197,8 @@
     "compare": "Comparer",
     "blog": "Blog",
     "pricing": "Tarifs",
-    "download": "Téléchargement"
+    "features": "Fonctionnalités",
+    "download": "Télécharger"
   },
   "faq": {
     "title": "Questions Fréquentes",
@@ -787,6 +788,151 @@
       "a2": "Non, l'interface de Re:mind est conçue pour être familière et intuitive. Vous serez à l'aise en quelques secondes.",
       "q3": "Pourquoi payer pour des rappels ?",
       "a3": "Parce que c'est plus que des rappels. C'est de la sérénité. La gestion des stocks de médicaments ou l'évitement d'une amende de péage rentabilise l'application immédiatement."
+    }
+  },
+  "downloadPage": {
+    "title_prefix": "Téléchargez ",
+    "title_highlight": "Re:mind",
+    "subtitle": "Disponible dès maintenant sur iOS et Android. Commencez à libérer votre esprit aujourd'hui.",
+    "appStore": "Télécharger sur l'App Store",
+    "googlePlay": "Télécharger SUR Google Play",
+    "scanTitle": "Scanner pour télécharger",
+    "scanDesc": "Utilisez l'appareil photo de votre téléphone",
+    "features": {
+      "title": "Pourquoi Re:mind ?",
+      "list": [
+        "Rappels illimités",
+        "Gestion des médicaments",
+        "Mode hors-ligne",
+        "Confidentialité totale"
+      ]
+    },
+    "quickStart": {
+      "title": "Commencer en 3 étapes",
+      "steps": [
+        {
+          "title": "Télécharger",
+          "desc": "Installez l'application depuis votre store."
+        },
+        {
+          "title": "Créer",
+          "desc": "Ajoutez vos premiers rappels en quelques secondes."
+        },
+        {
+          "title": "Profiter",
+          "desc": "Libérez votre esprit et laissez Re:mind gérer."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "q1": "Est-ce gratuit ?",
+      "a1": "Oui, Re:mind propose une version gratuite complète. Des fonctionnalités avancées sont disponibles avec l'abonnement Pro.",
+      "q2": "Mes données sont-elles sécurisées ?",
+      "a2": "Absolument. Tout est stocké localement sur votre téléphone. Nous n'avons accès à rien."
+    }
+  },
+  "featuresPage": {
+    "title_prefix": "Découvrez",
+    "title_highlight": "Re:mind",
+    "subtitle": "Une suite complète d'outils pour organiser votre vie et libérer votre esprit.",
+    "header": {
+      "badge": "Fonctionnalités",
+      "title": "Tout ce dont vous avez besoin, <br /> <span class=\"text-secondary/80\">au même endroit.</span>",
+      "subtitle": "Explorez les fonctionnalités qui font de Re:mind votre compagnon quotidien idéal. Organisez votre vie, libérez votre esprit et ne manquez plus rien d'important."
+    },
+    "beforeAfter": {
+      "title": "Votre vie Avant et Après Re:mind",
+      "subtitle": "Découvrez comment Re:mind transforme votre organisation quotidienne et votre bien-être mental",
+      "before": {
+        "title": "Avant Re:mind",
+        "items": [
+          "Oubli de prises de médicaments et de tâches importantes",
+          "Surcharge mentale à force de tout retenir",
+          "Rendez-vous et échéances manqués causant du stress",
+          "Aucune vision claire de votre journée ou semaine",
+          "Anxiété constante d'avoir oublié quelque chose"
+        ]
+      },
+      "after": {
+        "title": "Après Re:mind",
+        "items": [
+          "Plus jamais une prise de médicament oubliée",
+          "Esprit clair avec tout externalisé",
+          "Planning organisé avec visualisation claire",
+          "Vue d'ensemble complète de vos tâches",
+          "Sérénité totale, rien ne passe entre les mailles"
+        ]
+      }
+    },
+    "keyBenefitsLabel": "Avantages clés :",
+    "overview": {
+      "dashboard": {
+        "title": "Tableau de bord",
+        "desc": "Vue centralisée de toutes vos tâches"
+      },
+      "calendar": {
+        "title": "Calendrier",
+        "desc": "Planification visuelle simplifiée"
+      },
+      "tasks": {
+        "title": "Rappels",
+        "desc": "Notifications intelligentes & suivi"
+      },
+      "privacy": {
+        "title": "Confidentialité",
+        "desc": "Vos données restent sur votre appareil"
+      }
+    },
+    "hero": {
+      "title": "Tout ce dont vous avez besoin",
+      "subtitle": "Explorez les fonctionnalités qui font de Re:mind votre compagnon quotidien idéal."
+    },
+    "features": {
+      "dashboard": {
+        "title": "Vue d'ensemble claire",
+        "desc": "Accédez à toutes vos informations importantes en un coup d'œil. Votre journée, vos tâches et vos rappels, centralisés dans un tableau de bord magnifique.",
+        "highlight": "📊 Tableau de bord",
+        "benefits": [
+          "Visualisez les tâches du jour, planifiées et terminées",
+          "Statistiques rapides sur votre productivité",
+          "Code couleur intuitif par catégorie",
+          "Widgets personnalisables selon vos besoins"
+        ]
+      },
+      "calendar": {
+        "title": "Calendrier Intuitif",
+        "desc": "Planifiez vos journées avec facilité. Glissez-déposez vos tâches et visualisez votre emploi du temps comme jamais auparavant.",
+        "highlight": "📅 Planification",
+        "benefits": [
+          "Vues semaine et mois pour mieux planifier",
+          "Time blocking visuel pour la productivité",
+          "Glisser-déposer pour reprogrammer instantanément",
+          "Synchronisation avec vos apps de calendrier"
+        ]
+      },
+      "tasks": {
+        "title": "Gestion de Tâches Puissante",
+        "desc": "Créez, organisez et priorisez vos tâches. Ne laissez plus rien passer entre les mailles du filet.",
+        "highlight": "✅ Tâches",
+        "benefits": [
+          "Catégorisation intelligente (médicaments, rappels, renouvellements)",
+          "Tâches récurrentes avec planification flexible",
+          "Gestion des stocks de médicaments",
+          "Détection automatique des péages et rappels"
+        ]
+      },
+      "stats": {
+        "title": "Statistiques Détaillées",
+        "desc": "Suivez votre productivité et analysez vos habitudes pour vous améliorer jour après jour.",
+        "highlight": "📈 Analytiques",
+        "benefits": [
+          "Taux de complétion et suivi des séries",
+          "Identifiez les patterns dans votre productivité",
+          "Rapports de progression hebdomadaires et mensuels",
+          "Insights pour optimiser votre routine"
+        ]
+      }
     }
   }
 }
