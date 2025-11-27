@@ -12,6 +12,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     metadataBase: new URL('https://remind-apps.vercel.app'),
     title: t('metadata.title'),
     description: t('metadata.description'),
+    keywords: [
+      "remind",
+      "application de rappels",
+      "re:mind",
+      "reminder app"
+    ],
     icons: {
       icon: "https://remind-apps.vercel.app/favicon.png",
       apple: "https://remind-apps.vercel.app/favicon.png",
