@@ -58,7 +58,14 @@ export default async function RootLayout({
                 className="inline-block rounded-full"
               />
             </div>
-            <div className="text-sm tracking-wide px-4">
+            <div className="text-sm tracking-wide px-4 flex items-center gap-1">
+              <Link className="text-action hover:underline whitespace-nowrap flex items-center gap-1" href="https://antoine-granier.vercel.app/" target="_blank">
+                <svg className="size-4 text-white" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"></path>
+</svg>
+                Antoine Granier
+              </Link>
+              <span>—</span>
               {t('footer.copyright', { year: new Date().getFullYear() })}
             </div>
             <nav className="flex min-w-full flex-wrap gap-x-4 gap-y-2 items-center justify-center text-sm font-medium px-4 max-w-md">

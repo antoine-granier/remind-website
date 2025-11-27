@@ -245,7 +245,7 @@
     }
   },
   "footer": {
-    "copyright": "In development — Re:mind © {{year}}",
+    "copyright": "Re:mind © {{year}}",
     "contact": "Contact Us",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
