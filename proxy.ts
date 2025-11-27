@@ -7,8 +7,7 @@ acceptLanguage.languages(languages)
 
 export const config = {
   // matcher: '/:lng*'
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|favicon.png|sw.js|site.webmanifest|sitemap.xml|robots.txt|.*\\.(?:png|jpg|jpeg|svg|webp|ico|gif)).*)'
-  ]
+  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|favicon.png|sw.js|site.webmanifest|sitemap\\.xml|robots\\.txt|google.*\\.html|.*\\.(?:png|jpg|jpeg|svg|webp|ico|gif)).*)']
 }
 
 export function proxy(req: NextRequest) {
