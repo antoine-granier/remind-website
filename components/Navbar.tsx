@@ -143,6 +143,16 @@ export const Navbar = ({ lng }: { lng: string }) => {
           </li>
           <li>
             <Link
+              href={`/${lng}/features`}
+              className="text-primary hover:bg-action/5 transition-all duration-200
+                block py-3 px-4 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.features')}
+            </Link>
+          </li>
+          <li>
+            <Link
               href={`/${lng}/compare`}
               className="text-primary hover:bg-action/5 transition-all duration-200
                 block py-3 px-4 rounded-lg"
@@ -173,7 +183,7 @@ export const Navbar = ({ lng }: { lng: string }) => {
           </li>
           <li>
             <a
-              href={`/${lng}/#launch`}
+              href={`/${lng}/download`}
               className="bg-action text-primary hover:bg-action/90 transition-all duration-200
                 block py-3 px-4 rounded-lg text-center font-semibold"
               onClick={() => setIsOpen(false)}
