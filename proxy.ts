@@ -11,6 +11,16 @@ export const config = {
 }
 
 export function proxy(req: NextRequest) {
+  if (
+    req.nextUrl.pathname.indexOf('icon') > -1 ||
+    req.nextUrl.pathname.indexOf('chrome') > -1 ||
+    req.nextUrl.pathname.endsWith('sitemap.xml') ||
+    req.nextUrl.pathname.endsWith('robots.txt') ||
+    req.nextUrl.pathname.indexOf('google') > -1
+  ) {
+    return NextResponse.next()
+  }
+
   let lng
   if (req.cookies.has(cookieName)) lng = acceptLanguage.get(req.cookies.get(cookieName)?.value)
   if (!lng) lng = acceptLanguage.get(req.headers.get('Accept-Language'))
