@@ -15,6 +15,7 @@ export function proxy(req: NextRequest) {
     req.nextUrl.pathname.indexOf('icon') > -1 ||
     req.nextUrl.pathname.indexOf('chrome') > -1 ||
     req.nextUrl.pathname.endsWith('sitemap.xml') ||
+    req.nextUrl.pathname.endsWith('sitemap-test.xml') ||
     req.nextUrl.pathname.endsWith('robots.txt') ||
     req.nextUrl.pathname.indexOf('google') > -1
   ) {
