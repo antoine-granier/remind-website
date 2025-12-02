@@ -16,6 +16,13 @@ export async function generateStaticParams() {
 
 export const metadata = {
   metadataBase: new URL('https://remind-apps.vercel.app'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/en',
+      'fr': '/fr',
+    },
+  },
 }
 
 export default async function RootLayout({

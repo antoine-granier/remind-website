@@ -11,6 +11,13 @@ export const config = {
 }
 
 export function proxy(req: NextRequest) {
+  // Redirect www to non-www
+  if (req.headers.get('host')?.startsWith('www.')) {
+    const newUrl = new URL(req.url)
+    newUrl.hostname = newUrl.hostname.replace('www.', '')
+    return NextResponse.redirect(newUrl, 301)
+  }
+
   if (
     req.nextUrl.pathname.indexOf('icon') > -1 ||
     req.nextUrl.pathname.indexOf('chrome') > -1 ||

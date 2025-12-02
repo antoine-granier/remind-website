@@ -5,6 +5,12 @@ import EnrichedBentoCard from "@/components/EnrichedBentoCard";
 import { Metadata } from "next";
 import { useTranslation } from "../i18n/server";
 
+import { languages } from "../i18n/settings";
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }))
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await useTranslation(lng, 'translation');
@@ -12,6 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     metadataBase: new URL('https://remind-apps.vercel.app'),
     title: t('metadata.title'),
     description: t('metadata.description'),
+    alternates: {
+      canonical: `/${lng}`,
+      languages: {
+        'en': '/en',
+        'fr': '/fr',
+      },
+    },
     keywords: [
       "remind",
       "application de rappels",
