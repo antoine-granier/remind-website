@@ -1,13 +1,33 @@
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n/server";
 import ScrollReveal from "@/components/ScrollReveal";
+import { generateAlternates } from "@/app/utils/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
+  const title = `${t('comparePage.title')} - Re:mind`;
+  const description = lng === 'fr' 
+    ? 'Comparez Re:mind avec Apple Rappels et Google Tasks. Découvrez pourquoi Re:mind est la meilleure application de rappels médicaux pour votre santé et votre vie quotidienne.'
+    : 'Compare Re:mind with Apple Reminders and Google Tasks. Discover why Re:mind is the best medication reminder app for your health and daily life.';
+
   return {
-    title: `${t('comparePage.title')} - Re:mind`,
-    description: t('metadata.description'),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://remind-apps.vercel.app/${lng}/compare`,
+      siteName: 'Re:mind',
+      locale: lng === 'fr' ? 'fr_FR' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    alternates: generateAlternates(lng, '/compare'),
   };
 }
 
