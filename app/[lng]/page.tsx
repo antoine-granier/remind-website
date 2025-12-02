@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { useTranslation } from "../i18n/server";
 
 import { languages } from "../i18n/settings";
+import { generateAlternates } from "@/app/utils/metadata";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }))
@@ -18,13 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     metadataBase: new URL('https://remind-apps.vercel.app'),
     title: t('metadata.title'),
     description: t('metadata.description'),
-    alternates: {
-      canonical: `/${lng}`,
-      languages: {
-        'en': '/en',
-        'fr': '/fr',
-      },
-    },
+    alternates: generateAlternates(lng),
     keywords: [
       "remind",
       "application de rappels",

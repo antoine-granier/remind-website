@@ -3,6 +3,7 @@ import { useTranslation } from "../../i18n/server";
 import IPhoneMockup from "@/components/IphoneMockup";
 import ScrollReveal from "@/components/ScrollReveal";
 import FAQItem from "@/components/FAQItem";
+import { generateAlternates } from "@/app/utils/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
@@ -10,6 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   return {
     title: `${t('downloadPage.title_prefix')} ${t('downloadPage.title_highlight')}`,
     description: t('downloadPage.subtitle'),
+    alternates: generateAlternates(lng, '/download'),
   };
 }
 

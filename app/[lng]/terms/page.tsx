@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n/server";
+import { generateAlternates } from "@/app/utils/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
@@ -7,6 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   return {
     title: `${t('termsPage.title')} - Re:mind`,
     description: t('metadata.description'),
+    alternates: generateAlternates(lng, '/terms'),
   };
 }
 

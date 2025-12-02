@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { useTranslation } from "@/app/i18n/server";
 import ContactContent from "./ContactContent";
+import { generateAlternates } from "@/app/utils/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     openGraph: {
       title,
       description,
-      url: `https://re-mind.app/${lng}/contact`,
+      url: `https://remind-apps.vercel.app/${lng}/contact`,
       siteName: 'Re:mind',
       locale: lng === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website',
@@ -27,13 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
       title,
       description,
     },
-    alternates: {
-      canonical: `https://re-mind.app/${lng}/contact`,
-      languages: {
-        'fr': 'https://re-mind.app/fr/contact',
-        'en': 'https://re-mind.app/en/contact',
-      },
-    },
+    alternates: generateAlternates(lng, '/contact'),
   };
 }
 
